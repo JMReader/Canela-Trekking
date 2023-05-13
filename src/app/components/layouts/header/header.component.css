@@ -1,0 +1,15 @@
+:root {
+    --color-hovcarta: rgba(120, 134, 169, 0.95);
+    --color-back: rgb(179, 216, 255);
+    --color-main: rgb(37, 115, 153);
+    --color-carta: rgba(209, 229, 248, 0.8);
+    --color-titulo: #ffe598eb;
+    --color-subtitulo: rgb(150 153 231);
+    --color-foot: rgba(37, 114, 153, 0.8);
+    --color-contactenos: rgba(54, 135, 175, 0.8);
+    --fondo-foto: url(https://tripin.travel/wp-content/uploads/2020/06/salinas-grandes-jujuy-4.jpg);
+}
+
+
+/*breakpoints css*/
+  
