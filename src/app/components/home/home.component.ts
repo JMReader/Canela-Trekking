@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Circuito } from 'src/app/models/circuito';
+import { SharedDataService } from 'src/app/services/shared-data.service';
 
 @Component({
   selector: 'app-home',
@@ -53,8 +54,13 @@ export class HomeComponent implements OnInit {
     }
   ];
 
-  constructor() { }
 
+  constructor(private Shared: SharedDataService) { 
+
+  }
+ get selectedCircuit() {
+    return this.Shared.selectedCircuit;
+  }
   ngOnInit(): void {
   }
 

@@ -39,11 +39,9 @@
           <div class="nav85__buscador">
           
             <!--Home-->
-            <a   class="buscador--flecha" href="/valle"><i class="fas fa-arrow-left"></i></a>    
-            <a style="margin: 0 6px ;" class="nav85__point" href="/home"> Todos </a>
-            <a  class="buscador--flecha" href="/yungas" title="Yungas"><i class="fas fa-arrow-right"></i></a>
-          
-   
+            <a   class="buscador--flecha" (click)="prevRegion()"><i class="fas fa-arrow-left"></i></a>    
+            <a style="margin: 0 6px ;" class="nav85__point" > {{this.region_actual}} </a>
+            <a  class="buscador--flecha"  (click)="nextRegion()" title="Yungas"><i class="fas fa-arrow-right"></i></a>
         </div>
     </nav>
 </header>
