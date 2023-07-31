@@ -7,7 +7,7 @@ import { SharedDataService } from 'src/app/services/shared-data.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  regiones =  ["Todos", "puna", "Quebrada", "Yungas", "Valle"]
+  regiones =  ["Todos", "Puna", "Quebrada", "Yungas", "Valle"]
   region_actual = this.regiones[0]
   contador = 0
   constructor(private Shared: SharedDataService) {
@@ -26,8 +26,9 @@ export class HeaderComponent implements OnInit {
     this.contador += 1
   }
   this.region_actual = this.regiones[this.contador]
-  this.Shared.selectedCircuit = this.region_actual;
+  this.Shared.selectedRegion = this.region_actual;
   this.circuitSelected.emit(this.region_actual);
+
   }
   //cambia la region a la anterior
   prevRegion(){
@@ -38,8 +39,23 @@ export class HeaderComponent implements OnInit {
       this.contador -= 1
     }
     this.region_actual = this.regiones[this.contador]
-    this.Shared.selectedCircuit = this.region_actual;
+    this.Shared.selectedRegion = this.region_actual;
     this.circuitSelected.emit(this.region_actual);
-  }
-
+    console.log(this.contador)  }
+  getBackgroungdColor(){
+    switch(this.contador){
+      case 0:
+        return "red"
+      case 1:
+        return "white"
+      case 2:
+        return "blue"
+      case 3:
+        return "violet"
+      case 4: //valle
+        return "#b8bd41"
+      default:
+        return "bg-primary"
+    }
+}
 }

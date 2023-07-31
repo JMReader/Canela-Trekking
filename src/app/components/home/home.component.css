@@ -9,38 +9,12 @@ body {
     background: rgb(179, 216, 255);
     background-size: cover;
 }
-
-.bodytodos {
-    background-image: var(--fondo-foto);
-    background-attachment: fixed;
-}
 /* aaaa */
-:root {
-    --color-hovcarta: rgba(120, 134, 169, 0.95);
-    --color-back: rgb(179, 216, 255);
-    --color-main: rgb(37, 115, 153);
-    --color-carta: rgba(209, 229, 248, 0.8);
-    --color-titulo: #ffe598eb;
-    --color-subtitulo: rgb(150 153 231);
-    --color-foot: rgba(37, 114, 153, 0.8);
-    --color-contactenos: rgba(54, 135, 175, 0.8);
-    --fondo-foto: url(https://tripin.travel/wp-content/uploads/2020/06/salinas-grandes-jujuy-4.jpg);
-}
-:root{
-    --color-hovcarta: rgba(213, 165, 76, .95);
-    --color-back: rgb(90, 74, 20);
-    --color-main: rgb(181 166 129);
-    --color-carta: rgba(223, 202, 164, 0.8);
-    --color-titulo: #ffffff;
-    --color-subtitulo:rgb(44 44 44);
-    --color-foot: rgb(181, 166, 129, .8);
-    --color-contactenos: rgba(197, 166, 87, 0.8);
-    --fondo-foto:  url(https://t1.ev.ltmcdn.com/es/posts/5/8/7/puna_que_es_caracteristicas_flora_y_fauna_2785_orig.jpg);
-}     
 .bodytodos{
   background-size: cover;
   background-attachment: fixed;
-  background-image: var(--fondo-foto);
+  background-image: url(http://drive.google.com/uc?export=view&id=1Wd5JUSPt0McGrn2JV5RqKLdNzADfHali);
+  padding-bottom: 1rem;
 }  
 
 /*navegador para pc*/

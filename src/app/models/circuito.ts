@@ -1,5 +1,4 @@
 export class Circuito {
-    
   constructor(
     public id: string,
     public name: string,
@@ -12,6 +11,6 @@ export class Circuito {
     public operable: boolean,
     public distancia: number,
     public region: string,
-    public fotos: Array<string>
+    public photos: Array<string>
   ) {}
 }

@@ -9,7 +9,36 @@
     --color-contactenos: rgba(54, 135, 175, 0.8);
     --fondo-foto: url(https://tripin.travel/wp-content/uploads/2020/06/salinas-grandes-jujuy-4.jpg);
 }
+#menu_drop{
+    border-top: none !important;
+}
+nav{
+    transition: background-color 0.8s ease;
+    color: black;
+    list-style: none;
+}
+#region-name{
+    transition: all 0.5s ease;
+}
+a{
+    color: aliceblue;
+}
+a:hover{
+    color: rgb(214, 219, 224);
+}
+#nav--logo{
+    object-fit: contain;
+    max-height: fit-content;
+    width: 15vw;
+    overflow: hidden;
+    
+}
+#nav--ul--buscador{
+    display: flex;
+    align-items: center;
+}
 
-
-/*breakpoints css*/
-  
+@media (min-width: 1800px){
+ 
+     
+    }

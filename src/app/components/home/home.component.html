@@ -1,29 +1,30 @@
-<p>home works!</p>
-<main class="bodytodos" >
+
+<main class="bodytodos"
+style="--color-hovcarta: {{this.selectedStyle.colorHovcarta}}; " [ngStyle]="{'background-image':this.selectedStyle.fondoFoto}">
     <div class="titulos">
       <h1 class="titulos__h1">Canela Trekking Jujuy</h1>
       <h2 class="titulos__h2">{{ selectedCircuit }}</h2>
     </div>
-  
+    
     <!--Todos los circuitos-->
-    <a *ngFor="let circ of circuitos" [routerLink]="['/circuito', circ.id]" class="a_carta">
-      <div class="carta">
+    <a *ngFor="let circ of circuitos" [routerLink]="['/circuito', circ.id]" class="a_carta" >
+      <div class="carta" [ngStyle]="{'background-color':this.selectedStyle.colorCarta, '--color-hovcarta':this.selectedStyle.colorHovcarta}">
         <!--caarrousel hecho con boostrap-->
         <div id="carouselExampleControls" class="carousel slide carta__img" data-bs-ride="carousel">
           <div class="carousel-innercarta__img">
             <div class="carousel-item active caruseldiv">
-              <img [src]="'data:;base64,' + circ.fotos[0]" class="carta__img" alt="...">
+              <img [src]="'data:;base64,' + circ.photos[0]" class="carta__img" alt="...">
             </div>
             <div class="carousel-item caruseldiv">
-              <img [src]="'data:;base64,' + circ.fotos[0]" class="carta__img" alt="...">
+              <img [src]="'data:;base64,' + circ.photos[0]" class="carta__img" alt="...">
             </div>
             <div class="carousel-item caruseldiv">
-              <img [src]="'data:;base64,' + circ.fotos[0]" class="carta__img" alt="...">
+              <img [src]="'data:;base64,' + circ.photos[0]" class="carta__img" alt="...">
             </div>
           </div>
         </div>
         <!--caarrousel hecho con boostrap-->
-  
+        
         <h4 class="carta__titulo">{{ circ.name }}</h4>
         <p class="carta__p">{{ circ.preview }}</p>
         <div class="carta__espe">
@@ -35,3 +36,8 @@
       </div>
     </a>
   </main>
+  <!--obtener del ts los estilos-->
+  <div [innerHTML]="generateCssRules()">
+
+  
+  </div>
