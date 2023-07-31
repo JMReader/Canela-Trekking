@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { ApiService } from 'src/app/services/api.service';
 import { SharedDataService } from 'src/app/services/shared-data.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class HeaderComponent implements OnInit {
   regiones =  ["Todos", "Puna", "Quebrada", "Yungas", "Valle"]
   region_actual = this.regiones[0]
   contador = 0
-  constructor(private Shared: SharedDataService) {
+  constructor(private Shared: SharedDataService, private api:ApiService) {
 
    }
   ngOnInit(): void {
@@ -45,7 +46,7 @@ export class HeaderComponent implements OnInit {
   getBackgroungdColor(){
     switch(this.contador){
       case 0:
-        return "red"
+        return "#0d5262"
       case 1:
         return "white"
       case 2:
