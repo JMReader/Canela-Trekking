@@ -1,27 +1,40 @@
-# CTrekkingNg
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.5.
 
-## Development server
+# Proyecto de Emprendimiento Jujeño - Sistema de Información y Landing Page
+  ![image](https://github.com/koritacrah/CTrekking-ng/assets/80925718/13069c48-f146-49bb-bbc4-af7d573a6598)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+Este repositorio contiene un proyecto desarrollado en Angular para un emprendimiento jujeño que ofrece servicios de salidas de trekking por toda la provincia de Jujuy. El nombre del emprendimiento es "Canela Trekking".
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Descripción del Proyecto
+El objetivo principal de este proyecto es proporcionar una landing page atractiva para el emprendimiento "Canela Trekking", que se especializa en turismo activo y receptivo en la provincia de Jujuy. 
 
-## Build
+Además de funcionar como una landing page, este proyecto tiene una visión a futuro de convertirse en un sistema de información más completo sobre los circuitos y lugares turísticos que ofrece "Canela Trekking". La idea es proporcionar a los usuarios una plataforma para explorar, obtener detalles y planificar sus aventuras en las hermosas regiones de Jujuy.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Características Actuales
+Landing page con información sobre el emprendimiento y sus servicios.
+Reserva de itinerarios de trekking.
+Experiencia y capacitación de los guías y prestadores de servicios.
+Conexión con la comunidad local y su cultura.
+## Próximos Pasos
+Se planea continuar el desarrollo de este proyecto para convertirlo en un sistema de información completo que incluya:
 
-## Running unit tests
+Información detallada sobre los diferentes circuitos de trekking ofrecidos.
+Galería de imágenes y videos de los lugares turísticos.
+Comentarios y reseñas de los clientes sobre sus experiencias.
+Integración con un sistema de pagos para facilitar las reservas.
+Sección de preguntas frecuentes y atención al cliente.
+Optimización para dispositivos móviles y otros aspectos de mejora de la experiencia del usuario.
+Cómo Contribuir
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Instrucciones de Instalación
+Clona este repositorio en tu máquina local.
+Instala las dependencias del proyecto usando npm install.
+Ejecuta el proyecto en modo de desarrollo usando ng serve.
+Abre tu navegador y visita http://localhost:4200/ para ver la aplicación.
+Agradecimientos
+Agradecemos a todos los colaboradores que contribuyen al desarrollo de este proyecto y ayudan a hacer realidad la visión del emprendimiento "Canela Trekking".
 
-## Running end-to-end tests
+Si tienes alguna pregunta o necesitas más información, no dudes en ponerte en contacto con nosotros.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+¡Disfruta de tus aventuras en Jujuy con "Canela Trekking"! 🏔️🚶‍♂️🌄
