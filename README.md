@@ -1,7 +1,8 @@
 
 
 # Proyecto de Emprendimiento Jujeño - Sistema de Información y Landing Page
-  ![image](https://github.com/koritacrah/CTrekking-ng/assets/80925718/13069c48-f146-49bb-bbc4-af7d573a6598)
+ ![image](https://github.com/koritacrah/Canela-Trekking/assets/80925718/ddbadaa6-06c6-4d88-bf1d-3c54d1517ed3)
+
 
 
 Este repositorio contiene un proyecto desarrollado en Angular para un emprendimiento jujeño que ofrece servicios de salidas de trekking por toda la provincia de Jujuy. El nombre del emprendimiento es "Canela Trekking".
