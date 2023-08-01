@@ -16,11 +16,11 @@ export class ApiService {
     'rgb(179, 216, 255)',
     'rgb(37, 115, 153)',
     'rgba(209, 229, 248, 0.8)',
-    '#ffe598eb',
+    '#9fb9c5',
     'rgb(150, 153, 231)',
     'rgba(37, 114, 153, 0.8)',
     'rgba(54, 135, 175, 0.8)',
-    'url(https://tripin.travel/wp-content/uploads/2020/06/salinas-grandes-jujuy-4.jpg)'
+    'url("../../../assets/backgroundAll.webp")'
   );
   puna : Style =  new Style(
     "Puna",
