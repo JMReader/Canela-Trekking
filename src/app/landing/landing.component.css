@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-image: url("../../assets/backgroundAll.webp");
+    background-size: cover;
+    background-attachment: fixed;
+}
+#logo{
+    max-width: 70%;
+}
+header {
+    background-color: #0d5262;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+.container {
+    background-color: #9fb9c5b7;
+    max-width: 960px;
+    margin: 16px auto;
+    border-radius: 6px;
+    padding: 2rem;
+}
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+p {
+    font-size: 1.2rem;
+}
+.cta-btn {
+    display: inline-block;
+    background-color: #5192ac;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+.cta-btn:hover {
+    background-color: #376f87;
+    animation: all .6s;
+}
