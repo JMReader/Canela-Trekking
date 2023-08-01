@@ -21,8 +21,21 @@
     <div class="container" id="contacto">
         <h2>Contacto</h2>
         <p>Para obtener más información y reservar tu próxima aventura con Canela Trekking, contáctanos a través de los siguientes medios:</p>
-        <p>Teléfono: +54 9 1234 5678</p>
-        <p>Email: info@canelatrekking.com</p>
+       <div class="container__buttons">
+        <button class="bookmarkBtn" (click)="openWindow('wpp')">
+            <span class="IconContainer" id="icon_wpp"> 
+                <i class="fa-brands fa-whatsapp"></i>
+            </span>
+            <p class="btn__txt">Whatsapp</p>
+          </button>
+          <button class="bookmarkBtn" (click)="openWindow('ig')">
+            <span class="IconContainer" id="icon_ig"> 
+                <i class="fa-brands fa-instagram"></i>  
+            </span>
+            <p class="btn__txt">Instagram</p>
+          </button>
+       </div>
+        
     </div>
     <app-footer></app-footer>
 </body>
