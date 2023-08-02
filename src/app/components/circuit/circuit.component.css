@@ -43,7 +43,7 @@ body{
 .flexcon__imagenes{
     display: inline-block;
     border-radius: 20px;
-    float: left;
+
     flex-basis: 1200px;
     flex-grow: 1;
     object-fit: cover;
