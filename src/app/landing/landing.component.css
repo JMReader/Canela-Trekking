@@ -49,6 +49,22 @@ p {
     display: flex;
     flex-wrap: wrap;
 }
+#socios--list{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 80px;
+  list-style: none;
+  margin: 0;
+  align-items: center;
+}
+#socios--list li{
+  aspect-ratio: 1/1;
+  height: 68px;
+}
+.socios--list--img{
+  height: 100%;
+}
 
 /*estilos boton*/
 /* styles.css */
