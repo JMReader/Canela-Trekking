@@ -8,6 +8,10 @@ import { HeaderComponent } from './components/layouts/header/header.component';
 import { CircuitComponent } from './components/circuit/circuit.component';
 import { FooterComponent } from './components/layouts/footer/footer.component';
 import { LandingComponent } from './landing/landing.component';
+import { CircuitFormComponent } from './components/workerComponents/circuit-form/circuit-form.component';
+import { ContainerComponent } from './components/workerComponents/container/container.component';
+import { SideBarComponent } from './components/workerComponents/side-bar/side-bar.component';
+
 
 @NgModule({
   declarations: [
@@ -16,7 +20,11 @@ import { LandingComponent } from './landing/landing.component';
     HeaderComponent,
     CircuitComponent,
     FooterComponent,
-    LandingComponent
+    LandingComponent,
+    CircuitFormComponent,
+    ContainerComponent,
+    SideBarComponent,
+   
   ],
   imports: [
     BrowserModule,
