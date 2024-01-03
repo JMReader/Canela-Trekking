@@ -1,0 +1,133 @@
+<div class="formFlexPadre">
+  <!--sideBar-->
+  <p class="form__tit">Cargar Circuito</p>
+  <form class="formFlex" method="post" enctype="multipart/form-data">
+    <div class="formFlex__div">
+      <input type="hidden" id="identificadorPoi" />
+      <textarea
+        class="formFLex__input"
+        type="text"
+        placeholder="nombre"
+      ></textarea>
+    </div>
+
+    <div class="formFlex__div">
+      <textarea class="formFLex__input" placeholder="descripcion"></textarea>
+    </div>
+    <div class="formFlex__div">
+      <textarea
+        maxlength="150"
+        class="formFLex__input"
+        placeholder="vista previa (descipcion corta)"
+      ></textarea>
+    </div>
+
+    <div class="formFlex__div">
+      <label for="reg" class="lab">region</label>
+      <select class="formFLex__input" placeholder="region" id="reg">
+        <option value="puna">puna</option>
+        <option value="valle">valle</option>
+        <option value="quebrada">quebrada</option>
+        <option value="yungas">yungas</option>
+      </select>
+    </div>
+    <div class="formFlex__div">
+      <label for="dif" class="lab">Dificultad</label>
+      <select class="formFLex__input" placeholder="region" id="dif">
+        <option value="baja">baja</option>
+        <option value="media">media</option>
+        <option value="alta">alta</option>
+      </select>
+    </div>
+    <div class="formFlex__div">
+      <label for="dist" class="lab">Distancia</label>
+      <input
+        id="dist"
+        class="formFLex__input"
+        type="number"
+        placeholder="distancia"
+        step="any"
+      />
+    </div>
+    <div class="formFlex__div">
+      <label class="lab">Duracion</label>
+      <input class="formFLex__input" type="number" placeholder="duracion" />
+    </div>
+
+    <div class="formFlex__div">
+      <label class="lab">Desnivel</label>
+      <input
+        class="formFLex__input"
+        type="number"
+        placeholder="desnivel positivo o negativo"
+      />
+    </div>
+    <div class="formFlex__div">
+      <label class="lab">Tiempo operable</label>
+      <input class="formFLex__input" type="text" placeholder="operable" />
+    </div>
+
+    <div class="MultimediaBox">
+      <div id="multimediaBox--radios">
+        <span id="box--title">Multimedia</span>
+        <div class="box--radio">
+          <input
+            type="radio"
+            name="Multimedia"
+            [(ngModel)]="file"
+            [value]="false"
+            checked
+          />
+          <label for="Url">URL</label>
+        </div>
+        <div class="box--radio">
+          <input
+            type="radio"
+            name="Multimedia"
+            [(ngModel)]="file"
+            [value]="true"
+          />
+          <label for="Archivos">Archivos</label>
+        </div>
+      </div>
+      <div class="Multimedia-input" *ngIf="file == true">
+        <input
+          class="formFLex__input"
+          id="Multimedia-input"
+          type="file"
+          multiple
+        />
+      </div>
+      <div class="Multimedia-input" *ngIf="file == false">
+        <label class="lab" for="NumerofUrl"> Cantidad de archivos {{UrlArray.length}}</label>
+        <select
+          (change)="selectChange(cantOfUrl)"
+          (selectionchange)="selectChange(cantOfUrl)"
+          [(ngModel)]="cantOfUrl"
+          name="NumerofUrl"
+          id=""
+        >
+          <option value="1" selected>1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+        
+        <div class="M" >
+          <input
+            class="formFLex__input input--url"
+            type="url"
+            id=""
+            placeholder="Url (drive) del archivo "
+            *ngFor="let i of UrlArray"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="formFlex__div" id="btn_send">
+      <input type="submit" class="formFLex__input sumb" />
+    </div>
+  </form>
+</div>
