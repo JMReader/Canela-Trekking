@@ -11,7 +11,7 @@ import { LandingComponent } from './landing/landing.component';
 import { CircuitFormComponent } from './components/workerComponents/circuit-form/circuit-form.component';
 import { ContainerComponent } from './components/workerComponents/container/container.component';
 import { SideBarComponent } from './components/workerComponents/side-bar/side-bar.component';
-
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,11 +24,11 @@ import { SideBarComponent } from './components/workerComponents/side-bar/side-ba
     CircuitFormComponent,
     ContainerComponent,
     SideBarComponent,
-   
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

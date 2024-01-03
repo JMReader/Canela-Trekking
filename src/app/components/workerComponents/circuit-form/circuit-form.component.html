@@ -71,31 +71,59 @@
       <div id="multimediaBox--radios">
         <span id="box--title">Multimedia</span>
         <div class="box--radio">
-          <input type="radio" value="Url" name="Multimedia" checked>
+          <input
+            type="radio"
+            name="Multimedia"
+            [(ngModel)]="file"
+            [value]="false"
+            checked
+          />
           <label for="Url">URL</label>
         </div>
         <div class="box--radio">
-          <input type="radio" value="Archivos" name="Multimedia" checked>
+          <input
+            type="radio"
+            name="Multimedia"
+            [(ngModel)]="file"
+            [value]="true"
+          />
           <label for="Archivos">Archivos</label>
         </div>
       </div>
-      <!-- <div class="Multimedia-input"> 
-        <input class="formFLex__input" id="Multimedia-input" type="file" multiple>
-      </div> -->
-      <div class="Multimedia-input"> 
-        <label class="lab" for="NumerofUrl"> Cantidad de archivos</label>
-        <select  name="NumerofUrl" id="">
-          <option value="1">1</option>
+      <div class="Multimedia-input" *ngIf="file == true">
+        <input
+          class="formFLex__input"
+          id="Multimedia-input"
+          type="file"
+          multiple
+        />
+      </div>
+      <div class="Multimedia-input" *ngIf="file == false">
+        <label class="lab" for="NumerofUrl"> Cantidad de archivos {{UrlArray.length}}</label>
+        <select
+          (change)="selectChange(cantOfUrl)"
+          (selectionchange)="selectChange(cantOfUrl)"
+          [(ngModel)]="cantOfUrl"
+          name="NumerofUrl"
+          id=""
+        >
+          <option value="1" selected>1</option>
           <option value="2">2</option>
           <option value="3">3</option>
           <option value="4">4</option>
           <option value="5">5</option>
         </select>
-        <div class="M">
-          <input class="formFLex__input input--url" type="url" id="" placeholder="Url (drive) del archivo">
+        
+        <div class="M" >
+          <input
+            class="formFLex__input input--url"
+            type="url"
+            id=""
+            placeholder="Url (drive) del archivo "
+            *ngFor="let i of UrlArray"
+          />
         </div>
       </div>
-      
     </div>
 
     <div class="formFlex__div" id="btn_send">

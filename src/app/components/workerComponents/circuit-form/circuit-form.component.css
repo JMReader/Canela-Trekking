@@ -91,6 +91,7 @@ body {
 }
 .input--url{
     width: fit-content;
+    margin: 8px
 }
 
 textarea {
