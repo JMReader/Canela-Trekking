@@ -38,6 +38,28 @@ a:hover{
     align-items: center;
 }
 
+#nBar{
+    background-color:  --color-main;
+}
+
+#Lenguage{
+    padding: 0 4px;
+    color: white;
+
+}
+.dropdown-menu i {
+    margin: 4px;
+}
+#li-Ig:hover{
+    background-color:#C13584 ;
+}
+#li-Fa:hover{
+background-color: #3B5998;
+}
+#li-Wpp:hover{
+    background-color: #128c7e;
+
+}
 @media (min-width: 1800px){
  
      
