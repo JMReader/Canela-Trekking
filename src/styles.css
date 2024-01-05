@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap');
 *{
     box-sizing: border-box;
     padding: 0px;
@@ -364,4 +364,6 @@
         --color-foot: rgb(181, 166, 129, .8);
         --color-contactenos: rgba(197, 166, 87, 0.8);
         --fondo-foto:  url(https://revistabamag.com.ar/imagenes/2018/04/La-Puna-juje%C3%B1a-en-clave-localport.jpg);
-    }      */
+    }      
+    */
+    

@@ -12,5 +12,18 @@ export class Circuito {
     public distancia: number,
     public region: string,
     public photos: Array<string>
-  ) {}
+  ) {
+    this.id = id;
+    this.name = name;
+    this.descripcion = descripcion;
+    this.preview = preview;
+    this.dificultad = dificultad;
+    this.desnivel = desnivel;
+    this.duracion = duracion;
+    this.create_date = create_date;
+    this.operable = operable;
+    this.distancia = distancia;
+    this.region = region;
+    this.photos = photos;
+  }
 }
