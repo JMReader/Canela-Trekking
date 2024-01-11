@@ -60,7 +60,8 @@ background-color: #3B5998;
     background-color: #128c7e;
 
 }
-@media (min-width: 1800px){
- 
-     
+@media (max-width: 720px){
+    #nav--logo{
+        width: 33dvw;
+    }
     }
