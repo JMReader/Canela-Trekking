@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ContainerComponent } from './components/workerComponents/container/container.component';
+import { LandingComponent } from './landing/landing.component';
 
-const routes: Routes = [ {
-  path: 'work',
-  component: ContainerComponent
-}];
+const routes: Routes = [ 
+  {path:'', component: LandingComponent},
+  {path:'about', component:LandingComponent}
+  
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

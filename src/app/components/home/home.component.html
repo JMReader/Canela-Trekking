@@ -1,9 +1,13 @@
-
+<app-header></app-header>
 <main class="bodytodos"
 style="--color-hovcarta: {{this.selectedStyle.colorHovcarta}}; " [ngStyle]="{'background-image':this.selectedStyle.fondoFoto}">
     <div class="titulos">
       <h1 class="titulos__h1">Canela Trekking Jujuy</h1>
-      <h2 class="titulos__h2">{{ selectedCircuit }}</h2>
+      <div id="box-filter-h2">
+        <h2 class="titulos__h2">Todos los Circuitos</h2>
+        <button type="button" class="btn btn-outline-dark"><i class="fa-solid fa-magnifying-glass"></i> Filtrar</button>
+      </div>
+      
     </div>
     
     <!--Todos los circuitos-->
@@ -37,7 +41,9 @@ style="--color-hovcarta: {{this.selectedStyle.colorHovcarta}}; " [ngStyle]="{'ba
     </a>
   </main>
   <!--obtener del ts los estilos-->
-  <div [innerHTML]="generateCssRules()">
+  <!-- <div [innerHTML]="generateCssRules()">
 
   
-  </div>
+  </div> -->
+
+  <app-footer></app-footer>

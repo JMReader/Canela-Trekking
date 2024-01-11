@@ -1,5 +1,5 @@
 <header>
-    <nav [ngStyle]="{ 'background-color': getBackgroungdColor() }" class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav [ngStyle]="{ 'background-color': getBackgroungdColor() }" class="navbar navbar-expand-lg">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img src="assets/logo.png" alt="Canela Trekking Logo" id="nav--logo">
@@ -9,39 +9,38 @@
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item" id="nav--ul--buscador">
+                    <!--TO DO: averiguar porque cambia despues de la segunda -->
+                    <!-- <li class="nav-item" id="nav--ul--buscador">
                         <a class="nav-link active" (click)="prevRegion()" ><i class="fa-solid fa-arrow-left"></i></a>
                         <b style="color: white;" class="" id="region-name" aria-current="page" href="#">{{region_actual}}</b>
                         <a class="nav-link active" (click)="nextRegion()"><i class="fa-solid fa-arrow-right"></i></a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
+                        <a class="nav-link" href="/about">Quienes Somos</a>
                     </li>
-                    <li class="nav-item dropdown">
+                   
+                    <li class="nav-item dropdown" id="Dropd">
                         <a class="nav-link dropdown-toggle" id="menu_drop" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
-                            Dropdown
+                            Nuestras redes
                         </a>
                         <ul [ngStyle]="{ 'background-color': getBackgroungdColor() }" class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li  ><a  id="li-Fa" class="dropdown-item" target="_blank" href="https://www.facebook.com/canela.trekking.jujuy/"><i class="fa-brands fa-facebook"></i>Facebook</a></li>
+                            <li ><a  id="li-Ig"class="dropdown-item" target="_blank" href="https://www.instagram.com/canela.trekking.jujuy/"><i class="fa-brands fa-instagram"></i>Instagram</a></li>
+                            <li ><a id="li-Wpp" class="dropdown-item"  target="_blank"  href="https://wa.me/543885148856"><i class="fa-brands fa-whatsapp"></i>Whatsapp</a></li>
                         </ul>
                     </li>
+                    
                     <li class="nav-item">
-                        <a class="nav-link disabled">Disabled</a>
+                        <a class="nav-link disabled" href="#" aria-disabled="true" title="mi_link">Circuitos (proximamente)</a>
                     </li>
                 </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-            </div> -->
+                <div id="Lenguage">
+                    <i class="fa-solid fa-globe"></i> Es
+                </div>
+            </div>
         </div>
     </nav>
 </header>
