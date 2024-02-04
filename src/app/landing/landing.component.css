@@ -60,7 +60,8 @@ p {
 }
 #socios--list li{
   aspect-ratio: 1/1;
-  height: 68px;
+  height: 76px;
+  margin: 0 8px
 }
 .socios--list--img{
   height: 100%;
