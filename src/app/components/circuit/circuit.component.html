@@ -1,4 +1,5 @@
 <div class="bodytodos"> 
+  <app-header></app-header>
     <div class="flexcon">
       <div class="flexcon__titulo">
         <h1>{{ circ.name }}</h1>
@@ -34,13 +35,12 @@
         </div>
   
         <div class="flexcon__descripcion">
-          <p class="descripcion">{{ circ.descripcion }}</p>
+          <div class="descripcion" [innerHTML]="sanitizeDescription(circ.descripcion)"></div>
         </div>
       </div>
-  
       <div class="flexcon__propiedades">
         <div class="celda">
-          <i class="fas fa-battery-empty"></i>
+          <i class="fas fa-battery-full"></i>
           <p class="celda__t">Dificultad:</p>
           <p>{{ circ.dificultad }}</p>
         </div>
@@ -52,7 +52,7 @@
         <div class="celda">
           <i class="fas fa-clock"></i>
           <p class="celda__t">Duracion:</p>
-          <p>{{ circ.duracion }} horas</p>
+          <p>{{  transformTime(circ.duracion) }} </p>
         </div>
         <div class="celda">
           <i class="fas fa-cloud-rain"></i>
@@ -80,8 +80,57 @@
         </a>
       </div>
     </div>
+    <section class="VideosYtitulo">
+      <h3 class="flexcon__titulo" style="color: var(--color-back);"> Una mirada desde dentro de la Travesia</h3>
+      <div id="containerVideos">
+        <div class="vidBox">
+          <p class="Vid__titulo">Día 1</p>
+          <iframe class="videoFrame"  src="https://www.youtube.com/embed/KVcTKdmbIWQ" title="Travesía Jujuy | Tilcara - San Francisco | DÍA 1 : Mezcla de emociones" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="vidBox">
+          <p class="Vid__titulo">Día 2</p>
+          <iframe class="videoFrame"  src="https://www.youtube.com/embed/d7S1mCnEi2k" title="DÍA 2 : Molulo - Travesía Jujuy | Tilcara - San Francisco |" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        
+      </div>
+     
+      
+    </section>
+
+    <section class="flexcon">
+      <section>
+        <h2>La Intensidad:</h2>
+        <p>Esta travesía no es solo una caminata; es un desafío. Con una intensidad clasificada como alta, estamos
+          diseñados para aquellos que buscan más que un simple paseo. Requiere actividad física regular, pero cada gota de
+          sudor se verá recompensada con vistas impresionantes y una conexión única con la naturaleza.</p>
+      </section>
+
+      <section>
+        <h2>Precio:</h2>
+        <p>Argentinos por persona: $380 ARS<br> Extranjeros: $700 USD</p>
+      </section>
+    
+      <section>
+        <h2>Fechas Disponibles:</h2>
+        <p>Abril, Junio, Agosto y Octubre de 2024.</p>
+      </section>
+    
+      <section>
+        <h2>Prepárate para la Aventura:</h2>
+        <p>Cada paso de esta travesía está cargado de autenticidad y descubrimientos. Acompáñanos mientras exploramos los
+          rincones menos conocidos de Jujuy. Para tener una vista más cercana, disfruta de los videos de nuestra embajadora
+          en YouTube, [Nombre de la YouTuber], quien ha capturado la esencia de esta travesía desde adentro.</p>
+        <p><strong>¡Reserva tu lugar y únete a nosotros para una experiencia que va más allá de lo ordinario! Descubre la
+            verdadera maravilla de Jujuy con Canela Trekking.</strong></p>
+      </section>
+
+
+    </section>
+
+
+
   
-    <h4 class="titulos__recomendacion">Otros Circuitos:</h4>
+    <app-footer></app-footer>
   
 
   </div>

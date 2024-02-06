@@ -86,15 +86,15 @@ export class ApiService {
         id: '0',
         name: 'Tilcara - San francisco. La travesia de la quebrada',
         descripcion:
-          "  <section>   <p>Bienvenido a una experiencia única en la majestuosa provincia de Jujuy. Nuestra Travesía Épica te lleva en un" +
+          "  <section>   <p>Bienvenido a una experiencia única en la majestuosa provincia de Jujuy. Nuestra Travesía Épica te lleva en un " +
            "viaje inolvidable desde las imponentes alturas de la Quebrada de Humahuaca hasta la exuberancia de las Yungas. "+
             "Sumérgete en un mundo de maravillas naturales, aventuras y autenticidad que solo Jujuy puede ofrecer.</p>"+
         "</section>"+
         "<section>"+
         "<b id='ol'>El Recorrido:</b>"+
-        "<p>Comenzamos en Tilcara, un punto de partida lleno de historia y encanto. Desde aquí, cada paso te lleva más profundo"+
-          "en la belleza de la Quebrada de Humahuaca. Atravesaremos Yuto Pampa, Molulo y San Lucas, explorando paisajes que"+
-          "te dejarán sin aliento. Finalmente, llegaremos a Peñalta en San Francisco, un destino que marca el final de una"+
+        "<p>Comenzamos en Tilcara, un punto de partida lleno de historia y encanto. Desde aquí, cada paso te lleva más profundo "+
+          "en la belleza de la Quebrada de Humahuaca. Atravesaremos Yuto Pampa, Molulo y San Lucas, explorando paisajes que "+
+          "te dejarán sin aliento. Finalmente, llegaremos a Peñalta en San Francisco, un destino que marca el final de una "+
           "travesía llena de desafíos y recompensas.</p>"+
       "</section>"+
       "<section>"+
@@ -121,7 +121,7 @@ export class ApiService {
         duracion: 96,
         create_date: new Date('2022-10-01'),
         operable: true,
-        distancia: 12,
+        distancia: 64,
         region: 'Quebrada',
         photos: [
           'https://example.com/foto1.jpg',
