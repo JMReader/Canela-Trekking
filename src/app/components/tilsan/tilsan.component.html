@@ -5,43 +5,38 @@
           <h1>{{ circ.name }}</h1>
         </header>
         <div class="flexcon__img__descip">
-          <div class="flexcon__imagenes">
-            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-              <div class="carousel-inner">
-                <div class="carousel-item" *ngFor="let img of circ.photos; let i = index"
-                  [class.active]="i === 0">
-                  <img [src]="img" class="d-block w-100 carrousel__img" alt="...">
+              <div class="flexcon__imagenes">
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                  <div class="carousel-inner">
+                    <div class="carousel-item" *ngFor="let img of circ.photos; let i = index"
+                      [class.active]="i === 0">
+                      <img [src]="img" class="d-block carrousel__img" alt="...">
+                    </div>
+                  </div>  
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
                 </div>
-              </div>  
-              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
-            </div>
-          </div>
-      |
-          <div class="flexcon__descripcion">
-            <section>
-                <p>Bienvenido a una experiencia única en la majestuosa provincia de Jujuy. Nuestra Travesía Épica te lleva en un
-                  viaje inolvidable desde las imponentes alturas de la Quebrada de Humahuaca hasta la exuberancia de las Yungas.
-                  Sumérgete en un mundo de maravillas naturales, aventuras y autenticidad que solo Jujuy puede ofrecer.</p>
-              </section>
-            
-              <section>
-                <h2>El Recorrido:</h2>
-                <p>Comenzamos en Tilcara, un punto de partida lleno de historia y encanto. Desde aquí, cada paso te lleva más profundo
-                  en la belleza de la Quebrada de Humahuaca. Atravesaremos Yuto Pampa, Molulo y San Lucas, explorando paisajes que
-                  te dejarán sin aliento. Finalmente, llegaremos a Peñalta en San Francisco, un destino que marca el final de una
-                  travesía llena de desafíos y recompensas.</p>
-                </section>
-          </div>
+              </div>
+            <div class="flexcon__descripcion">  
+                    <p>Bienvenido a una experiencia única en la majestuosa provincia de Jujuy. Nuestra Travesía Épica te lleva en un
+                      viaje inolvidable desde las imponentes alturas de la Quebrada de Humahuaca hasta la exuberancia de las Yungas.
+                      Sumérgete en un mundo de maravillas naturales, aventuras y autenticidad que solo Jujuy puede ofrecer.
+                    </p>
+                    <!-- <p>Comenzamos en Tilcara, un punto de partida lleno de historia y encanto. Desde aquí, cada paso te lleva más profundo
+                        en la belleza de la Quebrada de Humahuaca. Atravesaremos Yuto Pampa, Molulo y San Lucas, explorando paisajes que
+                        te dejarán sin aliento. Finalmente, luego de 64 kilometros llenas de nuevas experiencias llegaremos a Peñalta en San Francisco,
+                         un destino que marca el final de una travesía llena de desafíos y recompensas.</p> -->
+             </div>
         </div>
+    
         <div class="flexcon__propiedades">
           <div class="celda">
             <i class="fas fa-battery-full"></i>
@@ -61,7 +56,7 @@
           <div class="celda">
             <i class="fas fa-cloud-rain"></i>
             <p class="celda__t">Operable:</p>
-            <p>{{ circ.operable }}</p>
+            <p>De abril a noviembre</p>
           </div>
           <div class="celda">
             <i class="fas fa-map-marker-alt"></i>
@@ -85,7 +80,13 @@
         </div>
       </div>
       <section class="VideosYtitulo">
-        <h3 class="flexcon__titulo" style="color: var(--color-back);"> Una mirada desde dentro de la Travesia</h3>
+        <h3 class="flexcon__titulo" style="color: rgb(172, 213, 234);"> Una mirada desde dentro de la Travesia</h3>
+        <p>Comenzamos en Tilcara, un punto de partida lleno de historia y encanto. Desde aquí, cada paso te lleva más profundo
+            en la belleza de la Quebrada de Humahuaca. Atravesaremos Yuto Pampa, Molulo y San Lucas, explorando paisajes que
+            te dejarán sin aliento. <br>
+            Finalmente, luego de 64 kilometros llenas de nuevas experiencias llegaremos a Peñalta en San Francisco,
+            un destino que marca el final de una travesía llena de desafíos y recompensas.
+        </p>
         <div id="containerVideos">
           <div class="vidBox">
             <p class="Vid__titulo">Día 1</p>
@@ -97,37 +98,36 @@
           </div>
           
         </div>
-       
+       <p style="text-align: center;">
+        Te dejamos a mano los videos de nuestra embajadora en youtube <b> Maite por el mundo </b> para tener una vista mas cercana a nuestra travesia
+       </p>
         
       </section>
   
-      <section class="flexcon">
+      <section class="flexcon addition">
         <section>
-          <h2>La Intensidad:</h2>
+          <h2 class="subtit">La Intensidad:</h2>
           <p>Esta travesía no es solo una caminata; es un desafío. Con una intensidad clasificada como alta, estamos
             diseñados para aquellos que buscan más que un simple paseo. Requiere actividad física regular, pero cada gota de
             sudor se verá recompensada con vistas impresionantes y una conexión única con la naturaleza.</p>
         </section>
   
-        <section>
-          <h2>Precio:</h2>
-          <p>Argentinos por persona: $380 ARS<br> Extranjeros: $700 USD</p>
-        </section>
+       
       
         <section>
-          <h2>Fechas Disponibles:</h2>
+          <h2 class="subtit" >Fechas Disponibles:</h2>
           <p>Abril, Junio, Agosto y Octubre de 2024.</p>
         </section>
       
         <section>
-          <h2>Prepárate para la Aventura:</h2>
+          <h2 class="subtit">Prepárate para la Aventura:</h2>
           <p>Cada paso de esta travesía está cargado de autenticidad y descubrimientos. Acompáñanos mientras exploramos los
-            rincones menos conocidos de Jujuy. Para tener una vista más cercana, disfruta de los videos de nuestra embajadora
-            en YouTube, [Nombre de la YouTuber], quien ha capturado la esencia de esta travesía desde adentro.</p>
+            rincones menos conocidos de Jujuy.</p>
           <p><strong>¡Reserva tu lugar y únete a nosotros para una experiencia que va más allá de lo ordinario! Descubre la
               verdadera maravilla de Jujuy con Canela Trekking.</strong></p>
         </section>
-  
+
+        <a href="/tilcara-sanfrancisco" style="align-self: center;" (click)="enviarwpp('a')" class="cta-btn">Conoce los secretos naturales con nosotros </a>
   
       </section>
   

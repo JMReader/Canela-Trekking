@@ -84,7 +84,7 @@ export class ApiService {
     this.circuitos = [
       {
         id: '0',
-        name: 'Tilcara - San francisco. La travesia de la quebrada',
+        name: 'De Tilcara a San Francisco: Travesia entre dos Secretos Naturales ',
         descripcion:
           "  aaaaaaaaaa"
       ,
