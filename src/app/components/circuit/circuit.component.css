@@ -114,40 +114,7 @@
 .celda:link{
    color: white;
     }
-.VideosYtitulo{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    background-color: #0d4b58a1;
-    margin-bottom: 5dvh;
-}
-#containerVideos{
 
-border-radius: 6px;
-margin-left: 5%;
-display: flex;
-flex-direction: row;
-justify-content: center;
-    flex-wrap: wrap;
-    
-    
-}
-.videoFrame{
-    aspect-ratio: 16/9 auto;
-    border-radius: 6%;
-    width: 30dvw;
-    
-}
-.Vid__titulo{
-    font-size: larger;
-    font-weight: bolder;
-    color: aliceblue;
-    text-align: center;
-}
-
-.vidBox{
-    margin: 8px 5dvw;
-}
  
     @media screen and (min-width: 360px) AND (max-width: 750px){
         .flexcon__imagenes{
