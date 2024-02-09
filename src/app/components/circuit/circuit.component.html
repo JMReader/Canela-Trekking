@@ -1,9 +1,11 @@
 <div class="bodytodos"> 
   <app-header></app-header>
     <div class="flexcon">
-      <div class="flexcon__titulo">
+
+      <header class="flexcon__titulo">
         <h1>{{ circ.name }}</h1>
-      </div>
+      </header>
+
       <div class="flexcon__img__descip">
         <div class="flexcon__imagenes">
           <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
@@ -26,7 +28,7 @@
           </div>
         </div>
     |
-        <div class="flexcon__descripcion"> ESTA PARTE VA CUANDO NO SEA HARDCODE
+        <div class="flexcon__descripcion"> 
           <div class="descripcion" [innerHTML]="sanitizeDescription(circ.descripcion)"></div>
         </div> 
       </div>

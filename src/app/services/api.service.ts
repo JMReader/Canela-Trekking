@@ -86,31 +86,7 @@ export class ApiService {
         id: '0',
         name: 'Tilcara - San francisco. La travesia de la quebrada',
         descripcion:
-          "  <section>   <p>Bienvenido a una experiencia única en la majestuosa provincia de Jujuy. Nuestra Travesía Épica te lleva en un " +
-           "viaje inolvidable desde las imponentes alturas de la Quebrada de Humahuaca hasta la exuberancia de las Yungas. "+
-            "Sumérgete en un mundo de maravillas naturales, aventuras y autenticidad que solo Jujuy puede ofrecer.</p>"+
-        "</section>"+
-        "<section>"+
-        "<b id='ol'>El Recorrido:</b>"+
-        "<p>Comenzamos en Tilcara, un punto de partida lleno de historia y encanto. Desde aquí, cada paso te lleva más profundo "+
-          "en la belleza de la Quebrada de Humahuaca. Atravesaremos Yuto Pampa, Molulo y San Lucas, explorando paisajes que "+
-          "te dejarán sin aliento. Finalmente, llegaremos a Peñalta en San Francisco, un destino que marca el final de una "+
-          "travesía llena de desafíos y recompensas.</p>"+
-      "</section>"+
-      "<section>"+
-      "<b>Lo que Incluye:</b>"+
-      "<ul>"+
-        "<li>Alojamiento y comidas</li>"+
-        "<li>Raciones de marcha</li>"+
-        "<li>Guías certificados WFR (Wilderness First Responder)</li>"+
-        "<li>Cargueros para grupos grandes</li>"+
-        "<li>Transporte al punto de inicio en Acequia</li>"+
-        "<li>Transporte desde Peñalta a San Francisco</li>"+
-        "<li>Mensajero y seguimiento satelital</li>"+
-        "<li>Tubo de oxígeno</li>"+
-        "<li>Noche en Tilcara antes de la caminata en Tierra Andina Hostel.</li>"+
-      "</ul>"+
-    "</section>"
+          "  aaaaaaaaaa"
       ,
 
 

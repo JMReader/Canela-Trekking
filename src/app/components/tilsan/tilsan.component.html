@@ -1,9 +1,9 @@
 <div class="bodytodos"> 
     <app-header></app-header>
       <div class="flexcon">
-        <div class="flexcon__titulo">
+        <header class="flexcon__titulo">
           <h1>{{ circ.name }}</h1>
-        </div>
+        </header>
         <div class="flexcon__img__descip">
           <div class="flexcon__imagenes">
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
@@ -26,8 +26,20 @@
             </div>
           </div>
       |
-          <div class="flexcon__descripcion"> ESTA PARTE VA CUANDO NO SEA HARDCODE
-            <div class="descripcion" [innerHTML]="sanitizeDescription(circ.descripcion)"></div>
+          <div class="flexcon__descripcion">
+            <section>
+                <p>Bienvenido a una experiencia única en la majestuosa provincia de Jujuy. Nuestra Travesía Épica te lleva en un
+                  viaje inolvidable desde las imponentes alturas de la Quebrada de Humahuaca hasta la exuberancia de las Yungas.
+                  Sumérgete en un mundo de maravillas naturales, aventuras y autenticidad que solo Jujuy puede ofrecer.</p>
+              </section>
+            
+              <section>
+                <h2>El Recorrido:</h2>
+                <p>Comenzamos en Tilcara, un punto de partida lleno de historia y encanto. Desde aquí, cada paso te lleva más profundo
+                  en la belleza de la Quebrada de Humahuaca. Atravesaremos Yuto Pampa, Molulo y San Lucas, explorando paisajes que
+                  te dejarán sin aliento. Finalmente, llegaremos a Peñalta en San Francisco, un destino que marca el final de una
+                  travesía llena de desafíos y recompensas.</p>
+                </section>
           </div>
         </div>
         <div class="flexcon__propiedades">
