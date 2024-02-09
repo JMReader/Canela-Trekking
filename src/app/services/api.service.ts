@@ -124,9 +124,13 @@ export class ApiService {
         distancia: 64,
         region: 'Quebrada',
         photos: [
-          'https://example.com/foto1.jpg',
-          'https://example.com/foto2.jpg',
-          'https://example.com/foto3.jpg',
+          'assets/TIL-SF/horizontal (4).jpg',
+          'assets/TIL-SF/horizontal (5).jpg',
+          'assets/TIL-SF/horizontal (6).jpg',
+          'assets/TIL-SF/horizontal (7).jpg',
+          'assets/TIL-SF/horizontal (8).jpg',
+          'assets/TIL-SF/horizontal (9).jpg',
+
         ],
       },
       {

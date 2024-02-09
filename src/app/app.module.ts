@@ -13,6 +13,8 @@ import { ContainerComponent } from './components/workerComponents/container/cont
 import { SideBarComponent } from './components/workerComponents/side-bar/side-bar.component';
 import { FormsModule } from '@angular/forms';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +25,7 @@ import { FormsModule } from '@angular/forms';
     LandingComponent,
     CircuitFormComponent,
     ContainerComponent,
-    SideBarComponent,
+    SideBarComponent
   ],
   imports: [
     BrowserModule,
