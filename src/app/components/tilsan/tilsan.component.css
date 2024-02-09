@@ -157,6 +157,7 @@ justify-content: center;
     border-radius: 5px;
     margin-top: 1rem;
     transition: background-color 0.6s;
+    border: none;
 }
 .cta-btn:hover {
     background-color: #376f87;
@@ -183,7 +184,67 @@ align-items: baseline;
 
 }
  
-    @media screen and (min-width: 360px) AND (max-width: 750px){
+
+    @media screen and (min-width: 100px) AND (max-width: 900px){
+        h1{
+            text-align: center;
+        }
+        h3{
+            text-align: center;
+        }
+       .flexcon{
+        padding: 8px;
+       }
+        .flexcon__imagenes{
+
+            width: 156px;
+            /* height: 120px; */
+            flex-grow: 1;
+        }
+        .flexcon__img__descip{
+            
+         display: flex;
+         flex-wrap: wrap;
+         
+        }
+        .flexcon__propiedades{
+            font-size: 12px;
+        }
+        .carrousel__img{
+            height: 160px;
+          
+        }
+        .flexcon__descripcion{
+            font-size: large;
+            max-width: max-content;
+            margin-top: 16px;
+            padding: 0;
+        }
+        .celda{
+            padding-top: 10px;
+        }
+        .descripcion{
+            margin-left: 0;
+            padding: 8px;
+            padding-bottom: 0;
+            
+        }
+        .videoFrame{
+            width: fit-content;
+        }
+        .VideosYtitulo{
+            font-size: medium;
+        }
+        .addition{
+            padding: 16px;
+        }
+        .addition section{
+            font-size: medium;
+        }
+    }
+
+
+    /* @media screen and (min-width: 360px) AND (max-width: 750px){
         .flexcon__imagenes{
             flex-basis: 0;
              width: 320px !important;
@@ -202,44 +263,4 @@ align-items: baseline;
             height: 200;
             object-fit: cover;
         }
-    }
-    @media screen and (min-width: 100px) AND (max-width: 600px){
-        .recomendaciones{
-            margin-left: 1vw;
-        }
-       
-        .flexcon__imagenes{
-
-            width: 156px;
-            /* height: 120px; */
-            flex-grow: 1;
-        }
-        .flexcon__img__descip{
-            
-         display: flex;
-         flex-wrap: wrap;
-         
-        }
-        .flexcon__propiedades{
-            font-size: 12px;
-            padding: 4px;
-        }
-        .carrousel__img{
-            height: 160px;
-          
-        }
-        .flexcon__descipcion{
-            font-size: 10px;
-        }
-        .celda{
-            padding-top: 10px;
-        }
-        .descripcion{
-            margin-left: 0;
-            padding: 8px;
-            padding-bottom: 0;
-            
-        }
-    }
-
-
+    } */
