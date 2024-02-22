@@ -106,7 +106,6 @@ export class ApiService {
           'assets/TIL-SF/horizontal (7).jpg',
           'assets/TIL-SF/horizontal (8).jpg',
           'assets/TIL-SF/horizontal (9).jpg',
-
         ],
       },
       {

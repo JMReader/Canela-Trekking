@@ -183,6 +183,12 @@ align-items: baseline;
     color: rgb(177, 199, 217);
 
 }
+.mainteLink{
+    color: #5192ac;
+}
+.mainteLink:link, .mainteLink:visited, .mainteLink:active{
+    text-decoration:none;
+}
  
 
     @media screen and (min-width: 100px) AND (max-width: 900px){
