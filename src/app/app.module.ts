@@ -12,6 +12,9 @@ import { CircuitFormComponent } from './components/workerComponents/circuit-form
 import { ContainerComponent } from './components/workerComponents/container/container.component';
 import { SideBarComponent } from './components/workerComponents/side-bar/side-bar.component';
 import { FormsModule } from '@angular/forms';
+import { TilsanComponent } from './components/tilsan/tilsan.component';
+
+
 
 @NgModule({
   declarations: [
@@ -24,6 +27,7 @@ import { FormsModule } from '@angular/forms';
     CircuitFormComponent,
     ContainerComponent,
     SideBarComponent,
+    TilsanComponent
   ],
   imports: [
     BrowserModule,

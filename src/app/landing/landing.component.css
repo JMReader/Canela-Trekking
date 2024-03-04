@@ -45,10 +45,7 @@ p {
 .cta-btn:hover {
     background-color: #376f87;
 }
-.container__buttons{
-    display: flex;
-    flex-wrap: wrap;
-}
+
 #socios--list{
   display: flex;
   flex-direction: row;
@@ -69,6 +66,10 @@ p {
 
 /*estilos boton*/
 /* styles.css */
+.container__buttons{
+  display: flex;
+  flex-wrap: wrap;
+}
 .bookmarkBtn {
     min-width: 160px;
     margin: 6px;

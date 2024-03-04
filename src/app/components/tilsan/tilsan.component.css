@@ -1,0 +1,272 @@
+
+.bodytodos{
+    padding-top: 0;
+   max-width: 100dvw;
+    height: auto;
+    background-size: cover;
+    background-attachment: fixed;
+    background-image: url("../../../assets/backgroundAll.webp");
+    padding-bottom: 0;
+    overflow-x: hidden;
+  }  
+.flexcon{
+    padding-top: 1rem;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 90vw;
+    margin: 3dvw 5dvw;
+    background-color: rgba(170, 206, 240, 0.7);
+    flex-direction: column;
+    border-radius: 12px;
+    color: rgb(0, 0, 0);
+    max-width: 90vw;
+    overflow-x: hidden;
+}
+
+
+.flexcon__titulo{
+    font-family: quicksand;
+    color: var(--color-foot);
+    margin-top: 12px;
+    display: flex;
+    justify-content: center;
+}
+
+
+.flexcon__imagenes{
+    display: inline-block;
+    border-radius: 20px;
+    float: left;
+    width: 60%;
+    overflow: hidden;
+}
+.carousel{
+    max-height: 600px;
+    width: 100%;
+}
+.flexcon__descripcion{
+    display: flex;
+    flex-direction: column;
+    max-width: 45%;
+    font-size: 1.5em;
+    padding: .8em;
+}
+.descripcion{
+    margin-left: 16px;
+    max-width: 100vw;
+    font-weight: 400;
+    font-size: 1.5em
+}
+
+
+.carrousel__img{
+    width: 100%;
+    max-height: 720px;
+    float: left;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.flexcon__propiedades{
+    border-radius: 6px;
+    margin: 12px 9px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 4px;
+    width: -webkit-fill-available;
+}
+
+
+.flexcon__img__descip{
+    margin: 6px 1rem;
+ display: flex;
+ 
+}
+
+
+.celda{
+    border-radius: 12px;
+    background-color: rgb(49, 112, 143) ;
+    display: inline-block;
+    margin: 4px, 1rem;
+    border: none;
+    text-align: center;
+    color: white;
+    padding: 8px 4px;
+}
+.celda p{
+    display: inline-block;
+    margin: 0;
+    margin-right: 2px;
+}
+.celda i {
+   padding: 0 5px;
+
+}
+.celda:nth-child(7){
+    background-color: rgba(7, 94, 84);
+    }
+    .celda:nth-child(8){
+        background-color: rgba(225, 48, 108) ;
+    }
+.celda:visited{
+    color: white;
+    }
+.celda:link{
+   color: white;
+    }
+.VideosYtitulo{
+    width: 100%;
+    padding: 16px 8%;
+    display: flex;
+    flex-direction: column;
+    background-color: #0d4b58a1;
+    margin-bottom: 5dvh;
+}
+#containerVideos{
+border-radius: 6px;
+display: flex;
+flex-direction: row;
+justify-content: center;
+    flex-wrap: wrap;
+}
+.videoFrame{
+    aspect-ratio: 16/9 auto;
+    border-radius: 6%;
+    width: 35dvw;
+}
+.Vid__titulo{
+    font-size: larger;
+    font-weight: bolder;
+    color: aliceblue;
+    text-align: center;
+}
+
+.vidBox{
+    margin: 1.2em;
+}
+
+.cta-btn {
+    display: inline-block;
+    background-color: #5192ac;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 1rem;
+    transition: background-color 0.6s;
+    border: none;
+}
+.cta-btn:hover {
+    background-color: #376f87;
+}
+
+.addition {
+padding: 1rem;
+display: flex;
+flex-direction: column;
+justify-content: baseline;
+align-items: baseline;
+}
+.addition section{
+    font-size: large;
+
+}
+.addition section .subtit{
+ color: #0d5262;
+}
+
+.VideosYtitulo p{
+    font-size: 1.2em;
+    color: rgb(177, 199, 217);
+
+}
+.mainteLink{
+    color: #5192ac;
+}
+.mainteLink:link, .mainteLink:visited, .mainteLink:active{
+    text-decoration:none;
+}
+ 
+
+    @media screen and (min-width: 100px) AND (max-width: 900px){
+        h1{
+            text-align: center;
+        }
+        h3{
+            text-align: center;
+        }
+       .flexcon{
+        padding: 8px;
+       }
+        .flexcon__imagenes{
+
+            width: 156px;
+            /* height: 120px; */
+            flex-grow: 1;
+        }
+        .flexcon__img__descip{
+            
+         display: flex;
+         flex-wrap: wrap;
+         
+        }
+        .flexcon__propiedades{
+            font-size: 12px;
+        }
+        .carrousel__img{
+            height: 160px;
+          
+        }
+        .flexcon__descripcion{
+            font-size: large;
+            max-width: max-content;
+            margin-top: 16px;
+            padding: 0;
+        }
+        .celda{
+            padding-top: 10px;
+        }
+        .descripcion{
+            margin-left: 0;
+            padding: 8px;
+            padding-bottom: 0;
+            
+        }
+        .videoFrame{
+            width: fit-content;
+        }
+        .VideosYtitulo{
+            font-size: medium;
+        }
+        .addition{
+            padding: 16px;
+        }
+        .addition section{
+            font-size: medium;
+        }
+    }
+
+
+    /* @media screen and (min-width: 360px) AND (max-width: 750px){
+        .flexcon__imagenes{
+            flex-basis: 0;
+             width: 320px !important;
+             flex-grow: 1;
+ 
+         }
+         .flexcon__img__descip{
+            
+         display: flex;
+         flex-wrap: wrap;
+         
+        }
+        .carrousel__img{
+            overflow: hidden;
+           
+            height: 200;
+            object-fit: cover;
+        }
+    } */

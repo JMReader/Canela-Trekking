@@ -1,25 +1,20 @@
 <div class="bodytodos"> 
+  <app-header></app-header>
     <div class="flexcon">
-      <div class="flexcon__titulo">
+
+      <header class="flexcon__titulo">
         <h1>{{ circ.name }}</h1>
-      </div>
+      </header>
+
       <div class="flexcon__img__descip">
         <div class="flexcon__imagenes">
           <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-                aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                aria-label="Slide 3"></button>
-            </div>
             <div class="carousel-inner">
               <div class="carousel-item" *ngFor="let img of circ.photos; let i = index"
                 [class.active]="i === 0">
-                <img [src]="'data:;base64,' + img" class="d-block w-100 carrousel__img" alt="...">
+                <img [src]="img" class="d-block w-100 carrousel__img" alt="...">
               </div>
-            </div>
+            </div>  
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
               data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -32,15 +27,14 @@
             </button>
           </div>
         </div>
-  
-        <div class="flexcon__descripcion">
-          <p class="descripcion">{{ circ.descripcion }}</p>
-        </div>
+    |
+        <div class="flexcon__descripcion"> 
+          <div class="descripcion" [innerHTML]="sanitizeDescription(circ.descripcion)"></div>
+        </div> 
       </div>
-  
       <div class="flexcon__propiedades">
         <div class="celda">
-          <i class="fas fa-battery-empty"></i>
+          <i class="fas fa-battery-full"></i>
           <p class="celda__t">Dificultad:</p>
           <p>{{ circ.dificultad }}</p>
         </div>
@@ -52,7 +46,7 @@
         <div class="celda">
           <i class="fas fa-clock"></i>
           <p class="celda__t">Duracion:</p>
-          <p>{{ circ.duracion }} horas</p>
+          <p>{{  transformTime(circ.duracion) }} </p>
         </div>
         <div class="celda">
           <i class="fas fa-cloud-rain"></i>
@@ -79,9 +73,8 @@
           <p class="celda__t">Consulte por IG</p>
         </a>
       </div>
-    </div>
-  
-    <h4 class="titulos__recomendacion">Otros Circuitos:</h4>
+    </div>  
+    <app-footer></app-footer>
   
 
   </div>

@@ -354,16 +354,15 @@
       display: none;
     }
     
-    /* :root{
-        --color-hovcarta: rgba(213, 165, 76, .95);
-        --color-back: rgb(90, 74, 20);
-        --color-main: rgb(181 166 129);
-        --color-carta: rgba(223, 202, 164, 0.8);
-        --color-titulo: #ffffff;
-        --color-subtitulo:rgb(44 44 44);
-        --color-foot: rgb(181, 166, 129, .8);
-        --color-contactenos: rgba(197, 166, 87, 0.8);
-        --fondo-foto:  url(https://revistabamag.com.ar/imagenes/2018/04/La-Puna-juje%C3%B1a-en-clave-localport.jpg);
-    }      
-    */
+    :root {
+      --color-hovcarta: rgba(120, 134, 169, 0.95);
+      --color-back: rgb(179, 216, 255);
+      --color-main: rgb(37, 115, 153);
+      --color-carta: rgba(209, 229, 248, 0.8);
+      --color-titulo: #ffe598eb;
+      --color-subtitulo: rgb(150 153 231);
+      --color-foot: #0a4754;
+      --color-contactenos: rgba(54, 135, 175, 0.8);
+      --fondo-foto: url(https://tripin.travel/wp-content/uploads/2020/06/salinas-grandes-jujuy-4.jpg);
+  }
     

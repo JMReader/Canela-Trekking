@@ -1,0 +1,147 @@
+<div class="bodytodos"> 
+    <app-header></app-header>
+      <div class="flexcon">
+        <header class="flexcon__titulo">
+          <h1>{{ circ.name }}</h1>
+        </header>
+        <div class="flexcon__img__descip">
+              <div class="flexcon__imagenes">
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                  <div class="carousel-inner">
+                    <div class="carousel-item" *ngFor="let img of circ.photos; let i = index"
+                      [class.active]="i === 0">
+                      <img [src]="img" class="d-block carrousel__img" alt="...">
+                    </div>
+                  </div>  
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
+              </div>
+            <div class="flexcon__descripcion">  
+                    <p>Bienvenido a una experiencia única en la majestuosa provincia de Jujuy. Nuestra Travesía Épica te lleva en un
+                      viaje inolvidable desde las imponentes alturas de la Quebrada de Humahuaca hasta la exuberancia de las Yungas.
+                      Sumérgete en un mundo de maravillas naturales, aventuras y autenticidad que solo Jujuy puede ofrecer.
+                    </p>
+                    <!-- <p>Comenzamos en Tilcara, un punto de partida lleno de historia y encanto. Desde aquí, cada paso te lleva más profundo
+                        en la belleza de la Quebrada de Humahuaca. Atravesaremos Yuto Pampa, Molulo y San Lucas, explorando paisajes que
+                        te dejarán sin aliento. Finalmente, luego de 64 kilometros llenas de nuevas experiencias llegaremos a Peñalta en San Francisco,
+                         un destino que marca el final de una travesía llena de desafíos y recompensas.</p> -->
+             </div>
+        </div>
+    
+        <div class="flexcon__propiedades">
+          <div class="celda">
+            <i class="fas fa-battery-full"></i>
+            <p class="celda__t">Dificultad:</p>
+            <p>{{ circ.dificultad }}</p>
+          </div>
+          <div class="celda">
+            <i class="fas fa-arrow-alt-circle-down"></i>
+            <p class="celda__t">Desnivel:</p>
+            <p>+2310mts -4101 mts </p>
+          </div>
+          <div class="celda">
+            <i class="fas fa-clock"></i>
+            <p class="celda__t">Duracion:</p>
+            <p>{{  transformTime(circ.duracion) }} </p>
+          </div>
+          <div class="celda">
+            <i class="fas fa-cloud-rain"></i>
+            <p class="celda__t">Operable:</p>
+            <p>De abril a noviembre</p>
+          </div>
+          <div class="celda">
+            <i class="fas fa-map-marker-alt"></i>
+            <p class="celda__t">Region:</p>
+            <p>{{ circ.region }}</p>
+          </div>
+          <div class="celda">
+            <i class="fas fa-hiking"></i>
+            <p class="celda__t">Distancia:</p>
+            <p>{{ circ.distancia }} KM</p>
+          </div>
+          <a (click)="enviarwpp(circ.name)" class="celda" href="">
+            <div><i class="fab fa-whatsapp"></i>
+              <p class="celda__t">Consulte por wpp</p>
+            </div>
+          </a>
+          <a class="celda" href="">
+            <i class="fab fa-instagram"></i>
+            <p class="celda__t">Consulte por IG</p>
+          </a>
+        </div>
+      </div>
+      <section class="VideosYtitulo">
+        <h3 class="flexcon__titulo" style="color: rgb(172, 213, 234);"> Una mirada desde dentro de la Travesia</h3>
+        <p>Comenzamos en Tilcara, un punto de partida lleno de historia y encanto. Desde aquí, cada paso te lleva más profundo
+            en la belleza de la Quebrada de Humahuaca. Atravesaremos Yuto Pampa, Molulo y San Lucas, explorando paisajes que
+            te dejarán sin aliento. <br>
+            Finalmente, luego de 64 kilometros llenas de nuevas experiencias llegaremos a Peñalta en San Francisco,
+            un destino que marca el final de una travesía llena de desafíos y recompensas.
+        </p>
+        <div id="containerVideos">
+          <div class="vidBox">
+            <p class="Vid__titulo">Día 1</p>
+            <iframe class="videoFrame"  src="https://www.youtube.com/embed/KVcTKdmbIWQ" title="Travesía Jujuy | Tilcara - San Francisco | DÍA 1 : Mezcla de emociones" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <div class="vidBox">
+            <p class="Vid__titulo">Día 2</p>
+            <iframe class="videoFrame"  src="https://www.youtube.com/embed/d7S1mCnEi2k" title="DÍA 2 : Molulo - Travesía Jujuy | Tilcara - San Francisco |" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <div class="vidBox">
+            <p class="Vid__titulo">Día 3</p>
+            <iframe class="videoFrame" src="https://www.youtube.com/embed/she8Ga8GU08?si=bbGI6akYEVMC5CMa" title="Día 3: Nos quedamos sin agua" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          
+
+          
+        </div>
+       <p style="text-align: center;">
+        Te dejamos a mano los videos de nuestra embajadora en youtube <b>  <a class="mainteLink" target="_blank" href="https://www.youtube.com/@maiteporelmundo" > Maite por el mundo  </a> </b> para tener una vista mas cercana a nuestra travesia
+       </p>
+        
+      </section>
+  
+      <section class="flexcon addition">
+        <section>
+          <h2 class="subtit">La Intensidad:</h2>
+          <p>Esta travesía no es solo una caminata; es un desafío. Con una intensidad clasificada como alta, estamos
+            diseñados para aquellos que buscan más que un simple paseo. Requiere actividad física regular, pero cada gota de
+            sudor se verá recompensada con vistas impresionantes y una conexión única con la naturaleza.</p>
+        </section>
+  
+       
+      
+        <section>
+          <h2 class="subtit" >Fechas Disponibles:</h2>
+          <p>Abril, Junio, Agosto y Octubre de 2024.</p>
+        </section>
+      
+        <section>
+          <h2 class="subtit">Prepárate para la Aventura:</h2>
+          <p>Cada paso de esta travesía está cargado de autenticidad y descubrimientos. Acompáñanos mientras exploramos los
+            rincones menos conocidos de Jujuy.</p>
+          <p><strong style="color: #09404c;">¡Reserva tu lugar y únete a nosotros para una experiencia que va más allá de lo ordinario! Descubre la
+              verdadera maravilla de Jujuy con Canela Trekking.</strong></p>
+        </section>
+
+        <button href="#" style="align-self: center;" (click)="enviarwpp('a')" class="cta-btn">Conoce los secretos naturales con nosotros </button>
+  
+      </section>
+  
+  
+  
+    
+      <app-footer></app-footer>
+    
+  
+    </div>
+  
