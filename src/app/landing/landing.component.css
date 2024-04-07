@@ -64,6 +64,31 @@ p {
   height: 100%;
 }
 
+
+.container:hover {
+  box-shadow: 8px 6px 1px var(--color-foot);
+  transition: box-shadow .7s;
+}
+
+
+.koa--cont{
+  display: flex;
+  flex-direction: row;
+  font-size: medium;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  
+}
+.koa--cont-img img{
+  aspect-ratio: 3/4;
+  max-width: 400px;
+  border-radius: 9px;
+}
+.koa--cont-text{
+  max-width: 45%;
+  font-weight: 600;
+}
+
 /*estilos boton*/
 /* styles.css */
 .container__buttons{
@@ -150,7 +175,20 @@ p {
     .container__buttons{
         justify-content: center;
     }
-  
+    .koa--cont-img img{
+      max-width: 60%;
+    }
+    .koa--cont-text{
+      max-width: 100%;
+      font-weight: 400;
+
+    }
+    #koa{
+      justify-content: center;
+    }
+    #socios--list{
+      height: auto;
+    }
  }
 
 
