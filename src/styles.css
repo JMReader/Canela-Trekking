@@ -1,4 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap');
+:root {
+  --color-hovcarta: rgba(120, 134, 169, 0.95);
+  --color-back: rgb(179, 216, 255);
+  --color-main: rgb(37, 115, 153);
+  --color-carta: rgba(209, 229, 248, 0.8);
+  --color-titulo: #ffe598eb;
+  --color-subtitulo: rgb(150 153 231);
+  --color-foot: #0a4754;
+  --color-contactenos: rgba(54, 135, 175, 0.8);
+  --fondo-foto: url(https://tripin.travel/wp-content/uploads/2020/06/salinas-grandes-jujuy-4.jpg);
+}
+.bodytodos{
+  padding-top: 0;
+ max-width: 100dvw;
+ min-height: 100dvh;
+  height: auto;
+  background-size: cover;
+  background-attachment: fixed;
+  background-image: url("assets/backgroundAll.webp");
+  padding-bottom: 0;
+  overflow-x: hidden;
+} 
+*{
+  
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-back) var(--color-main) ;
+    scrollbar-track-color:var(--color-titulo) ;
+  
+}
 *{
     box-sizing: border-box;
     padding: 0px;
@@ -354,15 +383,5 @@
       display: none;
     }
     
-    :root {
-      --color-hovcarta: rgba(120, 134, 169, 0.95);
-      --color-back: rgb(179, 216, 255);
-      --color-main: rgb(37, 115, 153);
-      --color-carta: rgba(209, 229, 248, 0.8);
-      --color-titulo: #ffe598eb;
-      --color-subtitulo: rgb(150 153 231);
-      --color-foot: #0a4754;
-      --color-contactenos: rgba(54, 135, 175, 0.8);
-      --fondo-foto: url(https://tripin.travel/wp-content/uploads/2020/06/salinas-grandes-jujuy-4.jpg);
-  }
+
     

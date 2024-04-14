@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-show-circuits',
@@ -6,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./show-circuits.component.css']
 })
 export class ShowCircuitsComponent implements OnInit {
-  
-  constructor() { }
+  circuits: Array<any> = [];
+  constructor(private api: ApiService, private sanitizer: DomSanitizer) {
+    
+   }
 
   ngOnInit(): void {
+    this.circuits = this.api.getCircuits();
   }
 
 }
