@@ -1,62 +1,121 @@
 <title>Canela Trekking - Explora Jujuy</title>
 <body>
-    <!-- <header>
+  <!-- <header>
         <img  id="logo" src="assets/logo.png" alt="">
         <p>¡Explora la provincia de Jujuy con nuestras emocionantes salidas de trekking!</p>
         <a href="#contacto" class="cta-btn">Reserva tu aventura</a>
     </header> -->
-    <app-header></app-header>
-    <div class="container">
-        <h2>Descubre la belleza de Jujuy</h2>
-        <p>Somos Canela Trekking, una Empresa de Viajes y Turismo especializada en turismo receptivo en la provincia de Jujuy, Argentina. Con más de 8 años de experiencia, te ofrecemos la oportunidad única de explorar los lugares no tradicionales de las 4 regiones de Jujuy, especialmente la exuberante región de las Yungas.</p>
-        <p>Nuestros guías, capacitados en primeros auxilios y expertos en entornos rurales y naturales, garantizan tu seguridad mientras disfrutas de una experiencia auténtica y enriquecedora.</p>
-    </div>
-    <div class="container my-2" >
-        <h2>¿Qué ofrecemos?</h2>
-        <ul>
-            <li>Itinerarios de 1, 4 y 7 días</li>
-            <li>Comidas de alta calidad durante las excursiones</li>
-            <li>Conexión con la comunidad local y su cultura</li>
-            <li>Paisajes impresionantes y lugares poco conocidos</li>
-        </ul>
-        <a href="#contacto" class="cta-btn">Reserva tu aventura ahora</a>
-    </div>
-    <div class="container" id="contacto">
-        <h2>Contacto</h2>
-        <p>Para obtener más información y reservar tu próxima aventura con Canela Trekking, contáctanos a través de los siguientes medios:</p>
-       <div class="container__buttons">
-        <button class="bookmarkBtn" (click)="openWindow('wpp')">
-            <span class="IconContainer" id="icon_wpp"> 
-                <i class="fa-brands fa-whatsapp"></i>
-            </span>
-            <p class="btn__txt">Whatsapp</p>
-          </button>
-          <button class="bookmarkBtn" (click)="openWindow('ig')">
-            <span class="IconContainer" id="icon_ig"> 
-                <i class="fa-brands fa-instagram"></i>  
-            </span>
-            <p class="btn__txt">Instagram</p>
-          </button>
+  <app-header></app-header>
+  <div class="container">
+    <h2>Descubre la belleza de Jujuy</h2>
+    <p>
+      Somos Canela Trekking, una Empresa de Viajes y Turismo especializada en
+      turismo receptivo en la provincia de Jujuy, Argentina. Con más de 8 años
+      de experiencia, te ofrecemos la oportunidad única de explorar los lugares
+      no tradicionales de las 4 regiones de Jujuy, especialmente la exuberante
+      región de las Yungas.
+    </p>
+    <p>
+      Nuestros guías, capacitados en primeros auxilios y expertos en entornos
+      rurales y naturales, garantizan tu seguridad mientras disfrutas de una
+      experiencia auténtica y enriquecedora.
+    </p>
+  </div>
+  <div class="container my-2">
+    <h2>¿Qué ofrecemos?</h2>
+    <ul>
+      <li>Itinerarios de 1, 4 y 7 días</li>
+      <li>Comidas de alta calidad durante las excursiones</li>
+      <li>Conexión con la comunidad local y su cultura</li>
+      <li>Paisajes impresionantes y lugares poco conocidos</li>
+    </ul>
+    <a href="#contacto" class="cta-btn">Reserva tu aventura ahora</a>
+  </div>
+  <div class="container" id="contacto">
+    <h2>Contacto</h2>
+    <p>
+      Para obtener más información y reservar tu próxima aventura con Canela
+      Trekking, contáctanos a través de los siguientes medios:
+    </p>
+    <div class="container__buttons">
+      <button class="bookmarkBtn" (click)="openWindow('wpp')">
+        <span class="IconContainer" id="icon_wpp">
+          <i class="fa-brands fa-whatsapp"></i>
+        </span>
+        <p class="btn__txt">Whatsapp</p>
+      </button>
+      <button class="bookmarkBtn" (click)="openWindow('ig')">
+        <span class="IconContainer" id="icon_ig">
+          <i class="fa-brands fa-instagram"></i>
+        </span>
+        <p class="btn__txt">Instagram</p>
+      </button>
 
-          <button class="bookmarkBtn" (click)="openWindow('face')">
-            <span class="IconContainer" id="icon_ig"> 
-                <i class="fa-brands fa-facebook"></i>  
-            </span>
-            <p class="btn__txt">Facebook</p>
-          </button>
-       </div>
+      <button class="bookmarkBtn" (click)="openWindow('face')">
+        <span class="IconContainer" id="icon_ig">
+          <i class="fa-brands fa-facebook"></i>
+        </span>
+        <p class="btn__txt">Facebook</p>
+      </button>
     </div>
-       <div class="container my-2" id="socios" >
-        <h2>Socios Estrategicos</h2>
-        <ul id="socios--list">
-            <li><img class="socios--list--img" src="assets/aguadelchaco.png" alt="agua del chaco Logo"></li> 
-            <li ><img class="socios--list--img" src="assets/wamani.png" alt="Wamani Turismo Aventura"></li> 
-            <li style="aspect-ratio: auto;width: 132px;height: auto;"><img class="socios--list--img"  src="assets/CanelaTrekking.png" alt="Wamani Turismo Aventura"></li> 
-            <!-- <li><img class="socios--list--img" src="assets/aguadelchaco.png" alt="agua del chaco Logo"></li> 
+  </div>
+  <div class="container my-2" id="socios">
+    <h2>Socios Estrategicos</h2>
+    <ul id="socios--list">
+      <li>
+        <img
+          class="socios--list--img"
+          src="assets/aguadelchaco.png"
+          alt="agua del chaco Logo"
+        />
+      </li>
+      <li>
+        <img
+          class="socios--list--img"
+          src="assets/wamani.png"
+          alt="Wamani Turismo Aventura"
+        />
+      </li>
+      <li style="aspect-ratio: auto; width: 132px; height: auto">
+        <img
+          class="socios--list--img"
+          src="assets/CanelaTrekking.png"
+          alt="Wamani Turismo Aventura"
+        />
+      </li>
+      <li>
+        <img
+          class="socios--list--img"
+          src="assets/Koa.png"
+          alt="Alfajores K´oa"
+        />
+      </li>
+      <!-- <li><img class="socios--list--img" src="assets/aguadelchaco.png" alt="agua del chaco Logo"></li> 
             <li><img class="socios--list--img" src="assets/aguadelchaco.png" alt="agua del chaco Logo"></li>  -->
-        </ul>
-        <!-- <a href="#contacto" class="cta-btn">Asociate con nosotros</a> -->
+    </ul>
+    <!-- <a href="#contacto" class="cta-btn">Asociate con nosotros</a> -->
+  </div>
+  <div class="container my-3 efec" id="Koa">
+    <div class="h2">Nos Aliamos a K´oa</div>
+    <div class="koa--cont">
+      <div class="koa--cont-img">
+        <img src="assets/KoaFoto.jpg" alt="Foto de alfajores K´oa">
+      </div>
+      <div class="koa--cont-text">
+        <p>
+            K'oa, con su compromiso con la calidad y la autenticidad, ha conquistado
+            los corazones de los amantes del dulce en todo el país. Ahora, estamos
+            encantados de llevar su sabor único y suave a nuestros clientes en
+            Jujuy. <br> Porque sabemos que siempre es bueno ponerle un toque dulce a
+            nuestras aventuras, queremos que disfrutes de cada momento con el sabor
+            inconfundible de los alfajores K'oa. Ya sea que estés explorando la
+            Quebrada de Humahuaca, ascendiendo a las alturas de las montañas o
+            simplemente disfrutando de un día soleado en la ciudad, deja que K'oa
+            endulce tus momentos más especiales.
+        </p>
+      </div>
     </div>
-    <app-footer></app-footer>
-</body>
+  </div>
 
+  <app-footer></app-footer>
+</body>
