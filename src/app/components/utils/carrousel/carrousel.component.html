@@ -1,0 +1,15 @@
+<div [id]="'carouselExampleFade' + id " style="min-width: 160px" class="carousel slide carousel-fade">
+    <div class="carousel-inner">
+      <div *ngFor="let image of images; let i = index" class="carousel-item" [class.active]="i == 0">
+        <img [src]="image" class="d-block w-100 im" alt="Slide {{i}}">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" [attr.data-bs-target]="'#carouselExampleFade' + id" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" [attr.data-bs-target]="'#carouselExampleFade' + id" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
