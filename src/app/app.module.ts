@@ -9,8 +9,10 @@ import { CircuitComponent } from './components/circuits/circuit/circuit.componen
 import { FooterComponent } from './components/layouts/footer/footer.component';
 import { LandingComponent } from './landing/landing.component';
 import { FormsModule } from '@angular/forms';
-import { TilsanComponent } from './components/circuits/tilsan/tilsan.component';
+import { TilsanComponent } from './components/tilsan/tilsan.component';
 import { ShowCircuitsComponent } from './components/circuits/show-circuits/show-circuits.component';
+import { CarrouselComponent } from './components/utils/carrousel/carrousel.component';
+import { SwitchComponent } from './components/utils/switch/switch.component';
 
 
 
@@ -23,7 +25,9 @@ import { ShowCircuitsComponent } from './components/circuits/show-circuits/show-
     FooterComponent,
     TilsanComponent,
     LandingComponent,
-    ShowCircuitsComponent
+    ShowCircuitsComponent,
+    CarrouselComponent,
+    SwitchComponent
   ],
   imports: [
     BrowserModule,

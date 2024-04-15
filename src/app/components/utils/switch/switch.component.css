@@ -21,7 +21,7 @@
     cursor: pointer;
     background: linear-gradient(40deg, #A3DAFB, #8983F7 70%);
     transition: 0.4s;
-    box-shadow: -0px -0px 10px #8983F7, -0px -0px 3px #8983F7;
+     box-shadow: -0px -0px 10px #8983F7, -0px -0px 3px #8983F7;
   }
   
   .checkbox .slide {

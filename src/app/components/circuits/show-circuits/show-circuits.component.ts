@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+import { Circuito } from 'src/app/models/circuito';
 import { ApiService } from 'src/app/services/api.service';
 
 @Component({
@@ -8,7 +9,9 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./show-circuits.component.css']
 })
 export class ShowCircuitsComponent implements OnInit {
-  circuits: Array<any> = [];
+  circuits: Array<Circuito> = [];
+  f:string = '<i class="fa-solid fa-table-cells-large" aria-hidden="true></i>'
+  second:string='<i class="fa-solid fa-table-cells-large"></i>'
   constructor(private api: ApiService, private sanitizer: DomSanitizer) {
     
    }
