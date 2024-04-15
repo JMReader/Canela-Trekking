@@ -13,6 +13,7 @@ import { TilsanComponent } from './components/tilsan/tilsan.component';
 import { ShowCircuitsComponent } from './components/circuits/show-circuits/show-circuits.component';
 import { CarrouselComponent } from './components/utils/carrousel/carrousel.component';
 import { SwitchComponent } from './components/utils/switch/switch.component';
+import { LongCardComponent } from './components/circuits/cards/long-card/long-card.component';
 
 
 
@@ -27,7 +28,8 @@ import { SwitchComponent } from './components/utils/switch/switch.component';
     LandingComponent,
     ShowCircuitsComponent,
     CarrouselComponent,
-    SwitchComponent
+    SwitchComponent,
+    LongCardComponent
   ],
   imports: [
     BrowserModule,

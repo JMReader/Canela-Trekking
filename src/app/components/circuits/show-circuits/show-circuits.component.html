@@ -1,26 +1,10 @@
 <app-header></app-header>
 <main class="bodytodos bodyShowCircuit">
+    <h1>Circuitos</h1>
     <div class="botonera">
         <app-switch ></app-switch>
     </div>
-<div class="mx-2 my-1 p-3 circuit longCard">
-    <div id="imgContain">
-        <app-carrousel [id]="circuits[0].id" [images]="circuits[0].photos"></app-carrousel>
-    </div>
-    <div id="infoContain" class="mx-3">
-        <h4 class="carta__titulo" >{{circuits[0].name}}</h4>
-				 <p class="carta__p">
-                    {{circuits[0].preview}}
-				 </p>
-				 <div class="carta__espe">
-					<div class="carta__espe-i"><i class="fas fa-battery-empty ">  Dificultad: </i> {{circuits[0].dificultad}}</div>
-					<div class="carta__espe-i"><i class="fas fa-arrow-alt-circle-down "> Desnivel: </i><p> {{circuits[0].desnivel}}</p></div>
-					<div class="carta__espe-i"><i class="fas fa-clock"> Duracion: </i> <p>{{circuits[0].duracion}}</p></div>
-					<div class="carta__espe-i"><i class="fas fa-hiking"> Distancia: </i><p >{{circuits[0].distancia}}</p></div>
-				 </div>
-    </div>
-
-</div>
+    <app-long-card *ngFor="let circuit of circuits" [circuit]="circuit"></app-long-card>
 
 
 </main>
