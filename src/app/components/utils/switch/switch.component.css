@@ -46,7 +46,7 @@
     box-shadow: -0px -0px 10px #8983F7, -0px -0px 3px #8983F7;
   }
   
-  .check:checked + .checkbox .slide {
+  /* .check:checked + .checkbox .slide {
     background-color: #0a1929;
     color: #fff;
-  }
+  } */

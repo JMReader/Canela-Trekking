@@ -10,14 +10,24 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class ShowCircuitsComponent implements OnInit {
   circuits: Array<Circuito> = [];
-  f:string = '<i class="fa-solid fa-table-cells-large" aria-hidden="true></i>'
-  second:string='<i class="fa-solid fa-table-cells-large"></i>'
+  short:boolean;
+  contadorClicks:number; //para solucionar bug de los dos clicks
+  
   constructor(private api: ApiService, private sanitizer: DomSanitizer) {
-    
+    this.short= false;
+    this.contadorClicks=0;
    }
 
   ngOnInit(): void {
     this.circuits = this.api.getCircuits();
+  }
+  changeShort(){
+    this.contadorClicks++
+    if(this.contadorClicks%2==0){
+      this.short = !this.short;
+    
+    }
+    
   }
 
 }

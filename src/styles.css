@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap');
 :root {
-  --color-hovcarta: rgba(120, 134, 169, 0.95);
+  --color-hovcarta: #082a57;
   --color-back: rgb(179, 216, 255);
   --color-main: rgb(37, 115, 153);
   --color-carta: rgba(106, 186, 208, 0.7);
@@ -9,6 +9,10 @@
   --color-foot: #0a4754;
   --color-contactenos: rgba(54, 135, 175, 0.8);
   --fondo-foto: url(https://tripin.travel/wp-content/uploads/2020/06/salinas-grandes-jujuy-4.jpg);
+}
+.hoverstyle:hover {
+  box-shadow: 12px 8px 1px var(--color-hovcarta);
+  transition: box-shadow .7s;
 }
 .bodytodos{
   padding-top: 0;
