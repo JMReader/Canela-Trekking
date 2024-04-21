@@ -123,9 +123,9 @@ export class ApiService {
         distancia: 18,
         region: 'Yungas',
         photos: [
-          'https://example.com/foto4.jpg',
-          'https://example.com/foto5.jpg',
-          'https://example.com/foto6.jpg',
+          'https://wallpapercave.com/wp/wp4815672.jpg',
+          'https://img.freepik.com/foto-gratis/puesta-sol-siluetas-arboles-montanas-ia-generativa_169016-29371.jpg',
+          'https://marketplace.canva.com/EAFGKWZ7S3c/1/0/1600w/canva-fondo-de-pantalla-caritas-felices-aesthetic-gradiente-morado-y-rosa-yuWW9A_crYQ.jpg',
         ],
       },
       {
@@ -143,9 +143,9 @@ export class ApiService {
         distancia: 24,
         region: 'Puna',
         photos: [
-          'https://example.com/foto7.jpg',
-          'https://example.com/foto8.jpg',
-          'https://example.com/foto9.jpg',
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa-7TURNaT5eAWqyS1Y-kOqr3z8gEon5iQhb18_x6P1g&s',
+          'https://wallpapers.com/images/hd/horizontal-pictures-1920-x-1200-7ne2qtwzubx64ssl.jpg',
+          'https://wallpapercave.com/wp/wp5219551.jpg',
         ],
       },
     ];

@@ -1,0 +1,18 @@
+<div class="mx-2 my-1 p-3 circuit longCard">
+    <div id="imgContain">
+        <app-carrousel [id]="circuit.id" [images]="circuit.photos"></app-carrousel>
+    </div>
+    <div id="infoContain" class="mx-3">
+        <h4 class="carta__titulo" >{{circuit.name}}</h4>
+				 <p class="carta__p">
+                    {{circuit.preview}}
+				 </p>
+				 <div class="carta__espe">
+					<div class="carta__espe-i"><i class="fas fa-battery-empty ">  Dificultad: </i> {{circuit.dificultad}}</div>
+					<div class="carta__espe-i"><i class="fas fa-arrow-alt-circle-down "> Desnivel: </i><p> {{circuit.desnivel}}</p></div>
+					<div class="carta__espe-i"><i class="fas fa-clock"> Duracion: </i> <p>{{circuit.duracion}}</p></div>
+					<div class="carta__espe-i"><i class="fas fa-hiking"> Distancia: </i><p >{{circuit.distancia}}</p></div>
+				 </div>
+    </div>
+
+</div>
