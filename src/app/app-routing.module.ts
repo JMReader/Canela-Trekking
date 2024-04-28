@@ -1,20 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LandingComponent } from './landing/landing.component';
-
-import { TilsanComponent } from './components/tilsan/tilsan.component';
-import { ShowCircuitsComponent } from './components/circuits/show-circuits/show-circuits.component';
-import { HomeComponent } from './components/home/home.component';
-import { CircuitComponent } from './components/circuits/circuit/circuit.component';
+import { CircuitComponent } from './components/circuitos/circuit/circuit.component';
+import { ShowCircuitsComponent } from './components/circuitos/show-circuits/show-circuits.component';
+import { HomeComponent } from './components/circuitos/home/home.component';
+import { TilsanComponent } from './components/circuitos/tilsan/tilsan.component';
+import { LandingComponent } from './components/landing/landing.component';
 
 const routes: Routes = [ 
   {path:'', component: LandingComponent},
-  {path:'about', component:LandingComponent},
-  {path:'tilcara-sanfrancisco', component:TilsanComponent},
+  {path:'circuits/tilcara-sanfrancisco', component:TilsanComponent},
   {path:'circuits', component:ShowCircuitsComponent},
-  {path:'home', component:HomeComponent},
-  {path:'circuit', component:CircuitComponent}
-  
+  {path:'circuits/:id', component:CircuitComponent},
+  {path:'**', redirectTo:''}
+
 ];
 
 @NgModule({
