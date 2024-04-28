@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Circuito } from 'src/app/models/circuito';
-import { Style } from 'src/app/models/style';
-import { SharedDataService } from 'src/app/services/shared-data.service';
 import {ElementRef, ViewChild } from '@angular/core';
-import { ApiService } from 'src/app/services/api.service';
+import { Circuito } from 'src/app/core/models/circuito';
+import { Style } from 'src/app/core/models/style';
+import { ApiService } from 'src/app/core/services/api.service';
+import { SharedDataService } from 'src/app/core/services/shared-data.service';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
