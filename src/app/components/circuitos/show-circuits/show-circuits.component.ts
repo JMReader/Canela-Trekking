@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { Circuito } from 'src/app/models/circuito';
-import { ApiService } from 'src/app/services/api.service';
+import { Circuito } from 'src/app/core/models/circuito';
+import { ApiService } from 'src/app/core/services/api.service';
+
 
 @Component({
   selector: 'app-show-circuits',

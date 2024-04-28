@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingComponent implements OnInit {
   constructor() {}
-
+  backgroundImage = 'assets/backgroundAll.webp'; 
   ngOnInit(): void {}
   openWindow(opc: string) {
     var x = '';

@@ -5,7 +5,7 @@
     height: auto;
     background-size: cover;
     background-attachment: fixed;
-    background-image: url("../../../assets/backgroundAll.webp");
+    /* background-image: url("../../../assets/backgroundAll.webp"); */
     padding-bottom: 0;
     overflow-x: hidden;
   }  

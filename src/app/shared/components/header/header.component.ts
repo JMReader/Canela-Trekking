@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { ApiService } from 'src/app/services/api.service';
-import { SharedDataService } from 'src/app/services/shared-data.service';
+import { ApiService } from 'src/app/core/services/api.service';
+import { SharedDataService } from 'src/app/core/services/shared-data.service';
 
 @Component({
   selector: 'app-header',
