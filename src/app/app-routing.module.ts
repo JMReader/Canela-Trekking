@@ -14,7 +14,7 @@ const routes: Routes = [
 
   //esto se mostrara mas adelante cunaod se puedan ver los circuitos en la pagina
   // // muestra todos los circuitos traidos desde la api
-  // { path: 'circuits', component: ShowCircuitsComponent },
+  { path: 'circuits', component: ShowCircuitsComponent },
 
   // //muestra un circuito concreto, se pasa por input
   // // el circuito pero en caso de entrar directamente al link se tra desde api
