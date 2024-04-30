@@ -14,6 +14,7 @@ import { FooterComponent } from './shared/components/footer/footer.component';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { SwitchComponent } from './shared/components/switch/switch.component';
 import { LongCardComponent } from './components/circuitos/cards/long-card/long-card.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
 
 
 
@@ -28,7 +29,8 @@ import { LongCardComponent } from './components/circuitos/cards/long-card/long-c
     LandingComponent,
     CarrouselComponent,
     SwitchComponent,
-    LongCardComponent
+    LongCardComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,
