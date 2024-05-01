@@ -5,23 +5,12 @@
             <a class="navbar-brand" href="#">
                 <img src="assets/logo.png" alt="Canela Trekking Logo" id="nav--logo">
               </a>
-            <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button> -->
             <button class="navbar-toggler" data-bs-toggle="collapse" [class.open]="menuAbierto" (click)="menuAbierto = !menuAbierto" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
             aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>              
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <!--TO DO: averiguar porque cambia despues de la segunda -->
-                    <!-- <li class="nav-item" id="nav--ul--buscador">
-                        <a class="nav-link active" (click)="prevRegion()" ><i class="fa-solid fa-arrow-left"></i></a>
-                        <b style="color: white;" class="" id="region-name" aria-current="page" href="#">{{region_actual}}</b>
-                        <a class="nav-link active" (click)="nextRegion()"><i class="fa-solid fa-arrow-right"></i></a>
-                    </li> -->
                     <li class="nav-item">
                         <a class="nav-link" [routerLink]="'/'">Quienes Somos</a>
                     </li>
@@ -29,9 +18,7 @@
                     <li class="nav-item">
                         <a class="nav-link" [routerLink]="'/circuits/tilcara-sanfrancisco'">De Tilcara San Francisco</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" [routerLink]="'/circuits'" title="mi_link">Nuestros Circuitos (Proximamente)</a>
-                    </li>
+                    
 
                     <li class="nav-item dropdown" id="Dropd">
                         <a class="nav-link dropdown-toggle" id="menu_drop" href="#" role="button" data-bs-toggle="dropdown"
@@ -44,6 +31,9 @@
                             <li ><a  id="li-Ig"class="dropdown-item" target="_blank" href="https://www.instagram.com/canela.trekking.jujuy/"><i class="fa-brands fa-instagram"></i>Instagram</a></li>
                             <li ><a id="li-Wpp" class="dropdown-item"  target="_blank"  href="https://wa.me/543885148856"><i class="fa-brands fa-whatsapp"></i>Whatsapp</a></li>
                         </ul>
+                    </li>
+                    <li class="nav-item">
+                        <b class="nav-link disbled" title="mi_link" disabled>Nuestros Circuitos (Proximamente)</b>
                     </li>
 
                 </ul>
