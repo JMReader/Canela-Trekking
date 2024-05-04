@@ -14,7 +14,7 @@
   --color-layouts: #1c2952;
   --color-extra: #a0b6f9;/* color de fondo de las cards */
   --color-contactenos: rgba(54, 135, 175, 0.8);
-  /* --fondo-foto: url(https://tripin.travel/wp-content/uploads/2020/06/salinas-grandes-jujuy-4.jpg); */
+
   --fondo-foto: url("assets/MAINSTYLE.jpeg");
   --color-fondo: white;
 }
@@ -31,10 +31,9 @@
   height: auto;
   background-size: cover;
   background-attachment: fixed;
-  /* background-image: url("assets/backgroundAll.webp"); 
-  background-image: url("assets/MAINSTYLE.jpg");*/
   padding-bottom: 0;
   overflow-x: hidden;
+  background-image: var(--fondo-foto);
 }
 
 * {
@@ -44,6 +43,13 @@
   scrollbar-track-color: var(--color-titulo);
 
 }
+
+/* class */
+
+
+
+
+/* De aqui en adelante Configuracion de box sizing para todo el documento */
 
 * {
   box-sizing: border-box;

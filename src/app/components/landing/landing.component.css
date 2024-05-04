@@ -3,16 +3,13 @@ body {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  /* font-family: Arial, sans-serif; */
   line-height: 1.6;
   margin: 0;
   padding: 0;
-  /* background-image: url("../../../assets/backgroundAll.webp"); */
   background-image: var(--fondo-foto);
   background-size: cover;
   background-attachment: fixed;
-  background-position: bottom right;
-  /* background-color: var(--color-fondo); */
+  background-position: center;
 }
 
 #logo {

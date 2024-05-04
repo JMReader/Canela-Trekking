@@ -2,9 +2,9 @@
   height: 93vh;
   width: 100%;
   overflow: hidden;
-  /* background-image: var(--fondo-foto);
+  /* background-image: var(--fondo-foto); */
   background-size: cover;
-  background-position: center; */
+  background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
