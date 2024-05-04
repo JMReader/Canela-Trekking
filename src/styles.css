@@ -24,6 +24,9 @@
   transition: box-shadow .7s;
 }
 
+
+
+
 .bodytodos {
   padding-top: 0;
   max-width: 100dvw;
@@ -34,8 +37,11 @@
   padding-bottom: 0;
   overflow-x: hidden;
   background-image: var(--fondo-foto);
+  background-position: center;
 }
 
+
+/* Scroll */
 * {
 
   scrollbar-width: thin;
@@ -43,10 +49,6 @@
   scrollbar-track-color: var(--color-titulo);
 
 }
-
-/* class */
-
-
 
 
 /* De aqui en adelante Configuracion de box sizing para todo el documento */

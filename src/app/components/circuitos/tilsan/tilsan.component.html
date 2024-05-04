@@ -41,7 +41,7 @@
           <div class="celda">
             <i class="fas fa-battery-full"></i>
             <p class="celda__t">Dificultad:</p>
-            <p>{{ circ.dificultad }}</p>
+            <p>{{ circ.difficulty }}</p>
           </div>
           <div class="celda">
             <i class="fas fa-arrow-alt-circle-down"></i>
@@ -51,7 +51,7 @@
           <div class="celda">
             <i class="fas fa-clock"></i>
             <p class="celda__t">Duracion:</p>
-            <p>{{  transformTime(circ.duracion) }} </p>
+            <p>{{  transformTime(circ.duration) }} </p>
           </div>
           <div class="celda">
             <i class="fas fa-cloud-rain"></i>
@@ -66,7 +66,7 @@
           <div class="celda">
             <i class="fas fa-hiking"></i>
             <p class="celda__t">Distancia:</p>
-            <p>{{ circ.distancia }} KM</p>
+            <p>{{ circ.distance }} KM</p>
           </div>
           <a (click)="enviarwpp(circ.name)" class="celda" href="">
             <div><i class="fab fa-whatsapp"></i>

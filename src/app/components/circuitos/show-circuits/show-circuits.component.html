@@ -17,13 +17,13 @@
                          </p>
                          <div class="carta__espe">
                             <div class="carta__espe-i"><i class="fas fa-battery-empty ">  Dificultad: </i> {{circuit
-                .dificultad}}</div>
+                .difficulty}}</div>
                             <div class="carta__espe-i"><i class="fas fa-arrow-alt-circle-down "> Desnivel: </i><p> {{circuit
                 .desnivel}}</p></div>
                             <div class="carta__espe-i"><i class="fas fa-clock"> Duracion: </i> <p>{{circuit
-                .duracion}}</p></div>
+                .duration}}</p></div>
                             <div class="carta__espe-i"><i class="fas fa-hiking"> Distancia: </i><p >{{circuit
-                .distancia}}</p></div>
+                .distance}}</p></div>
                          </div>
             </div>
         
@@ -44,13 +44,36 @@
                      </p>
                      <div class="carta__espe short__espe">
                         <div class="carta__espe-i"><i class="fas fa-battery-empty "></i> {{circuit
-            .dificultad}}</div>
+            .difficulty}}</div>
                         <div class="carta__espe-i"><i class="fas fa-arrow-alt-circle-down "> </i><p> {{circuit
             .desnivel}} mts</p></div>
                         <div class="carta__espe-i"><i class="fas fa-clock"></i> <p>{{circuit
-            .duracion}} Horas</p></div>
+            .duration}} Horas</p></div>
                         <div class="carta__espe-i"><i class="fas fa-hiking"> </i><p >{{circuit
-            .distancia}} KM </p></div>
+            .distance}} KM </p></div>
+                     </div>
+        </div>
+    
+    </div>
+     <div *ngFor="let circuit of circuits;"  class=" p-3 circuit shortCard hoverstyle">
+        <div id="imgContain__short" >
+            <app-carrousel [id]="circuit.id" [images]="circuit.photos"></app-carrousel>
+        </div>
+        <div id="infoContain__short"  class="short__info" class="mx-3">
+            <h4 class="carta__titulo" >{{circuit.name}}</h4>
+                     <p class="carta__p">
+                        {{circuit
+            .preview}}
+                     </p>
+                     <div class="carta__espe short__espe">
+                        <div class="carta__espe-i"><i class="fas fa-battery-empty "></i> {{circuit
+            .difficulty}}</div>
+                        <div class="carta__espe-i"><i class="fas fa-arrow-alt-circle-down "> </i><p> {{circuit
+            .desnivel}} mts</p></div>
+                        <div class="carta__espe-i"><i class="fas fa-clock"></i> <p>{{circuit
+            .duration}} Horas</p></div>
+                        <div class="carta__espe-i"><i class="fas fa-hiking"> </i><p >{{circuit
+            .distance}} KM </p></div>
                      </div>
         </div>
     
@@ -67,17 +90,18 @@
                      </p>
                      <div class="carta__espe short__espe">
                         <div class="carta__espe-i"><i class="fas fa-battery-empty "></i> {{circuit
-            .dificultad}}</div>
+            .difficulty}}</div>
                         <div class="carta__espe-i"><i class="fas fa-arrow-alt-circle-down "> </i><p> {{circuit
             .desnivel}} mts</p></div>
                         <div class="carta__espe-i"><i class="fas fa-clock"></i> <p>{{circuit
-            .duracion}} Horas</p></div>
+            .duration}} Horas</p></div>
                         <div class="carta__espe-i"><i class="fas fa-hiking"> </i><p >{{circuit
-            .distancia}} KM </p></div>
+            .distance}} KM </p></div>
                      </div>
         </div>
     
-    </div>  <div *ngFor="let circuit of circuits;"  class=" p-3 circuit shortCard hoverstyle">
+    </div>
+    <div *ngFor="let circuit of circuits;"  class=" p-3 circuit shortCard hoverstyle">
         <div id="imgContain__short" >
             <app-carrousel [id]="circuit.id" [images]="circuit.photos"></app-carrousel>
         </div>
@@ -89,35 +113,13 @@
                      </p>
                      <div class="carta__espe short__espe">
                         <div class="carta__espe-i"><i class="fas fa-battery-empty "></i> {{circuit
-            .dificultad}}</div>
+            .difficulty}}</div>
                         <div class="carta__espe-i"><i class="fas fa-arrow-alt-circle-down "> </i><p> {{circuit
             .desnivel}} mts</p></div>
                         <div class="carta__espe-i"><i class="fas fa-clock"></i> <p>{{circuit
-            .duracion}} Horas</p></div>
+            .duration}} Horas</p></div>
                         <div class="carta__espe-i"><i class="fas fa-hiking"> </i><p >{{circuit
-            .distancia}} KM </p></div>
-                     </div>
-        </div>
-    
-    </div>  <div *ngFor="let circuit of circuits;"  class=" p-3 circuit shortCard hoverstyle">
-        <div id="imgContain__short" >
-            <app-carrousel [id]="circuit.id" [images]="circuit.photos"></app-carrousel>
-        </div>
-        <div id="infoContain__short"  class="short__info" class="mx-3">
-            <h4 class="carta__titulo" >{{circuit.name}}</h4>
-                     <p class="carta__p">
-                        {{circuit
-            .preview}}
-                     </p>
-                     <div class="carta__espe short__espe">
-                        <div class="carta__espe-i"><i class="fas fa-battery-empty "></i> {{circuit
-            .dificultad}}</div>
-                        <div class="carta__espe-i"><i class="fas fa-arrow-alt-circle-down "> </i><p> {{circuit
-            .desnivel}} mts</p></div>
-                        <div class="carta__espe-i"><i class="fas fa-clock"></i> <p>{{circuit
-            .duracion}} Horas</p></div>
-                        <div class="carta__espe-i"><i class="fas fa-hiking"> </i><p >{{circuit
-            .distancia}} KM </p></div>
+            .distance}} KM </p></div>
                      </div>
         </div>
     
