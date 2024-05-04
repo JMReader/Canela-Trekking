@@ -21,7 +21,7 @@ export class CircuitosService {
     return this.http.get<Circuit[]>(this.apiUrl)
       .pipe(
         catchError(this.handleError), // Handle errors
-        map(data => data) // Convert response data to Circuit objects
+        map(data => this.transformCircuits(data)) // Convert response data to Circuit objects
       );
   }
 
@@ -42,5 +42,16 @@ export class CircuitosService {
       console.error('Server-side error:', error.status, error.message);
     }
     return throwError('An error occurred while fetching circuits.');
+  }
+
+
+  private transformCircuits(data: any): Circuit[] { // New function for data transformation
+    return data.map((circuit: any) => {
+      const photos = circuit.photos?.map((photo: { url: any; }) => photo.url) || []; // Extract photo URLs
+      return {
+        ...circuit, // Spread operator for other properties (prevents overwriting)
+        photos
+      };
+    });
   }
 }
