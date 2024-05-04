@@ -15,6 +15,7 @@ import { HeaderComponent } from './shared/components/header/header.component';
 import { SwitchComponent } from './shared/components/switch/switch.component';
 import { LongCardComponent } from './components/circuitos/cards/long-card/long-card.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -35,7 +36,8 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule  
   ],
   providers: [],
   bootstrap: [AppComponent]
