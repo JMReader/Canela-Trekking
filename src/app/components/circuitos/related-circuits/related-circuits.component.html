@@ -1,0 +1,110 @@
+<div class="circuito-container">
+  <div class="container-fluid">
+    <div id="carouselExampleFade" class="carousel slide carousel-fade">
+      <div class="carousel-inner">
+        <div class="row">
+          <h3>CIRCUITOS RECOMENDADOS</h3>
+        </div>
+        <!-- Primer Slide -->
+        <div class="carousel-item active">
+          <div class="row">
+            <div class="col-4" *ngFor="let circuit of randomCircuits.slice(0, 3)">
+              <div class="contenedor-cartas">
+                <button class="btn btn-link" style="width: 100%; text-decoration: none">
+                <div class="card border-0">
+                  <img id="imgContain" src="{{photos[0]}}" class="card-img-top" alt="...">
+                  <div class="card-body" (click)="redirectToCircuit(circuit)">
+                    <h4 class="carta__titulo">{{circuit.name}}</h4>
+                    <p class="carta__p">
+                        {{circuit.preview}}
+                    </p>
+                    <!-- <div class="carta__info">
+                        <div class="container-fluid">
+                            <div class="row ">
+                                <div class="col">
+                                    <p class="text-uppercase"><i class="fas fa-battery-empty "></i>
+                                        Dificultad:
+                                        {{circuit.difficulty}}</p>
+                                </div>
+                                <div class="col">
+                                    <p class="text-uppercase"><i class="fas fa-arrow-alt-circle-down "></i>
+                                        Desnivel:
+                                        {{circuit.desnivel}}</p>
+                                </div>
+                                <div class="col">
+                                    <p class="text-uppercase"><i class="fas fa-clock"></i> Duracion:
+                                        {{circuit.duration}}</p>
+                                </div>
+                                <div class="col">
+                                    <p class="text-uppercase"><i class="fas fa-hiking"></i> Distancia:
+                                        {{circuit.distance}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+                </div>
+              </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Segundo Slide -->
+        <div class="carousel-item">
+          <div class="row">
+            <div class="col-4" *ngFor="let circuit of randomCircuits.slice(3)">
+              <div class="contenedor-cartas">
+                <button class="btn btn-link" style="width: 100%; text-decoration: none">
+                <div class="card border-0">
+                  <img id="imgContain" src="{{photos[1]}}" class="card-img-top" alt="...">
+                  <div class="card-body" (click)="redirectToCircuit(circuit)">
+                    <h4 class="carta__titulo">{{circuit.name}}</h4>
+                    <p class="carta__p">
+                        {{circuit.preview}}
+                    </p>
+                    <!-- <div class="carta__info">
+                        <div class="container-fluid">
+                            <div class="row ">
+                                <div class="col">
+                                    <p class="text-uppercase"><i class="fas fa-battery-empty "></i>
+                                        Dificultad:
+                                        {{circuit.difficulty}}</p>
+                                </div>
+                                <div class="col">
+                                    <p class="text-uppercase"><i class="fas fa-arrow-alt-circle-down "></i>
+                                        Desnivel:
+                                        {{circuit.desnivel}}</p>
+                                </div>
+                                <div class="col">
+                                    <p class="text-uppercase"><i class="fas fa-clock"></i> Duracion:
+                                        {{circuit.duration}}</p>
+                                </div>
+                                <div class="col">
+                                    <p class="text-uppercase"><i class="fas fa-hiking"></i> Distancia:
+                                        {{circuit.distance}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+                </div>
+              </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Controles del Carrusel -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+</div>

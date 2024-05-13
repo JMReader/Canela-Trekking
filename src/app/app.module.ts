@@ -16,6 +16,7 @@ import { SwitchComponent } from './shared/components/switch/switch.component';
 import { LongCardComponent } from './components/circuitos/cards/long-card/long-card.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RelatedCircuitsComponent } from './components/circuitos/related-circuits/related-circuits.component';
 
 
 
@@ -31,7 +32,8 @@ import { HttpClientModule } from '@angular/common/http';
     CarrouselComponent,
     SwitchComponent,
     LongCardComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    RelatedCircuitsComponent,
   ],
   imports: [
     BrowserModule,
