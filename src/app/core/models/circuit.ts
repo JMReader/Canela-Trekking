@@ -1,4 +1,5 @@
 export interface Circuit {
+     _id: string, //Agregado para posibilitar consumo de id desde el json de datos.
      id: string,
      name:string,
      description: string,

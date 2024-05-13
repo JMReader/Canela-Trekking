@@ -17,6 +17,7 @@ export class TilsanComponent implements OnInit {
   constructor(api: ApiService, private sanitizer: DomSanitizer) {
     this.circ  = 
             {
+              _id: '', 
               id: '0',
               name: 'De Tilcara a San Francisco: Travesia entre dos Secretos Naturales ',
               description:
