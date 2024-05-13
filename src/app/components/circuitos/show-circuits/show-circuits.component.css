@@ -1,40 +1,61 @@
+.botonera {}
 
-.botonera{
-    
+.card {
+    width: 100%;
+    text-align: center;
+    background-color: var(--color-layouts);
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    color: whitesmoke;
 }
+
 .bodyShowCircuit {
     justify-content: center;
     align-items: center;
     display: flex;
     flex-direction: column;
+    padding: 2rem;
 }
+
 .circuit {
     display: flex;
     flex-direction: row;
-    background-color: var(--color-carta);
+    background-color: var(--color-layouts);
     border-radius: 12px;
-    align-items: center;/* Removed width and min-width properties */
-  }
-
-.longCard {
-    justify-content: flex-start;
-    width: 90%;
+    align-items: center;
 }
 
-#imgContain, #imgContain__short {
-    width: 30%;
+.longCard {
+    justify-content: center;
+}
+
+.carta__info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Estilos viejos */
+#imgContain,
+#imgContain__short {
+    width: 100%;
     min-width: 140px;
     aspect-ratio: 16/9;
     overflow: hidden;
 }
 
-#infoContain, #infoContain__short{
+#infoContain,
+#infoContain__short {
     flex: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
-.carta__p{
+
+.carta__p {
     text-align: center;
 }
 
@@ -64,30 +85,31 @@
     margin-left: 3px;
 
 }
-.carta__titulo{
+
+.carta__titulo {
     text-align: center;
 }
+
 .shortCard {
+    
     flex-direction: column;
-   width: 95%;
-   font-size:medium;
-   overflow: hidden;
-  }
-  .shortContainer {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-grid-column-gap: 16px;
-grid-row-gap: 16px;
+    width: 95%;
+    font-size: medium;
+    overflow: hidden;
 }
+
+.shortContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    /* Mostrar 3 columnas */
+    gap: 16px;
+    /* Espacio entre las cards */
+}
+
+
 #imgContain__short {
     width: 100%;
     min-width: 100px;
     aspect-ratio: 16/9;
     overflow: hidden;
-}
-.longContainer{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
 }
