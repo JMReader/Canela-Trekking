@@ -1,14 +1,14 @@
-<div class="bodytodos"> 
+<div class="bodytodos">
   <app-header></app-header>
-    <div class="flexcon">
+  <div class="flexcon">
 
-      <header class="flexcon__titulo">
-        <h1>{{ circ.name }}</h1>
-      </header>
+    <header class="flexcon__titulo">
+      <h1 class="text-uppercase">{{ circ.name }}</h1>
+    </header>
 
-      <div class="flexcon__img__descip">
-        <div class="flexcon__imagenes">
-          <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div class="flexcon__img__descip">
+      <div class="flexcon__imagenes">
+        <!-- <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
               <div class="carousel-item" *ngFor="let img of circ.photos; let i = index"
                 [class.active]="i === 0">
@@ -25,56 +25,83 @@
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Next</span>
             </button>
+          </div> -->
+        <div class="imgContain">
+          <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+            <div class="carousel-inner">
+              <div class="carousel-item" *ngFor="let img of photos; let i = index" [class.active]="i === 0">
+                <img [src]="img" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+              data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+              data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
           </div>
         </div>
-    |
-        <div class="flexcon__descripcion"> 
-          <div class="descripcion" [innerHTML]="sanitizeDescription(circ.description)"></div>
-        </div> 
       </div>
-      <div class="flexcon__propiedades">
-        <div class="celda">
-          <i class="fas fa-battery-full"></i>
-          <p class="celda__t">Dificultad:</p>
-          <p>{{ circ.difficulty }}</p>
+      
+      <div class="flexcon__descripcion">
+        <!-- <div class="descripcion" [innerHTML]="sanitizeDescription(circ.description)"> COMENTADO SOLO PARA VER INFO, FUNCIONA EL INNER-->
+        <div class="descripcion">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt unde minus maxime ad praesentium, est nesciunt eius tenetur vero sit quis eveniet voluptas? Accusantium qui, est aspernatur ratione provident ipsa.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt unde minus maxime ad praesentium, est nesciunt eius tenetur vero sit quis eveniet voluptas? Accusantium qui, est aspernatur ratione provident ipsa.</p>
         </div>
-        <div class="celda">
-          <i class="fas fa-arrow-alt-circle-down"></i>
-          <p class="celda__t">Desnivel:</p>
-          <p>{{ circ.desnivel }} mts</p>
-        </div>
-        <div class="celda">
-          <i class="fas fa-clock"></i>
-          <p class="celda__t">Duracion:</p>
-          <p>{{  transformTime(circ.duration) }} </p>
-        </div>
-        <div class="celda">
-          <i class="fas fa-cloud-rain"></i>
-          <p class="celda__t">Operable:</p>
-          <p>{{ circ.operable }}</p>
-        </div>
-        <div class="celda">
-          <i class="fas fa-map-marker-alt"></i>
-          <p class="celda__t">Region:</p>
-          <p>{{ circ.region }}</p>
-        </div>
-        <div class="celda">
-          <i class="fas fa-hiking"></i>
-          <p class="celda__t">Distancia:</p>
-          <p>{{ circ.distance }} KM</p>
-        </div>
-        <a (click)="enviarwpp(circ.name)" class="celda" href="">
-          <div><i class="fab fa-whatsapp"></i>
-            <p class="celda__t">Consulte por wpp</p>
-          </div>
-        </a>
-        <a class="celda" href="">
-          <i class="fab fa-instagram"></i>
-          <p class="celda__t">Consulte por IG</p>
-        </a>
       </div>
-    </div>  
-    <app-footer></app-footer>
-  
+    </div>
 
+    <div class="flexcon__propiedades">
+      <div class="celda">
+        <i class="fas fa-battery-full"></i>
+        <p class="celda__t">Dificultad:</p>
+        <p>{{ circ.difficulty }}</p>
+      </div>
+      <div class="celda">
+        <i class="fas fa-arrow-alt-circle-down"></i>
+        <p class="celda__t">Desnivel:</p>
+        <p>{{ circ.desnivel }} mts</p>
+      </div>
+      <div class="celda">
+        <i class="fas fa-clock"></i>
+        <p class="celda__t">Duracion:</p>
+        <p>{{ transformTime(circ.duration) }} </p>
+      </div>
+      <div class="celda">
+        <i class="fas fa-cloud-rain"></i>
+        <p class="celda__t">Operable:</p>
+        <p>{{ circ.operable }}</p>
+      </div>
+      <div class="celda">
+        <i class="fas fa-map-marker-alt"></i>
+        <p class="celda__t">Region:</p>
+        <p>{{ circ.region }}</p>
+      </div>
+      <div class="celda">
+        <i class="fas fa-hiking"></i>
+        <p class="celda__t">Distancia:</p>
+        <p>{{ circ.distance }} KM</p>
+      </div>
+      <a (click)="enviarwpp(circ.name)" class="celda" href="">
+        <div><i class="fab fa-whatsapp"></i>
+          <p class="celda__t">Consulte por whatsapp</p>
+        </div>
+      </a>
+      <a class="celda" href="">
+        <i class="fab fa-instagram"></i>
+        <p class="celda__t">Consulte por instagram</p>
+      </a>
+    </div>
   </div>
+
+  <div class="contenedor-random">
+    <app-related-circuits></app-related-circuits>
+  </div>
+
+  <app-footer></app-footer>
+</div>
