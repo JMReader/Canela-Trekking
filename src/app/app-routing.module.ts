@@ -18,7 +18,7 @@ const routes: Routes = [
 
   // //muestra un circuito concreto, se pasa por input
   // // el circuito pero en caso de entrar directamente al link se tra desde api
-  // { path: 'circuits/:id', component: CircuitComponent },
+  { path: 'circuits/:id', component: CircuitComponent },
 
   //redirecciona a landing
   { path: '**', redirectTo: '' },

@@ -10,7 +10,7 @@ import { Circuit } from '../models/circuit';
 export class CircuitosService {
 
   constructor(private http: HttpClient) { }
-  private apiUrl = "https://canela-trekking-server-node.onrender.com/circuit"; 
+  private apiUrl = "https://canela-trekking-server-node.onrender.com/circuit/"; 
 
   /**
    * Fetches all circuits from the API and returns an Observable of Circuit objects.
@@ -25,9 +25,12 @@ export class CircuitosService {
       );
   }
 
-
-
-
+  getCircuit(circuitId: string | undefined): Observable<Circuit> {
+    return this.http.get<Circuit>(this.apiUrl + circuitId)
+      .pipe(
+        catchError(this.handleError), // Handle errors
+      );
+  }
 
    /**
    * Handles HTTP errors by returning an Observable error with a meaningful message.

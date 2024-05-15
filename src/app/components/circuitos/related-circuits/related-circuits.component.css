@@ -1,0 +1,56 @@
+.carousel-inner h3{
+  text-align: center;
+  color: whitesmoke;
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  padding: 5px;
+  text-decoration:dotted;
+}
+
+
+.carousel-item {
+  display: flex;
+  justify-content: center;
+}
+
+.carousel-item .col-4 {
+  display: flex;
+  justify-content: center;
+}
+
+.carousel-item .contenedor-cartas {
+  margin: 0 auto; 
+}
+
+.carousel-item .card {
+  width: 15rem; 
+}
+
+#imgContain{
+    width: 100%;
+    min-width: 140px;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .carousel-item .col-4 {
+    flex: 0 0 33.333333%;
+  }
+  
+  .carousel-item .col-4 .contenedor-cartas {
+    margin: 10px;
+  }
+}
+
+@media (max-width: 767px) {
+  .carousel-item .col-4 {
+    flex: 0 0 100%; 
+  }
+
+  .carousel-item .col-4 .contenedor-cartas {
+    margin: 10px 0; 
+  }
+}
