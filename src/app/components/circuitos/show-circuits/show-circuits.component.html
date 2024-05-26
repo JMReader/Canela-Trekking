@@ -42,30 +42,10 @@
                 <div class="card border-0">
                     <div class="row g-0">
                         <div class="col-md-4">
-                            <!-- <div class="imgContain">
-                                <app-carrousel [id]="circuit.id" [images]="circuit.photos"></app-carrousel>
-                            </div> -->
                             <div class="imgContain">
-                                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel"
-                                    data-bs-interval="3000">
-                                    <div class="carousel-inner">
-                                        <div class="carousel-item" *ngFor="let img of photos; let i = index"
-                                            [class.active]="i === 0">
-                                            <img [src]="img" alt="...">
-                                        </div>
-                                    </div>
-                                    <button class="carousel-control-prev" type="button"
-                                        data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                        <span class="visually-hidden">Previous</span>
-                                    </button>
-                                    <button class="carousel-control-next" type="button"
-                                        data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                        <span class="visually-hidden">Next</span>
-                                    </button>
-                                </div>
+                                <app-carrousel [id]="circuit._id" [images]="circuit.photos"></app-carrousel>
                             </div>
+                            
 
                         </div>
                         <div class="col-md-8" (click)="redirectToCircuit(circuit)">
@@ -96,14 +76,6 @@
                                                     {{circuit.distance}}</p>
                                             </div>
                                         </div>
-                                        <!-- <p class="text-uppercase"><i class="fas fa-battery-empty "></i> Dificultad:
-                                            {{circuit.difficulty}}</p>
-                                        <p class="text-uppercase"><i class="fas fa-arrow-alt-circle-down "></i> Desnivel:
-                                            {{circuit.desnivel}}</p>
-                                        <p class="text-uppercase"><i class="fas fa-clock"></i> Duracion:
-                                            {{circuit.duration}}</p>
-                                        <p class="text-uppercase"><i class="fas fa-hiking"></i> Distancia:
-                                            {{circuit.distance}}</p> -->
                                     </div>
                                 </div>
                             </div>
@@ -119,85 +91,9 @@
     <div class="container-fluid shortContainer" *ngIf="short">
         <div *ngFor="let circuit of circuits;" class="my-3 p-3 circuit shortCard hoverstyle">
             <button class="btn btn-link" style="width: 100%; text-decoration: none">
-                <!-- <div class="card border-0">
-                    <div class="row g-0">
-                        <div class="col">
-                            <div class="imgContain">
-                                <app-carrousel [id]="circuit.id" [images]="circuit.photos"></app-carrousel>
-                            </div> 
-
-                            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                                <div class="carousel-inner">
-                                  <div class="carousel-item" *ngFor="let img of photos; let i = index"
-                                    [class.active]="i === 0">
-                                    <img [src]="img" alt="...">
-                                  </div>
-                                </div>  
-                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                                  data-bs-slide="prev">
-                                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                  <span class="visually-hidden">Previous</span>
-                                </button>
-                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                                  data-bs-slide="next">
-                                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                  <span class="visually-hidden">Next</span>
-                                </button>
-                              </div>
-                        </div>
-                        <div class="col" (click)="redirectToCircuit(circuit)">
-                            <div class="card-body">
-                                <h4 class="carta__titulo">{{circuit.name}}</h4>
-                                <p class="carta__p">
-                                    {{circuit.preview}}
-                                </p>
-                                <div class="carta__info">
-                                    <div class="container-fluid">
-                                        <div class="row ">
-                                            <div class="col">
-                                                <p class="text-uppercase"><i class="fas fa-battery-empty "></i>
-                                                    Dificultad:
-                                                    {{circuit.difficulty}}</p>
-                                            </div>
-                                            <div class="col">
-                                                <p class="text-uppercase"><i class="fas fa-arrow-alt-circle-down "></i>
-                                                    Desnivel:
-                                                    {{circuit.desnivel}}</p>
-                                            </div>
-                                            <div class="col">
-                                                <p class="text-uppercase"><i class="fas fa-clock"></i> Duracion:
-                                                    {{circuit.duration}}</p>
-                                            </div>
-                                            <div class="col">
-                                                <p class="text-uppercase"><i class="fas fa-hiking"></i> Distancia:
-                                                    {{circuit.distance}}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-
                 <div class="card border-0">
-                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item" *ngFor="let img of photos; let i = index"
-                                [class.active]="i === 0">
-                                <img [src]="img" alt="...">
-                            </div>
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                            data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                            data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
+                    <div class="imgContain">
+                        <app-carrousel [id]="circuit._id" [images]="circuit.photos"></app-carrousel>
                     </div>
                     <div class="card-body" (click)="redirectToCircuit(circuit)">
                         <h4 class="carta__titulo">{{circuit.name}}</h4>

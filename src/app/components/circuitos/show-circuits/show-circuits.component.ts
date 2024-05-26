@@ -36,7 +36,6 @@ export class ShowCircuitsComponent implements OnInit {
       data => {
         this.circuits = data;
         console.log("circuitos", this.circuits);
-        console.log("data", data);
       }
     );
   }
