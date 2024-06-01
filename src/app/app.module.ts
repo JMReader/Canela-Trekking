@@ -17,6 +17,13 @@ import { LongCardComponent } from './components/circuitos/cards/long-card/long-c
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RelatedCircuitsComponent } from './components/circuitos/related-circuits/related-circuits.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSelectModule } from '@angular/material/select';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import {MatChipsModule} from '@angular/material/chips';
+import { LoaderComponent } from './shared/components/loader/loader.component';
 
 
 
@@ -34,12 +41,19 @@ import { RelatedCircuitsComponent } from './components/circuitos/related-circuit
     LongCardComponent,
     AboutUsComponent,
     RelatedCircuitsComponent,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule  
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatSelectModule,
+    MatMenuModule,
+    MatIconModule,
+    MatButtonModule,
+    MatChipsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
