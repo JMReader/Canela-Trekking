@@ -1,58 +1,57 @@
 <div class="bodytodos">
   <app-header></app-header>
+
   <div class="flexcon">
 
-    <header class="flexcon__titulo">
+    <header class="banner-titulo">
       <h1 class="text-uppercase">{{ circ.name }}</h1>
+      <img src="{{circ.photos[0]}}" alt="">
     </header>
 
-    <div class="flexcon__img__descip">
-      <div class="flexcon__imagenes">
-        <!-- <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item" *ngFor="let img of circ.photos; let i = index"
-                [class.active]="i === 0">
-                <img [src]="img" class="d-block w-100 carrousel__img" alt="...">
-              </div>
-            </div>  
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-              data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-              data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div> -->
-        <div class="imgContain">
-          <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
-            <div class="carousel-inner">
-              <div class="carousel-item" *ngFor="let img of photos; let i = index" [class.active]="i === 0">
-                <img [src]="img" alt="...">
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-              data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-              data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
+    <ul class="nav nav-tabs mt-2" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active custom-button" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button"
+          role="tab" aria-controls="home-tab-pane" aria-selected="true">Detalles</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link custom-button" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button"
+          role="tab" aria-controls="profile-tab-pane" aria-selected="false">Fotos</button>
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+        <div class="descripcion">
+          <p>{{circ.description}}</p>
         </div>
       </div>
-      
-      <div class="flexcon__descripcion">
-        <!-- <div class="descripcion" [innerHTML]="sanitizeDescription(circ.description)"> COMENTADO SOLO PARA VER INFO, FUNCIONA EL INNER-->
-        <div class="descripcion">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt unde minus maxime ad praesentium, est nesciunt eius tenetur vero sit quis eveniet voluptas? Accusantium qui, est aspernatur ratione provident ipsa.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt unde minus maxime ad praesentium, est nesciunt eius tenetur vero sit quis eveniet voluptas? Accusantium qui, est aspernatur ratione provident ipsa.</p>
+      <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+        
+        <div class="container">
+          <div class="row">
+            <ng-container *ngFor="let img of circ.photos; let i = index">
+              <div class="col-md-4 mb-3">
+                <!-- Button trigger modal -->
+                <button class="btn btn-link" style="width: 100%; text-decoration: none" data-bs-toggle="modal" [attr.data-bs-target]="'#exampleModal' + i">
+                  <img src="{{img}}" alt="" class="img-fluid">
+                </button>
+              
+                <!-- Modal -->
+                <div class="modal fade" [id]="'exampleModal' + i" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content" style="background-color: var(--color-layouts);">
+                      <div class="modal-body">
+                        <img src="{{img}}" alt="" class="img-gallery">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="clearfix d-md-none"></div> <!-- Este div se mostrará solo en dispositivos móviles -->
+              <div class="clearfix d-none d-md-block" *ngIf="(i + 1) % 3 === 0"></div> <!-- Este div se mostrará solo en dispositivos mayores o iguales a md -->
+            </ng-container>
+          </div>
         </div>
+        
       </div>
     </div>
 
@@ -98,6 +97,7 @@
       </a>
     </div>
   </div>
+
 
   <div class="contenedor-random">
     <app-related-circuits></app-related-circuits>

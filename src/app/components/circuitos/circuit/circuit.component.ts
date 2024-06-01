@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { Circuit } from 'src/app/core/models/circuit';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 import { ApiService } from 'src/app/core/services/api.service';
 import { CircuitosService } from 'src/app/core/services/circuitos.service';
 
@@ -16,17 +16,13 @@ import { CircuitosService } from 'src/app/core/services/circuitos.service';
 export class CircuitComponent implements OnInit {
   circ!: Circuit //aqui debe recibir por parametro para cargar.
   circuitId!: string | undefined; 
-  photos: string[];
   
   constructor(private circuitoService: CircuitosService, private sanitizer: DomSanitizer, private router: Router) {
-    this.photos= [
-      'assets/TIL-SF/horizontal (4).jpg',
-      'assets/TIL-SF/horizontal (5).jpg',
-      'assets/TIL-SF/horizontal (6).jpg',
-      'assets/TIL-SF/horizontal (7).jpg',
-      'assets/TIL-SF/horizontal (8).jpg',
-      'assets/TIL-SF/horizontal (9).jpg',
-    ]
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        window.scrollTo(0, 0);
+      }
+    });
   }
 
   ngOnInit(): void {
@@ -34,6 +30,12 @@ export class CircuitComponent implements OnInit {
     this.circuitId = currentUrl.split('/').pop(); // Obtenemos el id del circuito actual.
     
     this.getCircuitData(this.circuitId)
+
+    //Al seleccionar un circuito si este estaba filtrado por región vuelve a su estilo default
+    document.documentElement.style.setProperty('--color-main', 'rgb(37, 115, 153)');
+    document.documentElement.style.setProperty('--color-extra', '#a0b6f9');
+    document.documentElement.style.setProperty('--color-layouts', '#1c2952');
+    document.documentElement.style.setProperty('--fondo-foto', 'url("assets/MAINSTYLE.jpeg")');
   }
 
   enviarwpp(circuit: string) {
@@ -58,7 +60,6 @@ export class CircuitComponent implements OnInit {
 
   getCircuitData(circuitId: string | undefined) {
     this.circuitoService.getCircuit(circuitId).subscribe((result) => {
-      console.log(result);
       this.circ = result;
     });
   }
