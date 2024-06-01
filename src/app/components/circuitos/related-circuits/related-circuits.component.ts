@@ -9,20 +9,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./related-circuits.component.css']
 })
 export class RelatedCircuitsComponent implements OnInit {
-
   randomCircuits: Array<Circuit> = [];
   circuits: Array<Circuit> = [];
-  photos: string[];
   
   constructor(private circuitService: CircuitosService, private router: Router) {
-    this.photos= [
-      'assets/TIL-SF/horizontal (4).jpg',
-      'assets/TIL-SF/horizontal (5).jpg',
-      'assets/TIL-SF/horizontal (6).jpg',
-      'assets/TIL-SF/horizontal (7).jpg',
-      'assets/TIL-SF/horizontal (8).jpg',
-      'assets/TIL-SF/horizontal (9).jpg',
-    ]
+    
   }
 
   ngOnInit(): void {
