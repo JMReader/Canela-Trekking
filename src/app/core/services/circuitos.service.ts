@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http';
 import { Observable, catchError, map, throwError } from 'rxjs';
 import { Circuit } from '../models/circuit';
 @Injectable({
@@ -10,7 +10,7 @@ import { Circuit } from '../models/circuit';
 export class CircuitosService {
 
   constructor(private http: HttpClient) { }
-  private apiUrl = "https://canela-trekking-server-node.onrender.com/circuit/"; 
+  private apiUrl = "https://canela-trekking-server-node.onrender.com/circuit/";
 
   /**
    * Fetches all circuits from the API and returns an Observable of Circuit objects.
@@ -29,14 +29,33 @@ export class CircuitosService {
     return this.http.get<Circuit>(this.apiUrl + circuitId)
       .pipe(
         catchError(this.handleError), // Handle errors
+        map((circuit: any) => this.transformCircuits([circuit])[0]) //como tiene un solo circuito le pasamos el primero
       );
   }
 
-   /**
-   * Handles HTTP errors by returning an Observable error with a meaningful message.
-   * @param error The HTTP error response object.
-   */
-   private handleError(error: HttpErrorResponse): Observable<never> {
+  getCircuitsFiltered(filters: any): Observable<Circuit[]> {
+    let params = new HttpParams();
+
+    for (const key in filters) {
+      if (filters[key]) {
+        params = params.set(key, filters[key]);
+        console.log(filters[key]);
+      }
+    };      
+
+    console.log(params);
+
+    return this.http.get<Circuit[]>(this.apiUrl, { params }).pipe(
+      catchError(this.handleError),
+      map(data => this.transformCircuits(data)) 
+    );
+  }
+
+  /**
+  * Handles HTTP errors by returning an Observable error with a meaningful message.
+  * @param error The HTTP error response object.
+  */
+  private handleError(error: HttpErrorResponse): Observable<never> {
     if (error.error instanceof ErrorEvent) {
       // Client-side error
       console.error('Client-side error:', error.error.message);
