@@ -1,4 +1,4 @@
-:root {
+/* :root {
     --color-hovcarta: rgba(120, 134, 169, 0.95);
     --color-back: rgb(179, 216, 255);
     --color-main: rgb(37, 115, 153);
@@ -8,60 +8,104 @@
     --color-foot: rgba(37, 114, 153, 0.8);
     --color-contactenos: rgba(54, 135, 175, 0.8);
     --fondo-foto: url(https://tripin.travel/wp-content/uploads/2020/06/salinas-grandes-jujuy-4.jpg);
+} */
+
+.navbar{
+    background-color: var(--color-layouts);
 }
-#menu_drop{
+.navbar.scrolled {
+    background-color: var(--color-carta);;
+}
+
+.navbar.scrolled .nav-link {
+    color: whitesmoke;
+}
+
+.navbar-toggler, .navbar-toggler.open , .navbar-toggler-icon, span.navbar-toggler-icon{
+    color: whitesmoke;
+    background-color: var(--color-extra);
+}
+
+#menu_drop {
     border-top: none !important;
 }
-nav{
+
+header {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+nav {
     transition: background-color 0.8s ease;
     color: black;
     list-style: none;
 }
-#region-name{
+
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link.show {
+    color: var(--color-extra);
+}
+
+#region-name {
     transition: all 0.5s ease;
 }
-a{
+
+a {
     color: aliceblue;
 }
-a:hover{
+
+a:hover {
     color: rgb(214, 219, 224);
 }
-#nav--logo{
+
+#nav--logo {
     object-fit: contain;
     max-height: fit-content;
     width: 15vw;
     overflow: hidden;
-    
+
 }
-#nav--ul--buscador{
+
+#nav--ul--buscador {
     display: flex;
     align-items: center;
 }
 
-#nBar{
-    background-color:  --color-main;
+#nBar {
+    background-color: --color-main;
 }
 
-#Lenguage{
+#Lenguage {
     padding: 0 4px;
     color: white;
 
 }
+
 .dropdown-menu i {
     margin: 4px;
 }
-#li-Ig:hover{
-    background-color:#C13584 ;
+
+.dropdown-menu {
+    background-color: var(--color-extra);
 }
-#li-Fa:hover{
-background-color: #3B5998;
+
+#li-Ig:hover {
+    background-color: #C13584;
 }
-#li-Wpp:hover{
+
+#li-Fa:hover {
+    background-color: #3B5998;
+}
+
+#li-Wpp:hover {
     background-color: #128c7e;
 
 }
-@media (max-width: 720px){
-    #nav--logo{
+
+@media (max-width: 720px) {
+    #nav--logo {
         width: 33dvw;
     }
-    }
+}

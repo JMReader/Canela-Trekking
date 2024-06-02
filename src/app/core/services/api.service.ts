@@ -2,13 +2,13 @@ import { Injectable } from '@angular/core';
 // import { HttpClient, HttpHeaders } from '@angular/common/http';
 // import { Observable } from 'rxjs';
 import { Style } from '../models/style';
-import { Circuito } from '../models/circuito';
+
 
 @Injectable({
   providedIn: 'root',
 })
 export class ApiService {
-  circuitos: Circuito[] = [];
+  // circuitos: Circuito[] = [];
   styles: Style[] = [];
   all: Style = new Style(
     'Todos',
@@ -80,76 +80,76 @@ export class ApiService {
     this.styles.push(this.quebrada);
     return this.styles;
   }
-  public getCircuits(): any {
-    this.circuitos = [
-      {
-        id: '0',
-        name: 'De Tilcara a San Francisco: Travesia entre dos Secretos Naturales ',
-        descripcion:
-          "  aaaaaaaaaa"
-      ,
+//   public getCircuits(): any {
+//     this.circuitos = [
+//       {
+//         id: '0',
+//         name: 'De Tilcara a San Francisco: Travesia entre dos Secretos Naturales ',
+//         descripcion:
+//           "  aaaaaaaaaa"
+//       ,
 
 
-        preview:
-          'Disfruta de los colores de la Quebrada de Humahuaca en este circuito de senderismo.',
-        dificultad: 'alta',
-        desnivel: 500,
-        duracion: 96,
-        create_date: new Date('2022-10-01'),
-        operable: true,
-        distancia: 64,
-        region: 'Quebrada',
-        photos: [
-          'assets/TIL-SF/horizontal (4).jpg',
-          'assets/TIL-SF/horizontal (5).jpg',
-          'assets/TIL-SF/horizontal (6).jpg',
-          'assets/TIL-SF/horizontal (7).jpg',
-          'assets/TIL-SF/horizontal (8).jpg',
-          'assets/TIL-SF/horizontal (9).jpg',
-        ],
-      },
-      {
-        id: '2',
-        name: 'Cascada del Río Yala',
-        descripcion:
-          'Un circuito que te lleva a través de la selva de las Yungas hasta la impresionante cascada del Río Yala.',
-        preview:
-          'Descubre la belleza de la selva de las Yungas y la cascada del Río Yala en este circuito de senderismo.',
-        dificultad: 'Difícil',
-        desnivel: 800,
-        duracion: 8,
-        create_date: new Date('2022-11-15'),
-        operable: false,
-        distancia: 18,
-        region: 'Yungas',
-        photos: [
-          'https://wallpapercave.com/wp/wp4815672.jpg',
-          'https://img.freepik.com/foto-gratis/puesta-sol-siluetas-arboles-montanas-ia-generativa_169016-29371.jpg',
-          'https://marketplace.canva.com/EAFGKWZ7S3c/1/0/1600w/canva-fondo-de-pantalla-caritas-felices-aesthetic-gradiente-morado-y-rosa-yuWW9A_crYQ.jpg',
-        ],
-      },
-      {
-        id: '3',
-        name: 'Cerro Chañi',
-        descripcion:
-          'Un circuito que te lleva a la cima del Cerro Chañi, la montaña más alta de la provincia de Jujuy.',
-        preview:
-          'Desafía tus límites y llega a la cima del Cerro Chañi en este circuito de senderismo.',
-        dificultad: 'Muy difícil',
-        desnivel: 1200,
-        duracion: 12,
-        create_date: new Date('2022-12-20'),
-        operable: true,
-        distancia: 24,
-        region: 'Puna',
-        photos: [
-          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa-7TURNaT5eAWqyS1Y-kOqr3z8gEon5iQhb18_x6P1g&s',
-          'https://wallpapers.com/images/hd/horizontal-pictures-1920-x-1200-7ne2qtwzubx64ssl.jpg',
-          'https://wallpapercave.com/wp/wp5219551.jpg',
-        ],
-      },
-    ];
+//         preview:
+//           'Disfruta de los colores de la Quebrada de Humahuaca en este circuito de senderismo.',
+//         dificultad: 'alta',
+//         desnivel: 500,
+//         duracion: 96,
+//         create_date: new Date('2022-10-01'),
+//         operable: true,
+//         distancia: 64,
+//         region: 'Quebrada',
+//         photos: [
+//           'assets/TIL-SF/horizontal (4).jpg',
+//           'assets/TIL-SF/horizontal (5).jpg',
+//           'assets/TIL-SF/horizontal (6).jpg',
+//           'assets/TIL-SF/horizontal (7).jpg',
+//           'assets/TIL-SF/horizontal (8).jpg',
+//           'assets/TIL-SF/horizontal (9).jpg',
+//         ],
+//       },
+//       {
+//         id: '2',
+//         name: 'Cascada del Río Yala',
+//         descripcion:
+//           'Un circuito que te lleva a través de la selva de las Yungas hasta la impresionante cascada del Río Yala.',
+//         preview:
+//           'Descubre la belleza de la selva de las Yungas y la cascada del Río Yala en este circuito de senderismo.',
+//         dificultad: 'Difícil',
+//         desnivel: 800,
+//         duracion: 8,
+//         create_date: new Date('2022-11-15'),
+//         operable: false,
+//         distancia: 18,
+//         region: 'Yungas',
+//         photos: [
+//           'https://wallpapercave.com/wp/wp4815672.jpg',
+//           'https://img.freepik.com/foto-gratis/puesta-sol-siluetas-arboles-montanas-ia-generativa_169016-29371.jpg',
+//           'https://marketplace.canva.com/EAFGKWZ7S3c/1/0/1600w/canva-fondo-de-pantalla-caritas-felices-aesthetic-gradiente-morado-y-rosa-yuWW9A_crYQ.jpg',
+//         ],
+//       },
+//       {
+//         id: '3',
+//         name: 'Cerro Chañi',
+//         descripcion:
+//           'Un circuito que te lleva a la cima del Cerro Chañi, la montaña más alta de la provincia de Jujuy.',
+//         preview:
+//           'Desafía tus límites y llega a la cima del Cerro Chañi en este circuito de senderismo.',
+//         dificultad: 'Muy difícil',
+//         desnivel: 1200,
+//         duracion: 12,
+//         create_date: new Date('2022-12-20'),
+//         operable: true,
+//         distancia: 24,
+//         region: 'Puna',
+//         photos: [
+//           'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa-7TURNaT5eAWqyS1Y-kOqr3z8gEon5iQhb18_x6P1g&s',
+//           'https://wallpapers.com/images/hd/horizontal-pictures-1920-x-1200-7ne2qtwzubx64ssl.jpg',
+//           'https://wallpapercave.com/wp/wp5219551.jpg',
+//         ],
+//       },
+//     ];
 
-    return this.circuitos;
-  }
-}
+//     return this.circuitos;
+//   }
+ }

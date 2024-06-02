@@ -1,131 +1,204 @@
 <app-header></app-header>
 <main class="bodytodos bodyShowCircuit">
-    <div class="botonera" >
-        <app-switch (click)="changeShort()" ></app-switch>
+    <div *ngIf="circuits.length === 0" class="container-fluid loader">
+        <app-loader></app-loader>
     </div>
-    <!-- LongCard si el usuario quiere uno por linea -->
-    <div class="container-fluid longContainer " *ngIf="!short">
-        <div *ngFor="let circuit of circuits;"  class="my-3 p-3 circuit longCard hoverstyle" >
-            <div id="imgContain">
-                <app-carrousel [id]="circuit.id" [images]="circuit.photos"></app-carrousel>
+
+    <div class="container" *ngIf="circuits.length > 0">
+        <div class="filtros">
+            <button mat-raised-button [matMenuTriggerFor]="regiones" class="large-button">
+                <mat-icon>landscape</mat-icon>
+                <span>Región</span>
+            </button>
+
+            <mat-menu #regiones="matMenu">
+                <button mat-menu-item (click)="selectedFiltersBack('region', 'puna')" (click)="selectFilter('region', 'puna')"><mat-icon
+                        style="color: brown;">location_on</mat-icon>Puna</button>
+                <button mat-menu-item (click)="selectedFiltersBack('region', 'quebrada')" (click)="selectFilter('region', 'quebrada')"><mat-icon
+                        style="color: rgb(165, 118, 42);">location_on</mat-icon>Quebrada</button>
+                <button mat-menu-item (click)="selectedFiltersBack('region', 'valles')" (click)="selectFilter('region', 'valles')"><mat-icon
+                        style="color: #5ca27a;">location_on</mat-icon>Valles</button>
+                <button mat-menu-item (click)="selectedFiltersBack('region', 'yungas')" (click)="selectFilter('region', 'yungas')"><mat-icon
+                        style="color: green;">location_on</mat-icon>Yungas</button>
+            </mat-menu>
+            
+            <button mat-raised-button [matMenuTriggerFor]="filter" class="large-button">
+                <mat-icon>tune</mat-icon><span class="large-text"> Filtros</span>
+            </button>
+
+            <mat-menu #filter="matMenu">
+                <button mat-menu-item [matMenuTriggerFor]="duration">
+                    <mat-icon>schedule</mat-icon>
+                    <span>Duración</span>
+                </button>
+                <button mat-menu-item [matMenuTriggerFor]="difficulty">
+                    <mat-icon>trending_up</mat-icon>
+                    <span>Dificultad</span>
+                </button>
+                <button mat-menu-item [matMenuTriggerFor]="distance">
+                    <mat-icon>hiking</mat-icon>
+                    <span>Distancia</span>
+                </button>
+
+            </mat-menu>
+
+            <mat-menu #duration="matMenu">
+                <button mat-menu-item (click)="selectedFiltersBack('duration', '<8')" (click)="selectFilter('duration', 'Menos de 8 horas')">Menos de 8 horas</button>
+                <button mat-menu-item (click)="selectedFiltersBack('duration', '8-24')" (click)="selectFilter('duration', 'De 8 a 24 horas')">De 8 a 24 horas</button>
+                <button mat-menu-item (click)="selectedFiltersBack('duration', '>24')" (click)="selectFilter('duration', 'Más de 24 horas')">Más de 24 horas</button>
+            </mat-menu>
+
+            <mat-menu #difficulty="matMenu">
+                <button mat-menu-item (click)="selectedFiltersBack('difficulty', 'baja')"
+                    (click)="selectFilter('difficulty', 'Baja')"><mat-icon>battery_0_bar</mat-icon>Baja</button>
+                <button mat-menu-item (click)="selectedFiltersBack('difficulty', 'media')"
+                    (click)="selectFilter('difficulty', 'Media')"><mat-icon>battery_4_bar</mat-icon>Media</button>
+                <button mat-menu-item (click)="selectedFiltersBack('difficulty', 'alta')"
+                    (click)="selectFilter('difficulty', 'Alta')"><mat-icon>battery_full</mat-icon>Alta</button>
+            </mat-menu>
+
+            <mat-menu #distance="matMenu">
+                <button mat-menu-item (click)="selectedFiltersBack('distance', '<10')" (click)="selectFilter('distance', 'Menos de 10 km')">Menos de 10 km</button>
+                <button mat-menu-item (click)="selectedFiltersBack('distance', '10-20')" (click)="selectFilter('distance', 'De 10 a 20 km')">De 10 a 20 km</button>
+                <button mat-menu-item (click)="selectedFiltersBack('distance', '>20')" (click)="selectFilter('distance', 'Más de 20 km')">Más de 20 km</button>
+            </mat-menu>
+        </div>
+
+        <div class="selected-filters">
+            <div *ngIf="selectedFilters['duration']">
+                <mat-chip>
+                    {{ selectedFilters['duration'] }}
+                    <button mat-icon-button (click)="clearFilter('duration')" (click)="clearFilterBack('duration')">
+                        <mat-icon>close</mat-icon>
+                    </button>
+                </mat-chip>
             </div>
-            <div id="infoContain" class="mx-3">
-                <h4 class="carta__titulo" >{{circuit.name}}</h4>
-                         <p class="carta__p">
-                            {{circuit
-                .preview}}
-                         </p>
-                         <div class="carta__espe">
-                            <div class="carta__espe-i"><i class="fas fa-battery-empty ">  Dificultad: </i> {{circuit
-                .dificultad}}</div>
-                            <div class="carta__espe-i"><i class="fas fa-arrow-alt-circle-down "> Desnivel: </i><p> {{circuit
-                .desnivel}}</p></div>
-                            <div class="carta__espe-i"><i class="fas fa-clock"> Duracion: </i> <p>{{circuit
-                .duracion}}</p></div>
-                            <div class="carta__espe-i"><i class="fas fa-hiking"> Distancia: </i><p >{{circuit
-                .distancia}}</p></div>
-                         </div>
+            <div *ngIf="selectedFilters['difficulty']">
+                <mat-chip>
+                    {{ selectedFilters['difficulty'] }}
+                    <button mat-icon-button (click)="clearFilter('difficulty')" (click)="clearFilterBack('difficulty')">
+                        <mat-icon>close</mat-icon>
+                    </button>
+                </mat-chip>
             </div>
-        
-        </div> 
+            <div *ngIf="selectedFilters['distance']">
+                <mat-chip>
+                    {{ selectedFilters['distance'] }}
+                    <button mat-icon-button (click)="clearFilter('distance')" (click)="clearFilterBack('distance')">
+                        <mat-icon>close</mat-icon>
+                    </button>
+                </mat-chip>
+            </div>
+            <div *ngIf="selectedFilters['region']">
+                <mat-chip>
+                    {{ selectedFilters['region'] }}
+                    <button mat-icon-button (click)="clearFilter('region')" (click)="clearFilterBack('region')">
+                        <mat-icon>close</mat-icon>
+                    </button>
+                </mat-chip>
+            </div>
+        </div>
+
+        <div class="botonera">
+            <app-switch (click)="changeShort()"></app-switch>
+        </div>
     </div>
-<!-- shortCard si el usuario quiere uno por linea-->
 
-<div class="container-fluid shortContainer" *ngIf="short">
-    <div *ngFor="let circuit of circuits;"  class=" p-3 circuit shortCard hoverstyle">
-        <div id="imgContain__short" >
-            <app-carrousel [id]="circuit.id" [images]="circuit.photos"></app-carrousel>
+
+    <div class="container-fluid longContainer" *ngIf="!short">
+        <div *ngFor="let circuit of circuits;" class="my-3 p-3 circuit longCard hoverstyle">
+            <button class="btn btn-link" style="width: 100%; text-decoration: none">
+                <div class="card border-0">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <div class="imgContain">
+                                <app-carrousel [id]="circuit._id" [images]="circuit.photos"></app-carrousel>
+                            </div>
+
+
+                        </div>
+                        <div class="col-md-8" (click)="redirectToCircuit(circuit)">
+                            <div class="card-body">
+                                <h4 class="carta__titulo">{{circuit.name}}</h4>
+                                <p class="carta__p">
+                                    {{circuit.preview}}
+                                </p>
+                                <div class="carta__info">
+                                    <div class="container-fluid">
+                                        <div class="row ">
+                                            <div class="col">
+                                                <p class="text-uppercase"><i class="fas fa-battery-empty "></i>
+                                                    Dificultad:
+                                                    {{circuit.difficulty}}</p>
+                                            </div>
+                                            <div class="col">
+                                                <p class="text-uppercase"><i class="fas fa-arrow-alt-circle-down "></i>
+                                                    Desnivel:
+                                                    {{circuit.desnivel}}</p>
+                                            </div>
+                                            <div class="col">
+                                                <p class="text-uppercase"><i class="fas fa-clock"></i> Duracion:
+                                                    {{circuit.duration}}</p>
+                                            </div>
+                                            <div class="col">
+                                                <p class="text-uppercase"><i class="fas fa-hiking"></i> Distancia:
+                                                    {{circuit.distance}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
         </div>
-        <div id="infoContain__short"  class="short__info" class="mx-3">
-            <h4 class="carta__titulo" >{{circuit.name}}</h4>
-                     <p class="carta__p">
-                        {{circuit
-            .preview}}
-                     </p>
-                     <div class="carta__espe short__espe">
-                        <div class="carta__espe-i"><i class="fas fa-battery-empty "></i> {{circuit
-            .dificultad}}</div>
-                        <div class="carta__espe-i"><i class="fas fa-arrow-alt-circle-down "> </i><p> {{circuit
-            .desnivel}} mts</p></div>
-                        <div class="carta__espe-i"><i class="fas fa-clock"></i> <p>{{circuit
-            .duracion}} Horas</p></div>
-                        <div class="carta__espe-i"><i class="fas fa-hiking"> </i><p >{{circuit
-            .distancia}} KM </p></div>
-                     </div>
-        </div>
-    
     </div>
-    <div *ngFor="let circuit of circuits;"  class=" p-3 circuit shortCard hoverstyle">
-        <div id="imgContain__short" >
-            <app-carrousel [id]="circuit.id" [images]="circuit.photos"></app-carrousel>
+
+    <!-- shortCard si el usuario quiere uno por linea-->
+
+    <div class="container-fluid shortContainer" *ngIf="short">
+        <div *ngFor="let circuit of circuits;" class="my-3 p-3 circuit shortCard hoverstyle">
+            <button class="btn btn-link" style="width: 100%; text-decoration: none">
+                <div class="card border-0">
+                    <div class="imgContain">
+                        <app-carrousel [id]="circuit._id" [images]="circuit.photos"></app-carrousel>
+                    </div>
+                    <div class="card-body" (click)="redirectToCircuit(circuit)">
+                        <h4 class="carta__titulo">{{circuit.name}}</h4>
+                        <p class="carta__p">
+                            {{circuit.preview}}
+                        </p>
+                        <div class="carta__info">
+                            <div class="container-fluid">
+                                <div class="row ">
+                                    <div class="col">
+                                        <p class="text-uppercase"><i class="fas fa-battery-empty "></i>
+                                            Dificultad:
+                                            {{circuit.difficulty}}</p>
+                                    </div>
+                                    <div class="col">
+                                        <p class="text-uppercase"><i class="fas fa-arrow-alt-circle-down "></i>
+                                            Desnivel:
+                                            {{circuit.desnivel}}</p>
+                                    </div>
+                                    <div class="col">
+                                        <p class="text-uppercase"><i class="fas fa-clock"></i> Duracion:
+                                            {{circuit.duration}}</p>
+                                    </div>
+                                    <div class="col">
+                                        <p class="text-uppercase"><i class="fas fa-hiking"></i> Distancia:
+                                            {{circuit.distance}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </button>
         </div>
-        <div id="infoContain__short"  class="short__info" class="mx-3">
-            <h4 class="carta__titulo" >{{circuit.name}}</h4>
-                     <p class="carta__p">
-                        {{circuit
-            .preview}}
-                     </p>
-                     <div class="carta__espe short__espe">
-                        <div class="carta__espe-i"><i class="fas fa-battery-empty "></i> {{circuit
-            .dificultad}}</div>
-                        <div class="carta__espe-i"><i class="fas fa-arrow-alt-circle-down "> </i><p> {{circuit
-            .desnivel}} mts</p></div>
-                        <div class="carta__espe-i"><i class="fas fa-clock"></i> <p>{{circuit
-            .duracion}} Horas</p></div>
-                        <div class="carta__espe-i"><i class="fas fa-hiking"> </i><p >{{circuit
-            .distancia}} KM </p></div>
-                     </div>
-        </div>
-    
-    </div>  <div *ngFor="let circuit of circuits;"  class=" p-3 circuit shortCard hoverstyle">
-        <div id="imgContain__short" >
-            <app-carrousel [id]="circuit.id" [images]="circuit.photos"></app-carrousel>
-        </div>
-        <div id="infoContain__short"  class="short__info" class="mx-3">
-            <h4 class="carta__titulo" >{{circuit.name}}</h4>
-                     <p class="carta__p">
-                        {{circuit
-            .preview}}
-                     </p>
-                     <div class="carta__espe short__espe">
-                        <div class="carta__espe-i"><i class="fas fa-battery-empty "></i> {{circuit
-            .dificultad}}</div>
-                        <div class="carta__espe-i"><i class="fas fa-arrow-alt-circle-down "> </i><p> {{circuit
-            .desnivel}} mts</p></div>
-                        <div class="carta__espe-i"><i class="fas fa-clock"></i> <p>{{circuit
-            .duracion}} Horas</p></div>
-                        <div class="carta__espe-i"><i class="fas fa-hiking"> </i><p >{{circuit
-            .distancia}} KM </p></div>
-                     </div>
-        </div>
-    
-    </div>  <div *ngFor="let circuit of circuits;"  class=" p-3 circuit shortCard hoverstyle">
-        <div id="imgContain__short" >
-            <app-carrousel [id]="circuit.id" [images]="circuit.photos"></app-carrousel>
-        </div>
-        <div id="infoContain__short"  class="short__info" class="mx-3">
-            <h4 class="carta__titulo" >{{circuit.name}}</h4>
-                     <p class="carta__p">
-                        {{circuit
-            .preview}}
-                     </p>
-                     <div class="carta__espe short__espe">
-                        <div class="carta__espe-i"><i class="fas fa-battery-empty "></i> {{circuit
-            .dificultad}}</div>
-                        <div class="carta__espe-i"><i class="fas fa-arrow-alt-circle-down "> </i><p> {{circuit
-            .desnivel}} mts</p></div>
-                        <div class="carta__espe-i"><i class="fas fa-clock"></i> <p>{{circuit
-            .duracion}} Horas</p></div>
-                        <div class="carta__espe-i"><i class="fas fa-hiking"> </i><p >{{circuit
-            .distancia}} KM </p></div>
-                     </div>
-        </div>
-    
     </div>
-</div>
-
-
-
 
 </main>
 <app-footer></app-footer>

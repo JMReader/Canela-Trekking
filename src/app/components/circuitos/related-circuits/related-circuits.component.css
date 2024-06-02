@@ -1,0 +1,83 @@
+.carousel-inner h3 {
+  text-align: center;
+  color: whitesmoke;
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  padding: 5px;
+  text-decoration: dotted;
+}
+
+
+.carousel-item {
+  display: flex;
+  justify-content: center;
+}
+
+.carousel-item .col-4 {
+  display: flex;
+  justify-content: center;
+}
+
+.carousel-item .contenedor-cartas {
+  margin: 0 auto;
+}
+
+.carousel-item .card {
+  width: 25rem;
+  height: 25rem;
+  color: whitesmoke;
+  border-radius: 15px;
+  border: 1px solid white !important;
+  background-color: #00000061;
+  margin: 10px;
+}
+
+.carousel-item .card:hover {
+  box-shadow: 0 8px 50px whitesmoke;
+}
+
+.card:hover {
+  border: 1px solid black;
+  transform: scale(1.05);
+}
+
+.card:active {
+  transform: scale(0.95) rotateZ(1.7deg);
+}
+
+#imgContain {
+  width: 100%;
+  min-width: 140px;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  border-radius: 15px 15px 0px 0px;
+}
+
+
+
+/* @media (min-width: 768px) {
+  .carousel-item .col-4 {
+    flex: 0 0 33.333333%;
+  }
+
+  .carousel-item .col-4 .contenedor-cartas {
+    margin: 10px;
+  }
+} */
+
+@media (max-width: 1025px) {
+  .carousel-item .col-4 {
+    flex: 0 0 100%;
+  }
+
+  .carousel-item .col-4 .contenedor-cartas {
+    margin: 10px 0;
+  }
+
+  .carousel-item .card{
+    width: 20rem;
+  }
+}
+

@@ -1,21 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Oswald&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
-  --color-hovcarta: #082a57;
   --color-back: rgb(179, 216, 255);
   --color-main: rgb(37, 115, 153);
-  --color-carta: rgba(106, 186, 208, 0.7);
+  --color-carta: #9fb9c5b7;
   --color-titulo: #ffe598eb;
   --color-subtitulo: rgb(150 153 231);
-  --color-foot: #0a4754;
+  --color-layouts: #1c2952;
+  --color-extra: #a0b6f9;/* color de fondo de las cards */
   --color-contactenos: rgba(54, 135, 175, 0.8);
-  --fondo-foto: url(https://tripin.travel/wp-content/uploads/2020/06/salinas-grandes-jujuy-4.jpg);
+
+  --fondo-foto: url("assets/MAINSTYLE.jpeg");
+  --color-fondo: white;
 }
 
 .hoverstyle:hover {
-  box-shadow: 12px 8px 1px var(--color-hovcarta);
+  box-shadow: 12px 8px 1px var(--color-extra);
   transition: box-shadow .7s;
 }
+
+html{
+  scroll-behavior: smooth;
+}
+
 
 .bodytodos {
   padding-top: 0;
@@ -24,11 +33,14 @@
   height: auto;
   background-size: cover;
   background-attachment: fixed;
-  background-image: url("assets/backgroundAll.webp");
   padding-bottom: 0;
   overflow-x: hidden;
+  background-image: var(--fondo-foto);
+  background-position: center;
 }
 
+
+/* Scroll */
 * {
 
   scrollbar-width: thin;
@@ -36,6 +48,9 @@
   scrollbar-track-color: var(--color-titulo);
 
 }
+
+
+/* De aqui en adelante Configuracion de box sizing para todo el documento */
 
 * {
   box-sizing: border-box;
