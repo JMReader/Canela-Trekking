@@ -12,13 +12,13 @@
             </button>
 
             <mat-menu #regiones="matMenu">
-                <button mat-menu-item (click)="selectFilter('region', 'puna')"><mat-icon
+                <button mat-menu-item (click)="selectedFiltersBack('region', 'puna')" (click)="selectFilter('region', 'puna')"><mat-icon
                         style="color: brown;">location_on</mat-icon>Puna</button>
-                <button mat-menu-item (click)="selectFilter('region', 'quebrada')"><mat-icon
+                <button mat-menu-item (click)="selectedFiltersBack('region', 'quebrada')" (click)="selectFilter('region', 'quebrada')"><mat-icon
                         style="color: rgb(165, 118, 42);">location_on</mat-icon>Quebrada</button>
-                <button mat-menu-item (click)="selectFilter('region', 'valles')"><mat-icon
+                <button mat-menu-item (click)="selectedFiltersBack('region', 'valles')" (click)="selectFilter('region', 'valles')"><mat-icon
                         style="color: #5ca27a;">location_on</mat-icon>Valles</button>
-                <button mat-menu-item (click)="selectFilter('region', 'yungas')"><mat-icon
+                <button mat-menu-item (click)="selectedFiltersBack('region', 'yungas')" (click)="selectFilter('region', 'yungas')"><mat-icon
                         style="color: green;">location_on</mat-icon>Yungas</button>
             </mat-menu>
             
@@ -43,24 +43,24 @@
             </mat-menu>
 
             <mat-menu #duration="matMenu">
-                <button mat-menu-item (click)="selectFilter('duration', 'Menos de 8 horas')">Menos de 8 horas</button>
-                <button mat-menu-item (click)="selectFilter('duration', 'De 8 a 24 horas')">De 8 a 24 horas</button>
-                <button mat-menu-item (click)="selectFilter('duration', 'Más de 24 horas')">Más de 24 horas</button>
+                <button mat-menu-item (click)="selectedFiltersBack('duration', '<8')" (click)="selectFilter('duration', 'Menos de 8 horas')">Menos de 8 horas</button>
+                <button mat-menu-item (click)="selectedFiltersBack('duration', '8-24')" (click)="selectFilter('duration', 'De 8 a 24 horas')">De 8 a 24 horas</button>
+                <button mat-menu-item (click)="selectedFiltersBack('duration', '>24')" (click)="selectFilter('duration', 'Más de 24 horas')">Más de 24 horas</button>
             </mat-menu>
 
             <mat-menu #difficulty="matMenu">
-                <button mat-menu-item
+                <button mat-menu-item (click)="selectedFiltersBack('difficulty', 'baja')"
                     (click)="selectFilter('difficulty', 'Baja')"><mat-icon>battery_0_bar</mat-icon>Baja</button>
-                <button mat-menu-item
+                <button mat-menu-item (click)="selectedFiltersBack('difficulty', 'media')"
                     (click)="selectFilter('difficulty', 'Media')"><mat-icon>battery_4_bar</mat-icon>Media</button>
-                <button mat-menu-item
+                <button mat-menu-item (click)="selectedFiltersBack('difficulty', 'alta')"
                     (click)="selectFilter('difficulty', 'Alta')"><mat-icon>battery_full</mat-icon>Alta</button>
             </mat-menu>
 
             <mat-menu #distance="matMenu">
-                <button mat-menu-item (click)="selectFilter('distance', 'Menos de 10 km')">Menos de 10 km</button>
-                <button mat-menu-item (click)="selectFilter('distance', 'De 10 a 20 km')">De 10 a 20 km</button>
-                <button mat-menu-item (click)="selectFilter('distance', 'Más de 20 km')">Más de 20 km</button>
+                <button mat-menu-item (click)="selectedFiltersBack('distance', '<10')" (click)="selectFilter('distance', 'Menos de 10 km')">Menos de 10 km</button>
+                <button mat-menu-item (click)="selectedFiltersBack('distance', '10-20')" (click)="selectFilter('distance', 'De 10 a 20 km')">De 10 a 20 km</button>
+                <button mat-menu-item (click)="selectedFiltersBack('distance', '>20')" (click)="selectFilter('distance', 'Más de 20 km')">Más de 20 km</button>
             </mat-menu>
         </div>
 
@@ -68,7 +68,7 @@
             <div *ngIf="selectedFilters['duration']">
                 <mat-chip>
                     {{ selectedFilters['duration'] }}
-                    <button mat-icon-button (click)="clearFilter('duration')">
+                    <button mat-icon-button (click)="clearFilter('duration')" (click)="clearFilterBack('duration')">
                         <mat-icon>close</mat-icon>
                     </button>
                 </mat-chip>
@@ -76,7 +76,7 @@
             <div *ngIf="selectedFilters['difficulty']">
                 <mat-chip>
                     {{ selectedFilters['difficulty'] }}
-                    <button mat-icon-button (click)="clearFilter('difficulty')">
+                    <button mat-icon-button (click)="clearFilter('difficulty')" (click)="clearFilterBack('difficulty')">
                         <mat-icon>close</mat-icon>
                     </button>
                 </mat-chip>
@@ -84,7 +84,7 @@
             <div *ngIf="selectedFilters['distance']">
                 <mat-chip>
                     {{ selectedFilters['distance'] }}
-                    <button mat-icon-button (click)="clearFilter('distance')">
+                    <button mat-icon-button (click)="clearFilter('distance')" (click)="clearFilterBack('distance')">
                         <mat-icon>close</mat-icon>
                     </button>
                 </mat-chip>
@@ -92,7 +92,7 @@
             <div *ngIf="selectedFilters['region']">
                 <mat-chip>
                     {{ selectedFilters['region'] }}
-                    <button mat-icon-button (click)="clearFilter('region')">
+                    <button mat-icon-button (click)="clearFilter('region')" (click)="clearFilterBack('region')">
                         <mat-icon>close</mat-icon>
                     </button>
                 </mat-chip>

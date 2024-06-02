@@ -32,7 +32,7 @@ export class ShowCircuitsComponent implements OnInit {
     this.getAllCircuits();
   }
 
-  getAllCircuits(){
+  getAllCircuits() {
     this.circuitosService.getAllCircuits().subscribe(
       data => {
         this.circuits = data;
@@ -52,6 +52,38 @@ export class ShowCircuitsComponent implements OnInit {
     this.router.navigate(['circuits/', circuit._id])
   }
 
+
+  filtersBack: { [key: string]: string | null } = {
+    duration: null,
+    difficulty: null,
+    distance: null,
+    region: null
+  };
+
+  getFilteredCircuits() {
+    // Llamada al service para filtrar los circuitos
+    this.circuitosService.getCircuitsFiltered(this.filtersBack).subscribe(data => {
+      Object.assign(this.circuits, data);
+    });
+  }
+
+  selectedFiltersBack(filterType: string, filterValue: string) {
+    this.filtersBack[filterType] = filterValue;
+    this.getFilteredCircuits();
+  }
+
+  clearFilterBack(filterType: string) {
+    this.filtersBack[filterType] = null;
+
+    if (Object.values(this.filtersBack).every(value => value === null)) {
+      this.getAllCircuits();
+    } else {
+      this.getFilteredCircuits();
+    }
+  }
+
+  //--------------------------------- Inicio Funcionalidad de chips -------------------------------------
+
   selectedFilters: { [key: string]: string | null } = {
     duration: null,
     difficulty: null,
@@ -61,9 +93,6 @@ export class ShowCircuitsComponent implements OnInit {
 
   selectFilter(filterType: string, filterValue: string) {
     this.selectedFilters[filterType] = filterValue;
-
-    console.log(this.selectedFilters);
-    
 
     if (filterType === 'region' && filterValue) {
       const theme = this.regionThemeMap[filterValue.toLowerCase()];
@@ -75,11 +104,6 @@ export class ShowCircuitsComponent implements OnInit {
         }
       }
     }
-
-    // ***Llamada al service para filtrar los circuitos***
-    this.circuitosService.getCircuitsFiltered(this.selectedFilters).subscribe(data => {
-      Object.assign(this.circuits, data);
-    });
   }
 
   clearFilter(filterType: string) {
@@ -94,8 +118,9 @@ export class ShowCircuitsComponent implements OnInit {
         }
       }
     }
-    this.getAllCircuits();
   }
+
+  //--------------------------------- Fin Funcionalidad de chips -------------------------------------
 
   regionThemeMap: { [key: string]: { [key: string]: string } } = {
     default: {

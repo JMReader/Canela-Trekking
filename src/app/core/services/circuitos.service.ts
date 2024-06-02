@@ -39,7 +39,7 @@ export class CircuitosService {
     for (const key in filters) {
       if (filters[key]) {
         params = params.set(key, filters[key]);
-        console.log(filters[key]);
+        // console.log(filters[key]);
       }
     };      
 
