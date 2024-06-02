@@ -44,7 +44,8 @@
 }
 
 .footer-links a {
-  color: #588c8c
+  /* color: #588c8c */
+  color: var(--color-extra);
 }
 
 .footer-links a:active,
@@ -74,6 +75,10 @@
 
 .copyright-text {
   margin: 0
+}
+
+.copyright-text a{
+  color: var(--color-extra);
 }
 
 .enlaces{
