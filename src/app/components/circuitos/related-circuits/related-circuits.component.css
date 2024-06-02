@@ -55,7 +55,19 @@
   border-radius: 15px 15px 0px 0px;
 }
 
-
+.celda{
+  display: flex;
+}
+.fas{
+  line-height: inherit;
+}
+.celda p{
+  margin-bottom:3px;
+}
+.botonera{
+  display: flex;
+  justify-content: center;
+}
 
 /* @media (min-width: 768px) {
   .carousel-item .col-4 {
