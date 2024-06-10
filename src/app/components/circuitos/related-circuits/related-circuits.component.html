@@ -12,7 +12,9 @@
               <div class="contenedor-cartas">
                 <button class="btn btn-link" style="width: 100%; text-decoration: none">
                 <div class="card border-0">
-                  <img id="imgContain" src="{{circuit.photos}}" class="card-img-top" alt="...">
+                  <div id="imgContain">
+                    <img  src="{{circuit.photos}}" class="card-img-top" alt="...">
+                  </div>
                   <div class="card-body" (click)="redirectToCircuit(circuit)">
                     <h4 class="carta__titulo">{{circuit.name}}</h4>
                     <p class="carta__p">
