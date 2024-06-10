@@ -8,65 +8,103 @@
         <!-- Primer Slide -->
         <div class="carousel-item active">
           <div class="row">
-            <div class="col-4" *ngFor="let circuit of randomCircuits.slice(0, 3)">
+            <div
+              class="col-4"
+              *ngFor="let circuit of randomCircuits.slice(0, 3)"
+            >
               <div class="contenedor-cartas">
-                <button class="btn btn-link" style="width: 100%; text-decoration: none">
-                <div class="card border-0">
-                  <div id="imgContain">
-                    <img  src="{{circuit.photos}}" class="card-img-top" alt="...">
-                  </div>
-                  <div class="card-body" (click)="redirectToCircuit(circuit)">
-                    <h4 class="carta__titulo">{{circuit.name}}</h4>
-                    <p class="carta__p">
-                        {{circuit.preview}}
-                    </p>
-                  <div class="botonera">
-                    <div class="celda mx-1">
-                      <i class="fas fa-hiking mx-1"></i>
-                      <p>{{ circuit.distance }} KM</p>
+                <button
+                  class="btn btn-link"
+                  style="width: 100%; text-decoration: none ; "
+                >
+                  <div class="card border-0">
+                    <div id="imgContain">
+                      <img
+                        src="{{ circuit.photos }}"
+                        class="card-img-top"
+                        alt="..."
+                      />
                     </div>
-                    <div class="celda mx-1">
-                      <i class="fas fa-map-marker-alt  mx-1"></i>
-                      <p>{{ circuit.region }}</p>
+                    <div class="card-body" (click)="redirectToCircuit(circuit)">
+                      <h4 class="carta__titulo">{{ circuit.name }}</h4>
+                      <p class="carta__p">
+                        {{ circuit.preview }}
+                      </p>
+                      <div class="botonera">
+                        <div class="celda mx-1">
+                          <i class="fas fa-hiking mx-1"></i>
+                          <p>{{ circuit.distance }} KM</p>
+                        </div>
+                        <div class="celda mx-1">
+                          <i class="fas fa-map-marker-alt mx-1"></i>
+                          <p>{{ circuit.region }}</p>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-                </div>
-              </button>
+                </button>
               </div>
             </div>
           </div>
         </div>
-        
+
         <!-- Segundo Slide -->
         <div class="carousel-item">
           <div class="row">
             <div class="col-4" *ngFor="let circuit of randomCircuits.slice(3)">
               <div class="contenedor-cartas">
-                <button class="btn btn-link" style="width: 100%; text-decoration: none">
-                <div class="card border-0">
-                  <img id="imgContain" src="{{circuit.photos}}" class="card-img-top" alt="...">
-                  <div class="card-body" (click)="redirectToCircuit(circuit)">
-                    <h4 class="carta__titulo">{{circuit.name}}</h4>
-                    <p class="carta__p">
-                        {{circuit.preview}}
-                    </p>
-                  
-                </div>
-                </div>
-              </button>
+                <button
+                  class="btn btn-link"
+                  style="width: 100%; text-decoration: none"
+                >
+                  <div class="card border-0">
+                    <div id="imgContain">
+                      <img
+                        src="{{ circuit.photos }}"
+                        class="card-img-top"
+                        alt="..."
+                      />
+                    </div>
+                    <div class="card-body" (click)="redirectToCircuit(circuit)">
+                      <h4 class="carta__titulo">{{ circuit.name }}</h4>
+                      <p class="carta__p">
+                        {{ circuit.preview }}
+                      </p>
+                      <div class="botonera">
+                        <div class="celda mx-1">
+                          <i class="fas fa-hiking mx-1"></i>
+                          <p>{{ circuit.distance }} KM</p>
+                        </div>
+                        <div class="celda mx-1">
+                          <i class="fas fa-map-marker-alt mx-1"></i>
+                          <p>{{ circuit.region }}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
-      
+
       <!-- Controles del Carrusel -->
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleFade"
+        data-bs-slide="prev"
+      >
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
       </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleFade"
+        data-bs-slide="next"
+      >
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
