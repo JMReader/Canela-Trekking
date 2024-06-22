@@ -31,7 +31,7 @@
             <ng-container *ngFor="let img of circ.photos; let i = index">
               <div class="col-md-4 mb-3">
                 <!-- Button trigger modal -->
-                <button class="btn btn-link" style="width: 100%; text-decoration: none" data-bs-toggle="modal" [attr.data-bs-target]="'#exampleModal' + i">
+                <button class="btn btn-link" style="width: 100%; text-decoration: none; aspect-ratio: 16/9;" data-bs-toggle="modal" [attr.data-bs-target]="'#exampleModal' + i">
                   <img src="{{img}}" alt="" class="img-fluid">
                 </button>
               

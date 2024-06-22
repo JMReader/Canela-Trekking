@@ -6,9 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./landing.component.css'],
 })
 export class LandingComponent implements OnInit {
-  constructor() {}
+  constructor() {
+    
+  }
   backgroundImage = 'assets/backgroundAll.webp'; 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+   
+     document.body.setAttribute(
+      'style',
+      '--color-back: rgb(179, 216, 255); --color-main :rgb(37, 115, 153);--color-extra: #a0b6f9;--color-layouts : #1c2952; --fondo-foto: url("assets/MAINSTYLE.jpeg")')
+  }
   openWindow(opc: string) {
     var x = '';
     switch (opc) {
