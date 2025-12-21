@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
 import { Circuit } from 'src/app/core/models/circuit';
-import { ApiService } from 'src/app/core/services/api.service';
 import { NavigationEnd, Router } from '@angular/router';
 import { CircuitosService } from 'src/app/core/services/circuitos.service';
+import { ThemeService } from 'src/app/core/services/theme.service';
 
 
 @Component({
@@ -17,7 +16,11 @@ export class ShowCircuitsComponent implements OnInit {
   contadorClicks: number; //para solucionar bug de los dos clicks
   getCircuitId: string = '';
 
-  constructor(private api: ApiService, private circuitosService: CircuitosService, private sanitizer: DomSanitizer, private router: Router) {
+  constructor(
+    private circuitosService: CircuitosService,
+    private router: Router,
+    private themeService: ThemeService
+  ) {
     this.short = false;
     this.contadorClicks = 0;
 
@@ -97,11 +100,7 @@ export class ShowCircuitsComponent implements OnInit {
     if (filterType === 'region' && filterValue) {
       const theme = this.regionThemeMap[filterValue.toLowerCase()];
       if (theme) {
-        for (const property in theme) {
-          if (theme.hasOwnProperty(property)) {
-            document.documentElement.style.setProperty(property, theme[property]);
-          }
-        }
+        this.themeService.applyTheme(theme);
       }
     }
   }
@@ -111,11 +110,7 @@ export class ShowCircuitsComponent implements OnInit {
     if (filterType === 'region') {
       const defaultTheme = this.regionThemeMap['default'];
       if (defaultTheme) {
-        for (const property in defaultTheme) {
-          if (defaultTheme.hasOwnProperty(property)) {
-            document.documentElement.style.setProperty(property, defaultTheme[property]);
-          }
-        }
+        this.themeService.applyTheme(defaultTheme);
       }
     }
   }
