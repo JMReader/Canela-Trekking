@@ -68,23 +68,5 @@ export class HeaderComponent implements OnInit {
     this.region_actual = this.regiones[this.contador]
     this.Shared.selectedRegion = this.region_actual;
     this.circuitSelected.emit(this.region_actual);
-    console.log(this.contador)
   }
-  
-  // getBackgroungdColor() {
-  //   switch (this.contador) {
-  //     case 0:
-  //       return "#0d5262"
-  //     case 1:
-  //       return "white"
-  //     case 2:
-  //       return "blue"
-  //     case 3:
-  //       return "violet"
-  //     case 4: //valle
-  //       return "#b8bd41"
-  //     default:
-  //       return "bg-primary"
-  //   }
-  // }
 }

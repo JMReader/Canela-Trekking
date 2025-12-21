@@ -11,8 +11,6 @@ export class CarrouselComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    //console.log(this.images)
-    
   } 
 
 }
