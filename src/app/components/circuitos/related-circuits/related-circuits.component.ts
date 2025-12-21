@@ -36,11 +36,9 @@ export class RelatedCircuitsComponent implements OnInit {
       let numeroAleatorio = Math.floor(Math.random() * circuits.length);      
       this.randomCircuits.push(circuits[numeroAleatorio]); 
     }
-    console.log(this.randomCircuits);
   }
 
   redirectToCircuit (circuit: Circuit) {
-    console.log(circuit._id);    
     this.router.navigate(['circuits/', circuit._id]); 
     setTimeout(() => {
       window.location.reload()

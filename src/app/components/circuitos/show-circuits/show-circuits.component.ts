@@ -1,10 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
-import { Circuit } from 'src/app/core/models/circuit';
-import { ApiService } from 'src/app/core/services/api.service';
-import { NavigationEnd, Router } from '@angular/router';
-import { CircuitosService } from 'src/app/core/services/circuitos.service';
 
+import { Component, OnInit } from '@angular/core';
+import { Circuit } from 'src/app/core/models/circuit';
+import { Router } from '@angular/router';
+import { CircuitosService } from 'src/app/core/services/circuitos.service';
+import { DEFAULT_THEME, REGION_THEME_MAP } from 'src/app/shared/theme/region-theme';
+import { scrollToTopOnNavigation } from 'src/app/shared/utils/router-scroll';
+import { ThemeService } from 'src/app/core/services/theme.service';
+
+const FILTER_KEYS = ['duration', 'difficulty', 'distance', 'region'] as const;
+type CircuitFilterKey = typeof FILTER_KEYS[number];
+type CircuitFilters = Record<CircuitFilterKey, string | null>;
 
 @Component({
   selector: 'app-show-circuits',
@@ -17,15 +22,14 @@ export class ShowCircuitsComponent implements OnInit {
   contadorClicks: number; //para solucionar bug de los dos clicks
   getCircuitId: string = '';
 
-  constructor(private api: ApiService, private circuitosService: CircuitosService, private sanitizer: DomSanitizer, private router: Router) {
+  constructor(
+    private circuitosService: CircuitosService,
+    private router: Router,
+    private themeService: ThemeService
+  ) {
     this.short = false;
     this.contadorClicks = 0;
-
-    this.router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        window.scrollTo(0, 0);
-      }
-    });
+    scrollToTopOnNavigation(this.router);
   }
 
   ngOnInit(): void {
@@ -53,7 +57,7 @@ export class ShowCircuitsComponent implements OnInit {
   }
 
 
-  filtersBack: { [key: string]: string | null } = {
+  filtersBack: CircuitFilters = {
     duration: null,
     difficulty: null,
     distance: null,
@@ -67,12 +71,12 @@ export class ShowCircuitsComponent implements OnInit {
     });
   }
 
-  selectedFiltersBack(filterType: string, filterValue: string) {
+  selectedFiltersBack(filterType: CircuitFilterKey, filterValue: string) {
     this.filtersBack[filterType] = filterValue;
     this.getFilteredCircuits();
   }
 
-  clearFilterBack(filterType: string) {
+  clearFilterBack(filterType: CircuitFilterKey) {
     this.filtersBack[filterType] = null;
 
     if (Object.values(this.filtersBack).every(value => value === null)) {
@@ -84,76 +88,33 @@ export class ShowCircuitsComponent implements OnInit {
 
   //--------------------------------- Inicio Funcionalidad de chips -------------------------------------
 
-  selectedFilters: { [key: string]: string | null } = {
+  selectedFilters: CircuitFilters = {
     duration: null,
     difficulty: null,
     distance: null,
     region: null
   };
 
-  selectFilter(filterType: string, filterValue: string) {
+  selectFilter(filterType: CircuitFilterKey, filterValue: string) {
     this.selectedFilters[filterType] = filterValue;
 
     if (filterType === 'region' && filterValue) {
-      const theme = this.regionThemeMap[filterValue.toLowerCase()];
+      const key = filterValue.toLowerCase() as keyof typeof REGION_THEME_MAP;
+      const theme = REGION_THEME_MAP[key];
       if (theme) {
-        for (const property in theme) {
-          if (theme.hasOwnProperty(property)) {
-            document.documentElement.style.setProperty(property, theme[property]);
-          }
-        }
+        this.themeService.applyTheme(theme);
       }
     }
   }
 
-  clearFilter(filterType: string) {
+  clearFilter(filterType: CircuitFilterKey) {
     this.selectedFilters[filterType] = null;
     if (filterType === 'region') {
-      const defaultTheme = this.regionThemeMap['default'];
-      if (defaultTheme) {
-        for (const property in defaultTheme) {
-          if (defaultTheme.hasOwnProperty(property)) {
-            document.documentElement.style.setProperty(property, defaultTheme[property]);
-          }
-        }
+      if (DEFAULT_THEME) {
+        this.themeService.applyTheme(DEFAULT_THEME);
       }
     }
   }
 
   //--------------------------------- Fin Funcionalidad de chips -------------------------------------
-
-  regionThemeMap: { [key: string]: { [key: string]: string } } = {
-    default: {
-      '--color-back': 'rgb(179, 216, 255)',
-      '--color-main': 'rgb(37, 115, 153)',
-      '--color-extra': '#a0b6f9',
-      '--color-layouts': '#1c2952',
-      '--fondo-foto': 'url("assets/MAINSTYLE.jpeg")'
-    },
-    puna: {
-      '--color-main': '#3c5c92',
-      '--color-extra': '#e5cfb1',
-      '--color-layouts': '#6981ad',
-      '--fondo-foto': 'url("assets/punaHornocal.jpg")'
-    },
-    quebrada: {
-      '--color-main': '#654321',
-      '--color-extra': '#bdcbd2',
-      '--color-layouts': '#828275',
-      '--fondo-foto': 'url("assets/quebrada-background.jpeg")'
-    },
-    valles: {
-      '--color-main': '#987654',
-      '--color-extra': '#595221',
-      '--color-layouts': '#a89854',
-      '--fondo-foto': 'url("assets/valle-background.jpeg")'
-    },
-    yungas: {
-      '--color-main': '#567890',
-      '--color-extra': '#363614',
-      '--color-layouts': '#595931',
-      '--fondo-foto': 'url("assets/yungas-background.jpeg")'
-    }
-  };
-
 }

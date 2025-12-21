@@ -2,9 +2,19 @@ import { Component, OnInit } from '@angular/core';
 
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { Circuit } from 'src/app/core/models/circuit';
-import { NavigationEnd, Router } from '@angular/router';
-import { ApiService } from 'src/app/core/services/api.service';
+import { Router } from '@angular/router';
+
 import { CircuitosService } from 'src/app/core/services/circuitos.service';
+import { ThemeService } from 'src/app/core/services/theme.service';
+
+import {
+  CIRCUIT_WHATSAPP_MESSAGE_PREFIX,
+  CIRCUIT_WHATSAPP_MESSAGE_SUFFIX,
+  WHATSAPP_PHONE_NUMBER
+} from 'src/app/shared/constants';
+import { DEFAULT_THEME } from 'src/app/shared/theme/region-theme';
+import { scrollToTopOnNavigation } from 'src/app/shared/utils/router-scroll';
+
 
 @Component({
   selector: 'app-circuit',
@@ -17,13 +27,15 @@ export class CircuitComponent implements OnInit {
   circ!: Circuit //aqui debe recibir por parametro para cargar.
   circuitId!: string | undefined; 
   
-  constructor(private circuitoService: CircuitosService, private sanitizer: DomSanitizer, private router: Router) {
-    this.router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        window.scrollTo(0, 0);
-      }
-    });
+  constructor(
+    private circuitoService: CircuitosService,
+    private sanitizer: DomSanitizer,
+    private router: Router,
+    private themeService: ThemeService
+  ) {
+    scrollToTopOnNavigation(this.router);
   }
+
 
   ngOnInit(): void {
     const currentUrl = this.router.url;
@@ -32,16 +44,12 @@ export class CircuitComponent implements OnInit {
     this.getCircuitData(this.circuitId)
 
     //Al seleccionar un circuito si este estaba filtrado por región vuelve a su estilo default
-    document.documentElement.style.setProperty('--color-main', 'rgb(37, 115, 153)');
-    document.documentElement.style.setProperty('--color-extra', '#a0b6f9');
-    document.documentElement.style.setProperty('--color-layouts', '#1c2952');
-    document.documentElement.style.setProperty('--fondo-foto', 'url("assets/MAINSTYLE.jpeg")');
+    this.themeService.applyTheme(DEFAULT_THEME);
   }
 
   enviarwpp(circuit: string) {
-    var x = "https://wa.me/543885148856?text=Hola%20buenas%20queria%20consultar%20sobre%20el%20circuito%20"
-      + circuit + " para la fecha de ...( completar en que fecha viaja por favor :) )";
-    window.open(x);
+    const url = `https://wa.me/${WHATSAPP_PHONE_NUMBER}?text=${CIRCUIT_WHATSAPP_MESSAGE_PREFIX}${circuit}${CIRCUIT_WHATSAPP_MESSAGE_SUFFIX}`;
+    window.open(url);
   }
 
   sanitizeDescription(description: string): SafeHtml {

@@ -2,6 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http';
 import { Observable, catchError, map, throwError } from 'rxjs';
 import { Circuit } from '../models/circuit';
+
+type CircuitFilterParams = Record<string, string | null>;
+type RawCircuit = Omit<Circuit, 'photos'> & { photos?: { url: string }[] };
 @Injectable({
   providedIn: 'root'
 })
@@ -10,15 +13,14 @@ import { Circuit } from '../models/circuit';
 export class CircuitosService {
 
   constructor(private http: HttpClient) { }
-  private apiUrl = "https://canela-trekking-server-node.onrender.com/circuit/";
+  private readonly apiUrl = "https://canela-trekking-server-node.onrender.com/circuit/";
 
   /**
    * Fetches all circuits from the API and returns an Observable of Circuit objects.
    */
 
   getAllCircuits(): Observable<Circuit[]> {
-    console.log("getAllCircuits");
-    return this.http.get<Circuit[]>(this.apiUrl)
+    return this.http.get<RawCircuit[]>(this.apiUrl)
       .pipe(
         catchError(this.handleError), // Handle errors
         map(data => this.transformCircuits(data)) // Convert response data to Circuit objects
@@ -26,26 +28,27 @@ export class CircuitosService {
   }
 
   getCircuit(circuitId: string | undefined): Observable<Circuit> {
-    return this.http.get<Circuit>(this.apiUrl + circuitId)
+    return this.http.get<RawCircuit>(this.apiUrl + circuitId)
       .pipe(
         catchError(this.handleError), // Handle errors
-        map((circuit: any) => this.transformCircuits([circuit])[0]) //como tiene un solo circuito le pasamos el primero
+        map((circuit: RawCircuit) => this.transformCircuits([circuit])[0]) //como tiene un solo circuito le pasamos el primero
       );
   }
 
-  getCircuitsFiltered(filters: any): Observable<Circuit[]> {
+  getCircuitsFiltered(filters: CircuitFilterParams): Observable<Circuit[]> {
     let params = new HttpParams();
 
     for (const key in filters) {
-      if (filters[key]) {
-        params = params.set(key, filters[key]);
+
+      const value = filters[key];
+      if (value) {
+        params = params.set(key, value);
         // console.log(filters[key]);
       }
     };      
 
-    console.log(params);
+    return this.http.get<RawCircuit[]>(this.apiUrl, { params }).pipe(
 
-    return this.http.get<Circuit[]>(this.apiUrl, { params }).pipe(
       catchError(this.handleError),
       map(data => this.transformCircuits(data)) 
     );
@@ -67,9 +70,9 @@ export class CircuitosService {
   }
 
 
-  private transformCircuits(data: any): Circuit[] { // New function for data transformation
-    return data.map((circuit: any) => {
-      const photos = circuit.photos?.map((photo: { url: any; }) => photo.url) || []; // Extract photo URLs
+  private transformCircuits(data: RawCircuit[]): Circuit[] { // New function for data transformation
+    return data.map((circuit) => {
+      const photos = circuit.photos?.map((photo) => photo.url) || []; // Extract photo URLs
       return {
         ...circuit, // Spread operator for other properties (prevents overwriting)
         photos
