@@ -1,6 +1,7 @@
 import { Component, EventEmitter, HostListener, OnInit, Output } from '@angular/core';
 import { ApiService } from 'src/app/core/services/api.service';
 import { SharedDataService } from 'src/app/core/services/shared-data.service';
+import { FACEBOOK_URL, INSTAGRAM_URL, WHATSAPP_BASE_URL } from 'src/app/shared/constants';
 
 const SCROLL_ACTIVE_START = 1500;
 const SCROLL_ACTIVE_END = 2000;
@@ -15,6 +16,12 @@ export class HeaderComponent implements OnInit {
   region_actual = this.regiones[0]
   contador = 0
   menuAbierto = false;
+  
+  // Social links
+  readonly instagramUrl = INSTAGRAM_URL;
+  readonly facebookUrl = FACEBOOK_URL;
+  readonly whatsappUrl = WHATSAPP_BASE_URL;
+
   constructor(private Shared: SharedDataService, private api: ApiService) {
 
   }
