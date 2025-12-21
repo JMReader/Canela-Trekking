@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DEFAULT_THEME } from 'src/app/shared/theme/region-theme';
+import { FACEBOOK_URL, INSTAGRAM_URL, LANDING_WHATSAPP_MESSAGE, WHATSAPP_BASE_URL } from 'src/app/shared/constants';
 
 @Component({
   selector: 'app-landing',
@@ -12,22 +14,23 @@ export class LandingComponent implements OnInit {
   backgroundImage = 'assets/backgroundAll.webp'; 
   ngOnInit(): void {
    
-     document.body.setAttribute(
-      'style',
-      '--color-back: rgb(179, 216, 255); --color-main :rgb(37, 115, 153);--color-extra: #a0b6f9;--color-layouts : #1c2952; --fondo-foto: url("assets/MAINSTYLE.jpeg")')
+     for(const property in DEFAULT_THEME) {
+       if (DEFAULT_THEME.hasOwnProperty(property)) {
+         document.documentElement.style.setProperty(property, (DEFAULT_THEME as any)[property]);
+       }
+     }
   }
   openWindow(opc: string) {
     var x = '';
     switch (opc) {
       case 'wpp':
-        x =
-          'https://wa.me/543885148856?text=¡Hola! Estoy interesado/a en obtener más información sobre tus servicios de trekking. ¿Me puedes brindar detalles?';
+        x = `${WHATSAPP_BASE_URL}?text=${LANDING_WHATSAPP_MESSAGE}`;
         break;
       case 'ig':
-        x = 'https://www.instagram.com/canela.trekking.jujuy/';
+        x = INSTAGRAM_URL;
         break;
       case 'face':
-        x = 'https://www.facebook.com/canela.trekking.jujuy/';
+        x = FACEBOOK_URL;
         break;
     }
     window.open(x);
