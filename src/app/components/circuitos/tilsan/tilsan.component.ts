@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TILSAN_WHATSAPP_MESSAGE, WHATSAPP_BASE_URL } from 'src/app/shared/constants';
 
 
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
@@ -45,10 +46,7 @@ export class TilsanComponent implements OnInit {
 
   ngOnInit(): void {}
   enviarwpp(circuit: string) {
-    var x =
-      'https://wa.me/543885148856?text=' +
-      'Hola quiero conocer los secretos de la naturaleza mediante la travesia desde tilcara a San Francisco' +
-      ' para la fecha de ...( completar en que fecha viaja por favor :) )';
+    var x = `${WHATSAPP_BASE_URL}?text=${TILSAN_WHATSAPP_MESSAGE}`;
     window.open(x);
   }
 

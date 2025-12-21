@@ -21,7 +21,7 @@ export class CircuitosService {
 
   getAllCircuits(): Observable<Circuit[]> {
     console.log("getAllCircuits");
-    return this.http.get<Circuit[]>(this.apiUrl)
+    return this.http.get<RawCircuit[]>(this.apiUrl)
       .pipe(
         catchError(this.handleError), // Handle errors
         map(data => this.transformCircuits(data)) // Convert response data to Circuit objects
@@ -29,7 +29,7 @@ export class CircuitosService {
   }
 
   getCircuit(circuitId: string | undefined): Observable<Circuit> {
-    return this.http.get<Circuit>(this.apiUrl + circuitId)
+    return this.http.get<RawCircuit>(this.apiUrl + circuitId)
       .pipe(
         catchError(this.handleError), // Handle errors
         map((circuit: RawCircuit) => this.transformCircuits([circuit])[0]) //como tiene un solo circuito le pasamos el primero
@@ -40,15 +40,16 @@ export class CircuitosService {
     let params = new HttpParams();
 
     for (const key in filters) {
-      if (filters[key]) {
-        params = params.set(key, filters[key]);
+      const value = filters[key];
+      if (value) {
+        params = params.set(key, value);
         // console.log(filters[key]);
       }
     };      
 
     console.log(params);
 
-    return this.http.get<Circuit[]>(this.apiUrl, { params }).pipe(
+    return this.http.get<RawCircuit[]>(this.apiUrl, { params }).pipe(
       catchError(this.handleError),
       map(data => this.transformCircuits(data)) 
     );

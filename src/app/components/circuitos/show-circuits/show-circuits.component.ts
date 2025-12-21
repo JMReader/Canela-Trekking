@@ -95,11 +95,12 @@ export class ShowCircuitsComponent implements OnInit {
     this.selectedFilters[filterType] = filterValue;
 
     if (filterType === 'region' && filterValue) {
-      const theme = REGION_THEME_MAP[filterValue.toLowerCase()];
+      const key = filterValue.toLowerCase() as keyof typeof REGION_THEME_MAP;
+      const theme = REGION_THEME_MAP[key];
       if (theme) {
         for (const property in theme) {
           if (theme.hasOwnProperty(property)) {
-            document.documentElement.style.setProperty(property, theme[property]);
+            document.documentElement.style.setProperty(property, (theme as any)[property]);
           }
         }
       }
@@ -111,7 +112,7 @@ export class ShowCircuitsComponent implements OnInit {
     if (filterType === 'region') {
       for (const property in DEFAULT_THEME) {
         if (DEFAULT_THEME.hasOwnProperty(property)) {
-          document.documentElement.style.setProperty(property, DEFAULT_THEME[property]);
+          document.documentElement.style.setProperty(property, (DEFAULT_THEME as any)[property]);
         }
       }
     }
