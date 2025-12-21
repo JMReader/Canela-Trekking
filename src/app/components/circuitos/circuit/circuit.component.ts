@@ -2,9 +2,11 @@ import { Component, OnInit } from '@angular/core';
 
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { Circuit } from 'src/app/core/models/circuit';
-import { NavigationEnd, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { ApiService } from 'src/app/core/services/api.service';
 import { CircuitosService } from 'src/app/core/services/circuitos.service';
+import { DEFAULT_THEME } from 'src/app/shared/theme/region-theme';
+import { scrollToTopOnNavigation } from 'src/app/shared/utils/router-scroll';
 
 @Component({
   selector: 'app-circuit',
@@ -18,11 +20,7 @@ export class CircuitComponent implements OnInit {
   circuitId!: string | undefined; 
   
   constructor(private circuitoService: CircuitosService, private sanitizer: DomSanitizer, private router: Router) {
-    this.router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        window.scrollTo(0, 0);
-      }
-    });
+    scrollToTopOnNavigation(this.router);
   }
 
   ngOnInit(): void {
@@ -32,10 +30,10 @@ export class CircuitComponent implements OnInit {
     this.getCircuitData(this.circuitId)
 
     //Al seleccionar un circuito si este estaba filtrado por región vuelve a su estilo default
-    document.documentElement.style.setProperty('--color-main', 'rgb(37, 115, 153)');
-    document.documentElement.style.setProperty('--color-extra', '#a0b6f9');
-    document.documentElement.style.setProperty('--color-layouts', '#1c2952');
-    document.documentElement.style.setProperty('--fondo-foto', 'url("assets/MAINSTYLE.jpeg")');
+    const defaultThemeKeys = ['--color-main', '--color-extra', '--color-layouts', '--fondo-foto'] as const;
+    for (const property of defaultThemeKeys) {
+      document.documentElement.style.setProperty(property, DEFAULT_THEME[property]);
+    }
   }
 
   enviarwpp(circuit: string) {
