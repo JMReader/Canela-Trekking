@@ -56,7 +56,6 @@ El `package.json` define los comandos estándar para el ciclo de vida del desarr
 
 *   `npm start` / `ng serve`: Inicia el servidor de desarrollo local en el puerto 4200 con recarga en caliente (HMR).
 *   `npm run build` / `ng build`: Genera los archivos estáticos optimizados para producción en la carpeta `dist/`.
-*   `npm test` / `ng test`: Ejecuta las pruebas unitarias utilizando **Karma** y **Jasmine**.
 
 ## Contacto
 
