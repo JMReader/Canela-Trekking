@@ -2,6 +2,9 @@ import { Component, EventEmitter, HostListener, OnInit, Output } from '@angular/
 import { ApiService } from 'src/app/core/services/api.service';
 import { SharedDataService } from 'src/app/core/services/shared-data.service';
 
+const SCROLL_ACTIVE_START = 1500;
+const SCROLL_ACTIVE_END = 2000;
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -23,9 +26,9 @@ export class HeaderComponent implements OnInit {
   @HostListener('window:scroll')
   scrollEvent() {
     const scrollPosition = window.scrollY;
-    if (scrollPosition >= 1500 && scrollPosition < 2000) {
+    if (scrollPosition >= SCROLL_ACTIVE_START && scrollPosition < SCROLL_ACTIVE_END) {
       this.isScrolled = true;
-    } else if (scrollPosition >= 2000) {
+    } else if (scrollPosition >= SCROLL_ACTIVE_END) {
       this.isScrolled = false;
     } else {
       this.isScrolled = false;

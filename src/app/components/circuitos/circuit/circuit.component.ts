@@ -5,6 +5,11 @@ import { Circuit } from 'src/app/core/models/circuit';
 import { NavigationEnd, Router } from '@angular/router';
 import { ApiService } from 'src/app/core/services/api.service';
 import { CircuitosService } from 'src/app/core/services/circuitos.service';
+import {
+  CIRCUIT_WHATSAPP_MESSAGE_PREFIX,
+  CIRCUIT_WHATSAPP_MESSAGE_SUFFIX,
+  WHATSAPP_PHONE_NUMBER
+} from 'src/app/shared/constants';
 
 @Component({
   selector: 'app-circuit',
@@ -39,9 +44,8 @@ export class CircuitComponent implements OnInit {
   }
 
   enviarwpp(circuit: string) {
-    var x = "https://wa.me/543885148856?text=Hola%20buenas%20queria%20consultar%20sobre%20el%20circuito%20"
-      + circuit + " para la fecha de ...( completar en que fecha viaja por favor :) )";
-    window.open(x);
+    const url = `https://wa.me/${WHATSAPP_PHONE_NUMBER}?text=${CIRCUIT_WHATSAPP_MESSAGE_PREFIX}${circuit}${CIRCUIT_WHATSAPP_MESSAGE_SUFFIX}`;
+    window.open(url);
   }
 
   sanitizeDescription(description: string): SafeHtml {
