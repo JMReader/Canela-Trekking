@@ -17,7 +17,6 @@ export class CircuitosService {
    */
 
   getAllCircuits(): Observable<Circuit[]> {
-    console.log("getAllCircuits");
     return this.http.get<Circuit[]>(this.apiUrl)
       .pipe(
         catchError(this.handleError), // Handle errors
@@ -39,11 +38,8 @@ export class CircuitosService {
     for (const key in filters) {
       if (filters[key]) {
         params = params.set(key, filters[key]);
-        // console.log(filters[key]);
       }
     };      
-
-    console.log(params);
 
     return this.http.get<Circuit[]>(this.apiUrl, { params }).pipe(
       catchError(this.handleError),
