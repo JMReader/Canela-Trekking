@@ -3,8 +3,9 @@ import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { Circuit } from 'src/app/core/models/circuit';
 import { Router } from '@angular/router';
-import { ApiService } from 'src/app/core/services/api.service';
+
 import { CircuitosService } from 'src/app/core/services/circuitos.service';
+import { ThemeService } from 'src/app/core/services/theme.service';
 
 import {
   CIRCUIT_WHATSAPP_MESSAGE_PREFIX,
@@ -26,9 +27,15 @@ export class CircuitComponent implements OnInit {
   circ!: Circuit //aqui debe recibir por parametro para cargar.
   circuitId!: string | undefined; 
   
-  constructor(private circuitoService: CircuitosService, private sanitizer: DomSanitizer, private router: Router) {
+  constructor(
+    private circuitoService: CircuitosService,
+    private sanitizer: DomSanitizer,
+    private router: Router,
+    private themeService: ThemeService
+  ) {
     scrollToTopOnNavigation(this.router);
   }
+
 
   ngOnInit(): void {
     const currentUrl = this.router.url;
@@ -37,10 +44,7 @@ export class CircuitComponent implements OnInit {
     this.getCircuitData(this.circuitId)
 
     //Al seleccionar un circuito si este estaba filtrado por región vuelve a su estilo default
-    const defaultThemeKeys = ['--color-main', '--color-extra', '--color-layouts', '--fondo-foto'] as const;
-    for (const property of defaultThemeKeys) {
-      document.documentElement.style.setProperty(property, DEFAULT_THEME[property]);
-    }
+    this.themeService.applyTheme(DEFAULT_THEME);
   }
 
   enviarwpp(circuit: string) {

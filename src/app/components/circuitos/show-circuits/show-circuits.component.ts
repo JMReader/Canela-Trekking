@@ -1,11 +1,11 @@
+
 import { Component, OnInit } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
 import { Circuit } from 'src/app/core/models/circuit';
-import { ApiService } from 'src/app/core/services/api.service';
 import { Router } from '@angular/router';
 import { CircuitosService } from 'src/app/core/services/circuitos.service';
 import { DEFAULT_THEME, REGION_THEME_MAP } from 'src/app/shared/theme/region-theme';
 import { scrollToTopOnNavigation } from 'src/app/shared/utils/router-scroll';
+import { ThemeService } from 'src/app/core/services/theme.service';
 
 const FILTER_KEYS = ['duration', 'difficulty', 'distance', 'region'] as const;
 type CircuitFilterKey = typeof FILTER_KEYS[number];
@@ -22,7 +22,11 @@ export class ShowCircuitsComponent implements OnInit {
   contadorClicks: number; //para solucionar bug de los dos clicks
   getCircuitId: string = '';
 
-  constructor(private api: ApiService, private circuitosService: CircuitosService, private sanitizer: DomSanitizer, private router: Router) {
+  constructor(
+    private circuitosService: CircuitosService,
+    private router: Router,
+    private themeService: ThemeService
+  ) {
     this.short = false;
     this.contadorClicks = 0;
     scrollToTopOnNavigation(this.router);
@@ -98,11 +102,7 @@ export class ShowCircuitsComponent implements OnInit {
       const key = filterValue.toLowerCase() as keyof typeof REGION_THEME_MAP;
       const theme = REGION_THEME_MAP[key];
       if (theme) {
-        for (const property in theme) {
-          if (theme.hasOwnProperty(property)) {
-            document.documentElement.style.setProperty(property, (theme as any)[property]);
-          }
-        }
+        this.themeService.applyTheme(theme);
       }
     }
   }
@@ -110,10 +110,8 @@ export class ShowCircuitsComponent implements OnInit {
   clearFilter(filterType: CircuitFilterKey) {
     this.selectedFilters[filterType] = null;
     if (filterType === 'region') {
-      for (const property in DEFAULT_THEME) {
-        if (DEFAULT_THEME.hasOwnProperty(property)) {
-          document.documentElement.style.setProperty(property, (DEFAULT_THEME as any)[property]);
-        }
+      if (DEFAULT_THEME) {
+        this.themeService.applyTheme(DEFAULT_THEME);
       }
     }
   }
